@@ -1,29 +1,29 @@
 window.addEventListener("load", function () {
-  const sections = document.querySelectorAll(".section");
+
+  /*
   const togglers = document.querySelectorAll(".section > h3");
-
-  function closeAll() {
-    sections.forEach((s) => {
-      s.classList.add("closed");
-    });
-  }
-
-  function toggle(el) {
-    el.classList.toggle("closed");
-    // if (el.classList.contains("closed")) {
-    //   el.classList.remove("closed");
-    // } else {
-    //   el.classList.add("closed");
-    // }
-  }
-
-  //---------
-
   Array.from(togglers).map((h3) => {
     h3.addEventListener("click", (e) => {
-      toggle(e.target.parentNode);
+      const el = e.target.parentNode;
+      el.classList.toggle("closed");
+      el.classList.toggle("open");
     });
   });
+  */
 
-
+  /*
+  const timerMs = 10000;
+  const header = document.querySelector("#header");
+  let lineIndex = 2;
+  let invert = false;
+  const interval = setInterval(() => {
+    header.style.backgroundImage = `url('${window.location.href}img/line-${lineIndex}.svg')`;
+    lineIndex = invert ? lineIndex - 1 : lineIndex + 1;
+    if (lineIndex == 1) {
+      invert = false;
+    } else if (lineIndex == 5) {
+      invert = true;
+    }
+  }, timerMs);
+  */
 });

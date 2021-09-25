@@ -4,7 +4,7 @@
   "description": "My personal website",
   "main": "index.html",
   "scripts": {
-    "serve": "npx http-server ."
+    "start": "http-server . -o -c-1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GianfrancoFrau/GianfrancoFrau.github.io/issues"
   },
-  "homepage": "https://github.com/GianfrancoFrau/GianfrancoFrau.github.io#readme"
+  "homepage": "https://github.com/GianfrancoFrau/GianfrancoFrau.github.io#readme",
+  "devDependencies": {
+    "http-server": "^13.0.2"
+  }
 }
