@@ -1,12 +1,14 @@
 :root {
   --text-color: #2c3e50;
   --hover-color: #2980b9;
+  --bg-color: #ecf0f1;
 }
 
 body {
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  background: var(--bg-color);
 }
 
 a {
@@ -56,16 +58,11 @@ header {
 header h1 {
   margin: 0;
   padding: 0;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 #content {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow-y: scroll; */
-  padding: 20px 20px 20px 20px;
-  border: 1px solid white;
+  padding: 20px;
 }
 
 #content h2 {
@@ -108,28 +105,27 @@ header h1 {
 }
 
 footer {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow-x: scroll; */
-  border: 1px solid white;
-}
-
-#links {
-  display: flex;
   padding: 20px;
 }
 
-#links span {
-  display: block;
-  padding: 10px;
-  margin-right: 10px;
+footer h3 {
+  margin-top: 0;
+  padding-top: 0;
 }
 
-#links span a {
+#links {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#links a {
   border-bottom: none;
+  display: flex;
+  align-items: center;
 }
 
-#links span a i {
-  font-size: 48px;
+#links a i {
+  font-size: 32px;
+  margin-right: 20px;
 }

@@ -1,4 +1,4 @@
-GianfrancoFrau.github.io
+Gianfranco Frau
 ========================
 
 My personal website.
