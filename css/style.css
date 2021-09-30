@@ -1,7 +1,7 @@
 :root {
   --text-color: #2c3e50;
-  --hover-color: #2980b9;
-  --bg-color: #ecf0f1;
+  --hover-color: #94afc2;
+  --bg-color: white;
 }
 
 body {
@@ -35,8 +35,8 @@ div {
 .montserrat-bold {
   font-weight: 500;
 }
-.lobster {
-  font-family: "Lobster", cursive;
+.quicksand {
+  font-family: "Quicksand", sans-serif;
 }
 .up {
   text-transform: uppercase;
@@ -53,12 +53,26 @@ div {
 header {
   width: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-device-width: 500px) {
+  header {
+    flex-direction: column;
+  }
 }
 
 header h1 {
   margin: 0;
   padding: 0;
   font-size: 50px;
+  margin-left: 40px;
+}
+
+header h1 span {
+  display: block;
 }
 
 #content {
