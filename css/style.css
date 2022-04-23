@@ -32,12 +32,15 @@ div {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
+
 .montserrat-bold {
   font-weight: 500;
 }
+
 .quicksand {
   font-family: "Quicksand", sans-serif;
 }
+
 .up {
   text-transform: uppercase;
 }
@@ -68,6 +71,17 @@ header h1 {
 
 header h1 span {
   display: block;
+}
+
+@media (max-device-width: 500px) {
+  header {
+    display: block;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+    margin-left: 0;
+  }
 }
 
 #content {
@@ -128,19 +142,19 @@ footer h3 {
   list-style: none;
 }
 
+#links li {
+  display: inline;
+}
+
 #links a {
   border-bottom: none;
-  display: flex;
-  align-items: center;
 }
 
 #links a i {
-  font-size: 32px;
+  font-size: 36px;
   margin-right: 20px;
 }
 
-@media (max-device-width: 500px) {
-  header h1 {
-    font-size: 2.2em;
-  }
+footer .made {
+  margin-top: 100px;
 }
