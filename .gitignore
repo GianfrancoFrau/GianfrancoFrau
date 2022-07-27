@@ -1,2 +1,14 @@
-./css/tailwind.css
-node_modules/
+# dependencies
+node_modules
+
+# production
+dist
+
+# misc
+.DS_Store
+
+npm-debug.log
+yarn-error.log
+yarn.lock
+.yarnclean
+.vscode
