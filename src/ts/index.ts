@@ -1,8 +1,17 @@
 import '../scss/index.scss';
 
 class App {
-  public run(): void {}
+  // private title: HTMLElement;
+
+  run(): void {
+    // this.title = document.getElementById('main-title');
+    // this.title.addEventListener('click', () => {
+    //   this.title.classList.toggle('clicked');
+    // });
+  }
 }
 
-const app = new App();
-app.run();
+window.addEventListener('load', () => {
+  const app = new App();
+  app.run();
+});
