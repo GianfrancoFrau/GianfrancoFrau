@@ -16,7 +16,7 @@ const config = {
     app: Path.resolve(__dirname, 'src/ts/index.ts'),
   },
   output: {
-    path: Path.join(__dirname, 'dist'),
+    path: Path.join(__dirname, 'docs'),
     filename: 'js/[name].js',
     clean: true,
   },
