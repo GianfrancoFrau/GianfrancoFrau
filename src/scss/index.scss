@@ -55,10 +55,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   max-width: 800px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 0;
+  border-left: 10px solid var(--text-color);
 
   h1,
   h2,
@@ -69,38 +69,18 @@ body {
   header {
     h1 {
       display: inline-block;
-      font-size: 2em;
+      font-size: 2.5em;
       margin: 0;
       border-radius: 10px;
-
-      // &.clicked {
-      //   .short {
-      //     display: none;
-      //   }
-      //   .long {
-      //     display: block;
-      //     width: auto;
-      //   }
-      // }
-
-      // .short {
-      //   -webkit-transition: $title-transition;
-      //   -moz-transition: $title-transition;
-      //   -o-transition: $title-transition;
-      //   transition: $title-transition;
-      // }
-
-      // .long {
-      //   -webkit-transition: $title-transition;
-      //   -moz-transition: $title-transition;
-      //   -o-transition: $title-transition;
-      //   transition: $title-transition;
-      //   display: none;
-      //   width: 0;
-      // }
     }
     h2 {
       font-size: 1.6em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h3 {
+      font-size: 1.6em;
+      margin-top: 50px;
       margin-bottom: 0;
     }
   }
