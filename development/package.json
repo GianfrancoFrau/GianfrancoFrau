@@ -6,9 +6,10 @@
   "scripts": {
     "start": "MODE='development' && webpack-dev-server --open --config webpack.config.js",
     "build": "MODE='production' && webpack --config webpack.config.js",
+    "postbuild": "cp -r dist/* ../",
     "postinstall": "npm run build",
     "serve-build": "npx http-server ./dist/",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/* && rm -rf node_modules"
   },
   "repository": {
     "type": "git",
