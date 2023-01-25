@@ -1,0 +1,137 @@
+:root {
+  --text-color: #2c3e50;
+  --title-font-family: 'Bebas Neue', cursive;
+  // --body-font-family: 'Montserrat', sans-serif;
+  --body-font-family: 'Quicksand', sans-serif;
+  --links-font-family: 'Bebas Neue', cursive;
+  --hover-color: #94afc2;
+  --bg-color: white;
+}
+
+$title-transition: all 0.1s linear;
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: var(--text-color);
+  background: var(--bg-color);
+
+  &.debug {
+    #container {
+      border: 1px solid red;
+
+      header {
+        border: 1px solid blue;
+      }
+
+      main {
+        border: 1px solid green;
+      }
+
+      footer {
+        border: 1px solid brown;
+      }
+    }
+  }
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 800px;
+  padding: 20px;
+  margin: 0;
+  border-left: 10px solid var(--text-color);
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--title-font-family);
+  }
+
+  header {
+    h1 {
+      display: inline-block;
+      font-size: 2.5em;
+      margin: 0;
+      border-radius: 10px;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h3 {
+      font-size: 1.6em;
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  main {
+    flex: 2;
+
+    #body {
+      font-family: var(--body-font-family);
+      font-size: 1.2em;
+      line-height: 1.4em;
+    }
+  }
+
+  footer {
+    margin-top: 40px;
+
+    #links {
+      font-family: var(--links-font-family);
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.6em;
+
+        li {
+          width: 50%;
+          margin-bottom: 5px;
+
+          .icon {
+            display: inline-block;
+            width: 30px;
+          }
+
+          a {
+            border: 0;
+          }
+        }
+      }
+
+      @media screen and (min-width: 376px) {
+        ul {
+          li {
+            width: 100%;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
