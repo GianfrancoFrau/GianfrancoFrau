@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/GianfrancoFrau/GianfrancoFrau.github.io#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/polyfill": "^7.12.1",
+    "animate.css": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
