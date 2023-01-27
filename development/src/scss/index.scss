@@ -25,10 +25,11 @@
   --bg-color: var(--color-blue-1);
 
   --font-family: 'Roboto', sans-serif;
-  --font-size: 18px;
 
   --header-font: 'Satisfy';
   --menu-icon-width: 30px;
+  --modal-background: var(--color-light-1);
+  --modal-text-color: var(--color-blue-2);
 
   // --linkedin-color: #0077b5;
   // --github-color: #24292e;
@@ -62,6 +63,10 @@ a::before {
   transition: transform 0.3s ease-in-out;
 }
 
+a.no-animation::before {
+  display: none;
+}
+
 a:hover {
   color: var(--link-hover-color);
 }
@@ -71,15 +76,66 @@ a:hover::before {
   transform: scaleX(1);
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   margin: 0;
   padding: 0;
+  position: relative;
   width: 100%;
   height: 100%;
   color: var(--text-color);
   font-family: var(--font-family);
   background: var(--bg-color);
-  font-size: var(--font-size);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  background: var(--modal-background);
+  color: var(--modal-text-color);
+
+  header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-family: var(--header-font);
+    text-transform: uppercase;
+
+    a {
+      font-size: 1.8em;
+      color: var(--modal-text-color);
+    }
+  }
+
+  h2 {
+    flex: 1;
+    text-align: center;
+  }
+
+  .modal-content {
+    padding: 20px;
+
+    a {
+      color: var(--color-green-1);
+    }
+
+    a::before {
+      background-color: var(--color-green-1);
+    }
+  }
+}
+
+#about {
+  .modal-content {
+    font-size: 1.8em;
+  }
 }
 
 main {
@@ -114,7 +170,7 @@ main {
       list-style: none;
       padding: 0 0 0 20px;
       margin: 0;
-      font-size: 1.6em;
+      font-size: 24px;
 
       li {
         width: 100%;
@@ -148,5 +204,10 @@ main {
 @media screen and (min-width: 1024px) {
   main {
     // margin-top: 10%;
+  }
+  .modal {
+    .modal-content {
+      font-size: 1.8em;
+    }
   }
 }

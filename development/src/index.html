@@ -16,29 +16,10 @@
         <h1>Gianfranco Frau</h1>
         <h2>Web Developer</h2>
       </header>
-      <!-- <div class="row">
-          <div id="body">
-            <p>
-              I'm Gianfranco, a passionate <b>Web Developer</b> focused on <b>Frontend Development</b>. I like to build smart web applications using modern
-              <b>Javascript</b> frameworks and libraries, like <a href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a> and
-              <a href="https://stenciljs.com/" target="_blank" rel="noopener noreferrer">Stencil</a>, but also using simple <b>Vanilla Javascript</b>.
-            </p>
-            <p>
-              I started my professional journey in <b>2014</b> working in a startup,
-              <a href="https://www.google.com/search?q=glaamy" target="_blank" rel="noopener noreferrer">Glaamy</a>. I worked both on web and mobile side, building Javascript
-              Single Page Applications and mobile applications for iOS and Android with
-              <a href="https://en.wikipedia.org/wiki/Appcelerator_Titanium" target="_blank" rel="noopener noreferrer">Titanium Appcelerator</a>.
-            </p>
-            <p>
-              Currently I work in <a href="https://www.vivocha.com/" target="_blank" rel="noopener noreferrer">Vivocha</a> where I deal with Frontend development both for the
-              company product and for the internal projects of <a href="https://covisian.com/" target="_blank" rel="noopener noreferrer">Covisian</a>, the parent company.
-            </p>
-          </div>
-        </div> -->
-      <div class="home-menu row">
+      <nav class="home-menu row">
         <ul>
           <li class="about">
-            <a href="#" rel="noopener noreferrer" title="About me">
+            <a href="#" data-modal-id="about" title="About me">
               <span class="icon"><i class="las la-user-circle"></i></span>
               <span>About</span>
             </a>
@@ -46,7 +27,7 @@
           <li class="cv">
             <a href="#" rel="noopener noreferrer" target="_blank" title="My CV">
               <span class="icon"><i class="las la-file-alt"></i></span>
-              <span>Curriculum</span>
+              <span>CV</span>
             </a>
           </li>
           <li class="linkedin">
@@ -80,7 +61,36 @@
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
+
+      <!-- MODAL #ABOUT -->
+      <section id="about" class="modal hidden animate__animated">
+        <div class="modal-wrapper">
+          <header class="modal-header">
+            <h2>About</h2>
+            <a href="#" class="no-animation" data-modal-close="about">
+              <i class="las la-times-circle"></i>
+            </a>
+          </header>
+          <div class="modal-content">
+            <p>
+              I'm Gianfranco, a passionate <b>Web Developer</b> focused on <b>Frontend Development</b>. I like to build smart web applications using modern
+              <b>Javascript</b> frameworks and libraries, like <a href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a> and
+              <a href="https://stenciljs.com/" target="_blank" rel="noopener noreferrer">Stencil</a>, but also using simple <b>Vanilla Javascript</b>.
+            </p>
+            <p>
+              I started my professional journey in <b>2014</b> working in a startup,
+              <a href="https://www.google.com/search?q=glaamy" target="_blank" rel="noopener noreferrer">Glaamy</a>. I worked both on web and mobile side, building Javascript
+              Single Page Applications and mobile applications for iOS and Android with
+              <a href="https://en.wikipedia.org/wiki/Appcelerator_Titanium" target="_blank" rel="noopener noreferrer">Titanium Appcelerator</a>.
+            </p>
+            <p>
+              Currently I work in <a href="https://www.vivocha.com/" target="_blank" rel="noopener noreferrer">Vivocha</a> where I deal with Frontend development both for the
+              company product and for the internal projects of <a href="https://covisian.com/" target="_blank" rel="noopener noreferrer">Covisian</a>, the parent company.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
