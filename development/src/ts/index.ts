@@ -1,37 +1,23 @@
 import '../scss/index.scss';
 
-declare interface SiteHeader {
-  el: HTMLElement;
-  classes: string[];
-  index: number;
-  interval: any;
-}
-
 class App {
-  private header: SiteHeader = {
-    el: null,
-    classes: ['cogs', 'topografy'],
-    index: 0,
-    interval: null,
-  };
+  animateMenu() {
+    const links: any = document.querySelectorAll('.home-menu a') || [];
+    Array.from(links).map((link: HTMLAnchorElement) => {
+      link.classList.add('animate__animated');
+      link.classList.add('animate__backInLeft');
+    });
+  }
 
-  initHeaderDynamicBackground() {
-    this.header.el = document.querySelector('header');
-    this.header.el.classList.add(this.header.classes[this.header.index]);
-    this.header.interval = setInterval(() => {
-      this.header.index++;
-      if (this.header.index >= this.header.classes.length) {
-        this.header.index = 0;
-      }
-      const next = this.header.classes[this.header.index];
-      const prev = this.header.classes[this.header.index - 1];
-      this.header.el.classList.remove(prev);
-      this.header.el.classList.add(next);
-    }, 3000);
+  animateTitle() {
+    const header = document.querySelector('header.header');
+    header.classList.add('animate__animated');
+    header.classList.add('animate__bounceInDown');
   }
 
   run() {
-    // this.initHeaderDynamicBackground();
+    this.animateTitle();
+    // this.animateMenu();
   }
 }
 
