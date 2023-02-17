@@ -9,6 +9,7 @@
   --color-green-1: #00b894;
   --color-green-2: #55c096;
   --color-white: white;
+  --color-vivocha: #ef5f19;
 
   --text-color: var(--color-black-3);
   --hover-color: var(--color-green-2);
@@ -70,6 +71,19 @@ body {
         display: block;
         margin-left: 10px;
         font-size: 36px;
+      }
+    }
+
+    h3 {
+      a {
+        display: inline-block;
+        text-decoration: underline;
+      }
+      a.vivocha:hover {
+        color: var(--color-vivocha);
+      }
+      a.covisian:hover {
+        color: var(--color-gray-1);
       }
     }
   }
