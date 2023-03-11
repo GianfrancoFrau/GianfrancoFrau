@@ -40,7 +40,7 @@ class App {
     this.titleIcon.classList.remove(...Array.from(this.titleIcon.classList));
     icon.split(' ').map(c => this.titleIcon.classList.add(c));
     this.icons.splice(i, 1);
-    console.log('randomizeTitleIcon', this.icons.length, i, icon);
+    // console.log('randomizeTitleIcon', this.icons.length, i, icon);
     if (animate) {
       this.animateTitleIcon(true);
     }
