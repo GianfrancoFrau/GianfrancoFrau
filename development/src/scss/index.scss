@@ -10,6 +10,7 @@
   --color-green-2: #55c096;
   --color-white: white;
   --color-vivocha: #ef5f19;
+  --color-startupitalia: #E93A4F;
 
   --text-color: var(--color-black-3);
   --hover-color: var(--color-green-2);
@@ -71,6 +72,7 @@ body {
         display: block;
         margin-left: 10px;
         font-size: 36px;
+        font-weight: normal;
       }
     }
 
@@ -84,6 +86,9 @@ body {
       }
       a.covisian:hover {
         color: var(--color-gray-1);
+      }
+      a.startupitalia:hover {
+        color: var(--color-startupitalia);
       }
     }
   }

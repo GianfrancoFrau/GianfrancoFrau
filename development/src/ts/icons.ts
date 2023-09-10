@@ -1,3 +1,4 @@
+// https://icons8.com/line-awesome
 export const ICONS: string[] = [
   'las la-dragon',
   'las la-coffee',
@@ -12,8 +13,6 @@ export const ICONS: string[] = [
   'las la-laptop-code',
   'las la-hat-wizard',
   'las la-cog',
-  'las la-snowboarding',
-  'las la-otter',
   'las la-hiking',
   'las la-mountain',
   'las la-magic',
@@ -24,7 +23,6 @@ export const ICONS: string[] = [
   'las la-ghost',
   'las la-cloud-moon',
   'las la-dungeon',
-  'las la-sliders-h',
   'las la-shipping-fast',
   'las la-yin-yang',
   'las la-brain',
@@ -37,5 +35,7 @@ export const ICONS: string[] = [
   'las la-fire-alt',
   'las la-code',
   'lab la-html5',
-  'lab la-css3-alt'
+  'lab la-css3-alt',
+  'lab la-wordpress',
+  'las la-shapes'
 ];

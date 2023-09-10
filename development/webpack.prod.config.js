@@ -14,8 +14,8 @@ const config = {
   },
   output: {
     path: Path.join(__dirname, 'dist'),
-    filename: 'js/[name].[chunkhash:8].js',
-    chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name].chunk.js',
     clean: true,
   },
   optimization: {
