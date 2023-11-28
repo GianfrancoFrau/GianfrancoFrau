@@ -1,0 +1,52 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+:root {
+  --color-black-1: #000000;
+  --color-black-2: #202020;
+  --color-black-3: #2d3436;
+  --color-gray-1: #606060;
+  --color-gray-2: #959595;
+  --color-green-1: #00b894;
+  --color-green-2: #55c096;
+  --color-white: white;
+  --color-vivocha: #ef5f19;
+  --color-startupitalia: #E93A4F;
+
+  --text-color: var(--color-black-3);
+  --link-hover-color: var(--color-green-2);
+  --bg-color: var(--color-white);
+  --font-bebas: 'Bebas Neue', cursive;
+
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+html,
+body,
+div,
+header,
+nav,
+footer {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: var(--font-bebas);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
