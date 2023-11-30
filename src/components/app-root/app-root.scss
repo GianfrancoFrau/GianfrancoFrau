@@ -5,67 +5,67 @@
 #container {
   width: 100%;
   height: 100vh;
-  border-left: 10px solid $text-color;
+  border: 1px solid black;
 
-  header {
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+  #box {
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+    border: 1px solid red;
+    background-color: white;
 
-    h2 {
-      display: flex;
-      align-items: center;
-      font-size: 2.2rem;
-      padding: 0;
-      margin: 0;
+    header {
+      border: 1px solid green;
 
-      .text {
-        display: block;
+      h1 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+
+        span:first-child {
+          color: $color-black-3;
+          // opacity: 0.85;
+        }
+        span:not(:first-child) {
+          color: $color-gray-2;
+        }
       }
 
-      .icons {
-        display: block;
-        margin-left: 10px;
-        font-size: 36px;
-        font-weight: normal;
-      }
-    }
-
-    h3 {
-      a {
-        display: inline-block;
-        text-decoration: underline;
-      }
-      a.vivocha:hover {
-        color: $color-vivocha;
-      }
-      a.covisian:hover {
-        color: $color-gray-1;
-      }
-      a.startupitalia:hover {
-        color: $color-startupitalia;
-      }
-    }
-  }
-
-  nav {
-    font-size: 1.8rem;
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        width: 100%;
-        margin-bottom: 4px;
-
-        .icon {
+      h3 {
+        a {
           display: inline-block;
-          width: 30px;
+          text-decoration: underline;
+        }
+        a.vivocha:hover {
+          color: $color-vivocha;
+        }
+        a.covisian:hover {
+          color: $color-gray-1;
+        }
+        a.startupitalia:hover {
+          color: $color-startupitalia;
+        }
+      }
+    }
+
+    nav {
+      font-size: 1.8rem;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          width: 100%;
+          margin-bottom: 4px;
+
+          .icon {
+            display: inline-block;
+            width: 30px;
+          }
         }
       }
     }
@@ -82,5 +82,13 @@
 
   a:hover {
     color: $link-hover-color;
+  }
+}
+
+@media (min-width: #{$mobile}) {
+  #container {
+    #box {
+      width: 50% !important;
+    }
   }
 }

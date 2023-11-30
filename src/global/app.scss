@@ -20,4 +20,16 @@ $animate-duration: 1s;
 $animate-delay: 1s;
 $animate-repeat: 1;
 
-@import "animations";
+$mobile: 767px;
+$desktop: 1024px;
+
+@import 'animations';
+
+html,
+body,
+div,
+header,
+nav,
+footer {
+  box-sizing: border-box;
+}

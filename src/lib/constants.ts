@@ -1,1 +1,42 @@
-export const ANIMATION_DELAY = 500;
+export const ANIMATION_DELAY = 800;
+
+export const ICONS: string[] = [
+  // 'las la-dragon',
+  'cafe',
+  'construct',
+  'fitness',
+  'git-pull-request',
+  'glasses',
+  'beer',
+  'rocket',
+  'logo-game-controller-b',
+  'logo-javascript',
+  'bulb',
+  'flash',
+  'pulse',
+  'logo-angular',
+  'logo-css3',
+  'logo-html5',
+  'logo-sass',
+  // 'las la-pizza-slice',
+  // 'las la-gamepad',
+  // 'las la-ghost',
+  // 'las la-cloud-moon',
+  // 'las la-dungeon',
+  // 'las la-shipping-fast',
+  // 'las la-yin-yang',
+  // 'las la-brain',
+  // 'las la-rocket',
+  // 'las la-bug',
+  // 'las la-meteor',
+  // 'lab la-angular',
+  // 'lab la-linux',
+  // 'lab la-node-js',
+  // 'las la-fire-alt',
+  // 'las la-code',
+  // 'lab la-html5',
+  // 'lab la-css3-alt',
+  // 'lab la-wordpress',
+  // 'las la-shapes'
+];
+
