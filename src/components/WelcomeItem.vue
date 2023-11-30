@@ -16,6 +16,7 @@
 .item {
   margin-top: 2rem;
   display: flex;
+  align-items: center;
   position: relative;
 }
 
@@ -30,7 +31,7 @@ i {
   place-content: center;
   width: 32px;
   height: 32px;
-
+  margin-right: 20px;
   color: var(--color-text);
 }
 
@@ -53,7 +54,7 @@ h3 {
     position: absolute;
     border: 1px solid var(--color-border);
     background: var(--color-background);
-    border-radius: 8px;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
   }

@@ -1,18 +1,25 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import HomePresentation from "./components/HomePresentation.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+
+    <!-- <img alt="GF logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
+    <img alt="Logo" class="logo" src="@/assets/smile.png" width="150" height="150" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <!-- <HelloWorld msg="You did it!" /> -->
+
+      <HomePresentation />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <a href="#">Github</a>
+        <a href="#">Linkedin</a>
       </nav>
     </div>
   </header>
