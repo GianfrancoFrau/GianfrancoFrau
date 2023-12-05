@@ -3,8 +3,8 @@
 import AppHeaderVue from '../components/AppHeader.vue';
 </script>
 <template>
-  <main class="app-page about-page">
-    <AppHeaderVue title="About" />
+  <main class="app-page bookmarks-page">
+    <AppHeaderVue title="Bookmarks" />
 
     <div class="page-content">
       <p>
@@ -59,4 +59,5 @@ import AppHeaderVue from '../components/AppHeader.vue';
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

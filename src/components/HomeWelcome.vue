@@ -35,6 +35,66 @@ import IconNotebooks from './icons/IconNotebooks.vue'
     Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
     ipsum dolor sit amet Lorem ipsum dolor sit amet
   </WelcomeItem>
+
+  <!-- <WelcomeItem>
+    <template #icon>
+      <IconNotebooks />
+    </template>
+    <template #heading>Notebook</template>
+
+    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    ipsum dolor sit amet Lorem ipsum dolor sit amet
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <IconNotebooks />
+    </template>
+    <template #heading>Notebook</template>
+
+    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    ipsum dolor sit amet Lorem ipsum dolor sit amet
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <IconNotebooks />
+    </template>
+    <template #heading>Notebook</template>
+
+    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    ipsum dolor sit amet Lorem ipsum dolor sit amet
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <IconNotebooks />
+    </template>
+    <template #heading>Notebook</template>
+
+    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    ipsum dolor sit amet Lorem ipsum dolor sit amet
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <IconNotebooks />
+    </template>
+    <template #heading>Notebook</template>
+
+    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    ipsum dolor sit amet Lorem ipsum dolor sit amet
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <IconNotebooks />
+    </template>
+    <template #heading>Notebook</template>
+
+    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    ipsum dolor sit amet Lorem ipsum dolor sit amet
+  </WelcomeItem> -->
 </template>
 
 <style scoped>
