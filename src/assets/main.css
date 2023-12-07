@@ -1,51 +1,29 @@
 @import './base.css';
 @import 'animate.css';
 
-body {
-  background-color: #fcfcfc;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%2327ae60' fill-opacity='0.1'%3E%3Cpath d='M12 0h18v6h6v6h6v18h-6v6h-6v6H12v-6H6v-6H0V12h6V6h6V0zm12 6h-6v6h-6v6H6v6h6v6h6v6h6v-6h6v-6h6v-6h-6v-6h-6V6zm-6 12h6v6h-6v-6zm24 24h6v6h-6v-6z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-}
-
 #app {
-  display: flex;
-  flex-direction: column;
-  max-width: 1024px;
-  height: 100vh;
+  max-width: 800px;
   margin: 0 auto;
-  /* font-weight: normal; */
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 .app-page {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 1rem;
-
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
   background: white;
-}
-
-.home-page {
-  margin-top: 3rem;
-  max-width: 767px;
+  border: 1px solid green;
 }
 
 .page-content {
-  margin-top: var(--header-height);
-  padding-top: 1rem;
+  padding: 0 1rem;
 }
 
-@media (min-width: 767px) {
-
-  /* .app-page {
-    -webkit-box-shadow: 3px 5px 15px 5px rgba(0, 0, 0, 0.31);
-    box-shadow: 3px 5px 15px 5px rgba(0, 0, 0, 0.31);
-  } */
-
-  .home-page {
-    margin: 10rem auto 0 auto;
-    padding: 5rem 0;
+@media (min-width: 800px) {
+  .app-page {
+    justify-content: center;
   }
-}
-
-@media (min-width: 1024px) {
-
 }

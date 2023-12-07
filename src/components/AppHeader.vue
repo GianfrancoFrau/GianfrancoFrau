@@ -1,9 +1,40 @@
 <script setup lang="ts">
+// import { onMounted, onBeforeUnmount, ref } from 'vue';
 import IconArrowLeftVue from './icons/IconArrowLeft.vue';
 
 defineProps<{
   title?: string
 }>()
+
+/*
+let stickyHeader = ref(false);
+
+onMounted(() => {
+  const appDiv = document.getElementById('app');
+  if (appDiv) {
+    appDiv.addEventListener('scroll', handleScroll);
+  }
+  console.log('app-header mounted', appDiv);
+})
+
+onBeforeUnmount(() => {
+  console.log('app-header unmounted');
+});
+
+const handleScroll = (ev: any) => {
+
+  const scrollY = ev.target.scrollTop;
+  const treeshold = 200;
+  if (scrollY > treeshold) {
+    stickyHeader.value = true;
+  } else {
+    stickyHeader.value = false;
+  }
+
+  console.log('HEY! handleScroll here', scrollY, stickyHeader.value);
+}
+*/
+
 </script>
 
 <template>
@@ -17,39 +48,42 @@ defineProps<{
 </template>
 
 <style scoped>
+.app-header {
+  position: relative;
+  display: flex;
+  height: var(--header-height);
+  padding: 2rem 1rem;
+  align-items: center;
+  transition: all 0.5s;
+  background: white;
+}
 
+.back-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  display: flex;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.app-header.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (min-width: 800px) {
   .app-header {
-    display: flex;
-    height: var(--header-height);
-    align-items: center;
-    /* border: 1px solid black; */
     margin-bottom: 2rem;
-    transition: all 0.5s ease-in;
-    background: white;
   }
-
-  .app-header.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-  .back-link {
-    display: flex;
-    padding: 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 5px;
-  }
-
-  .back-link svg {
-    /* width: 20px;
-    height: 20px; */
-  }
-
-  h1 {
-    margin-left: 2rem;
-  }
-
-
-
+}
 </style>

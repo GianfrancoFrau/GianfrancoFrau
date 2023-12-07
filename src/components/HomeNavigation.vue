@@ -8,7 +8,6 @@ import IconBookmarks from './icons/IconBookmarks.vue';
 
 <template>
   <nav>
-    <!-- <RouterLink to="/">Home</RouterLink> -->
     <ul>
       <li>
         <span class="icon">
@@ -20,19 +19,28 @@ import IconBookmarks from './icons/IconBookmarks.vue';
         <span class="icon">
           <IconProjects />
         </span>
-        <RouterLink to="/projects">Projects</RouterLink>
+        <RouterLink to="/projects">
+          Projects
+          <!-- <span class="link-badge">soon</span> -->
+        </RouterLink>
       </li>
       <li>
         <span class="icon">
           <IconNotebooks />
         </span>
-        <RouterLink to="/notebook">Notebook</RouterLink>
+        <RouterLink to="/notebook">
+          Notebook
+          <!-- <span class="link-badge">soon</span> -->
+        </RouterLink>
       </li>
       <li>
         <span class="icon">
           <IconBookmarks />
         </span>
-        <RouterLink to="/bookmarks">Bookmarks</RouterLink>
+        <RouterLink to="/bookmarks">
+          Bookmarks
+          <!-- <span class="link-badge">soon</span> -->
+        </RouterLink>
       </li>
     </ul>
     <!-- <a href="https://github.com/GianfrancoFrau" target="_blank">Github</a>
@@ -46,7 +54,7 @@ nav {
   font-size: 1.4rem;
   /* text-align: center; */
   padding: 1rem;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 nav ul {
@@ -71,7 +79,7 @@ nav ul li .icon svg {
   height: 25px;
 }
 
-nav a {
+nav ul li a {
   display: block;
   flex: 1 auto;
   padding: 1rem 2.5rem 1rem 0;
@@ -80,15 +88,15 @@ nav a {
   /* border-bottom: 1px solid var(--color-border); */
 }
 
-nav a:hover {
+nav ul li a:hover {
   color: var(--vt-c-black);
 }
 
-nav a.router-link-exact-active {
+nav ul li a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+nav ul li a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
@@ -96,12 +104,13 @@ nav a.router-link-exact-active:hover {
   nav ul {
     width: 100%;
     display: flex;
+    justify-content: center;
   }
+
   nav ul li {
     /* border: 1px solid black; */
-    width: 25%;
+    /* width: 25%; */
     /* text-align: center; */
   }
 }
-
 </style>
