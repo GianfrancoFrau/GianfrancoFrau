@@ -50,6 +50,7 @@
   --startupitalia: #CC3232;
   --icon-color: #2C3D4F;
 
+  --app-width: 800px;
   --header-height: 60px;
   --section-gap: 100px;
 }
@@ -84,4 +85,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+b {
+  font-weight: 700;
 }

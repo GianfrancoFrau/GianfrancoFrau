@@ -11,7 +11,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
 </script>
 <template>
   <main class="app-page about-page">
-    <AppHeaderVue title="About" />
+    <AppHeaderVue title="About" class="bg-random-shapes" />
 
     <div class="page-content">
       <section class="bio">
@@ -20,9 +20,10 @@ import AppHeaderVue from '../components/AppHeader.vue';
           bio.
         </h2>
         <p>
-          I'm born in <b>Nuoro</b> (<span class="phonetic" title="Nùoro"> /ˈnu.oro/</span>), Sardinia, in <b>1989</b>. I
+          I'm born in Nuoro (<span class="phonetic" title="Nùoro"> /ˈnu.oro/</span>), Sardinia, in <b>1989</b>. I
           grew up in
-          Orosei and after graduating from high school I moved to Cagliari, where I currently live and work.
+          Orosei and after graduating from high school I moved to Pisa and then to Cagliari, where I currently live and
+          work.
         </p>
         <p>
           I am a curious person who likes to learn. I like to understand how things work around me.
@@ -52,8 +53,10 @@ import AppHeaderVue from '../components/AppHeader.vue';
           profile & tech skills.
         </h2>
         <p>
-          I am a passionate <b>Javascript</b> Web Developer, focused on building Web Applications. Here are some of the
-          skills I have acquired and technologies I learned to use over the years.
+          I am a passionate Web Developer, interested on building things with Web Technologies.
+        </p>
+        <p>Here are some of the
+          skills I have acquired and technologies I learned or used over the years.
         </p>
         <ul>
           <li>HTML & CSS</li>
@@ -61,6 +64,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
           <li>Web Components based architectures</li>
           <li>Angular, Vuejs, Stenciljs, Ionicframework</li>
           <li>Scripting and automation</li>
+          <li>Git and software versioning</li>
         </ul>
       </section>
 

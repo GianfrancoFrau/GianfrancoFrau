@@ -10,41 +10,40 @@ import IconBookmarks from './icons/IconBookmarks.vue';
   <nav>
     <ul>
       <li>
-        <span class="icon">
-          <IconPersonRaisedHand />
-        </span>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">
+          <span class="icon">
+            <IconPersonRaisedHand />
+          </span>About
+        </RouterLink>
       </li>
       <li>
-        <span class="icon">
-          <IconProjects />
-        </span>
         <RouterLink to="/projects">
+          <span class="icon">
+            <IconProjects />
+          </span>
           Projects
           <!-- <span class="link-badge">soon</span> -->
         </RouterLink>
       </li>
       <li>
-        <span class="icon">
-          <IconNotebooks />
-        </span>
         <RouterLink to="/notebook">
+          <span class="icon">
+            <IconNotebooks />
+          </span>
           Notebook
           <!-- <span class="link-badge">soon</span> -->
         </RouterLink>
       </li>
       <li>
-        <span class="icon">
-          <IconBookmarks />
-        </span>
         <RouterLink to="/bookmarks">
+          <span class="icon">
+            <IconBookmarks />
+          </span>
           Bookmarks
           <!-- <span class="link-badge">soon</span> -->
         </RouterLink>
       </li>
     </ul>
-    <!-- <a href="https://github.com/GianfrancoFrau" target="_blank">Github</a>
-    <a href="https://www.linkedin.com/in/gianfranco-frau/" target="_blank">Linkedin</a> -->
   </nav>
 </template>
 
@@ -52,65 +51,58 @@ import IconBookmarks from './icons/IconBookmarks.vue';
 nav {
   width: 100%;
   font-size: 1.4rem;
-  /* text-align: center; */
   padding: 1rem;
   border: 1px solid red;
 }
 
 nav ul {
-  /* border: 1px solid blue; */
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-nav ul li {
+nav ul li a {
   display: flex;
   align-items: center;
-}
-
-nav ul li .icon {
-  display: flex;
-  margin-right: 1rem;
-}
-
-nav ul li .icon svg {
-  width: 25px;
-  height: 25px;
-}
-
-nav ul li a {
-  display: block;
-  flex: 1 auto;
   padding: 1rem 2.5rem 1rem 0;
+  font-size: 1.6rem;
   text-decoration: underline;
   color: var(--icon-color);
-  /* border-bottom: 1px solid var(--color-border); */
+  border: 1px solid blue;
 }
 
 nav ul li a:hover {
   color: var(--vt-c-black);
 }
 
-nav ul li a.router-link-exact-active {
-  color: var(--color-text);
+nav ul li a .icon {
+  display: flex;
+  margin-right: 1rem;
 }
 
-nav ul li a.router-link-exact-active:hover {
-  background-color: transparent;
+nav ul li a .icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 @media (min-width: 767px) {
   nav ul {
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
   }
 
   nav ul li {
-    /* border: 1px solid black; */
-    /* width: 25%; */
-    /* text-align: center; */
+    width: 25%;
   }
 }
+
+/* @media (min-width: 767px) {
+  nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+} */
 </style>

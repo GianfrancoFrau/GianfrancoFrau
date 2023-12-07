@@ -1,9 +1,11 @@
 <script setup lang="ts">
 // import { onMounted, onBeforeUnmount, ref } from 'vue';
+import { computed } from 'vue';
 import IconArrowLeftVue from './icons/IconArrowLeft.vue';
 
-defineProps<{
-  title?: string
+const props: any = defineProps<{
+  title?: string,
+  class?: string
 }>()
 
 /*
@@ -35,10 +37,17 @@ const handleScroll = (ev: any) => {
 }
 */
 
+
+const headerCss = computed(() => ({
+  'app-header': true,
+  'sticky': true,
+  [props.class]: true
+}))
+
 </script>
 
 <template>
-  <header class="app-header sticky">
+  <header :class="headerCss">
     <RouterLink to="/" class="back-link">
       <IconArrowLeftVue />
     </RouterLink>
@@ -51,11 +60,13 @@ const handleScroll = (ev: any) => {
 .app-header {
   position: relative;
   display: flex;
+  justify-content: center;
   height: var(--header-height);
   padding: 2rem 1rem;
   align-items: center;
   transition: all 0.5s;
   background: white;
+  border-bottom: 10px solid white;
 }
 
 .back-link {
@@ -67,11 +78,13 @@ const handleScroll = (ev: any) => {
   border: 1px solid var(--color-border);
   border-radius: 50px;
   transition: all 0.5s;
+  background: white;
 }
 
 h1 {
-  width: 100%;
-  text-align: center;
+  width: auto;
+  padding: 1rem 1rem;
+  background: white;
 }
 
 .app-header.sticky {

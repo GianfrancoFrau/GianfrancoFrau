@@ -4,7 +4,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
 </script>
 <template>
   <main class="app-page bookmarks-page">
-    <AppHeaderVue title="Bookmarks" />
+    <AppHeaderVue title="Bookmarks" class="bg-hexagon" />
 
     <div class="page-content">
       <p>

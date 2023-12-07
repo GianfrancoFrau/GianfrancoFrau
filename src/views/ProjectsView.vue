@@ -4,7 +4,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
 
 <template>
   <main class="app-page projects-page">
-    <AppHeaderVue title="Projects" />
+    <AppHeaderVue title="Projects" class="bg-cutout" />
 
     <div class="page-content">
       <p>

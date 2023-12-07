@@ -29,7 +29,6 @@ const iconCss = computed(() => ({
   [`animate__${animation.value}`]: true
 }))
 
-
 </script>
 
 <template>
