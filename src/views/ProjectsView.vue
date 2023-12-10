@@ -59,5 +59,4 @@ import AppHeaderVue from '../components/AppHeader.vue';
   </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

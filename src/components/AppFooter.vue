@@ -1,13 +1,10 @@
 <script setup lang="ts">
-
 import IconGithub from './icons/IconGithub.vue'
 import IconLinkedin from './icons/IconLinkedin.vue'
 import IconEnvelopePlus from './icons/IconEnvelopePlus.vue'
-
 const sendMail = () => {
-  console.log('sendMail');
+  window.location.href = 'mailto:gian.frau@hotmail.it';
 }
-
 </script>
 
 <template>
@@ -46,10 +43,9 @@ const sendMail = () => {
 <style scoped>
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   padding: 1rem;
-  margin-top: 2rem;
-  border: 1px solid red;
+  margin-top: 1rem;
 }
 
 footer ul {

@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import IconPersonRaisedHand from './icons/IconPersonRaisedHand.vue';
-import IconProjects from './icons/IconProjects.vue';
-import IconNotebooks from './icons/IconNotebooks.vue';
-import IconBookmarks from './icons/IconBookmarks.vue';
+import IconCircle from './icons/IconCircle.vue';
 </script>
 
 <template>
@@ -12,35 +9,33 @@ import IconBookmarks from './icons/IconBookmarks.vue';
       <li>
         <RouterLink to="/about">
           <span class="icon">
-            <IconPersonRaisedHand />
-          </span>About
+            <IconCircle />
+          </span>
+          About
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/projects">
+        <RouterLink to="/projects" class="disabled">
           <span class="icon">
-            <IconProjects />
+            <IconCircle />
           </span>
           Projects
-          <!-- <span class="link-badge">soon</span> -->
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/notebook">
+        <RouterLink to="/notebook" class="disabled">
           <span class="icon">
-            <IconNotebooks />
+            <IconCircle />
           </span>
           Notebook
-          <!-- <span class="link-badge">soon</span> -->
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/bookmarks">
+        <RouterLink to="/bookmarks" class="disabled">
           <span class="icon">
-            <IconBookmarks />
+            <IconCircle />
           </span>
           Bookmarks
-          <!-- <span class="link-badge">soon</span> -->
         </RouterLink>
       </li>
     </ul>
@@ -52,7 +47,6 @@ nav {
   width: 100%;
   font-size: 1.4rem;
   padding: 1rem;
-  border: 1px solid red;
 }
 
 nav ul {
@@ -64,15 +58,23 @@ nav ul {
 nav ul li a {
   display: flex;
   align-items: center;
-  padding: 1rem 2.5rem 1rem 0;
+  padding: 1rem 2.5rem 1rem 1rem;
+  margin: 2px;
   font-size: 1.6rem;
-  text-decoration: underline;
-  color: var(--icon-color);
-  border: 1px solid blue;
+  text-decoration: none;
+  color: var(--vt-c-black);
+  border: 1px solid var(--color-border);
+  border-collapse: collapse;
+  border-radius: var(--border-radius);;
 }
 
 nav ul li a:hover {
   color: var(--vt-c-black);
+}
+
+nav ul li a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 nav ul li a .icon {
@@ -83,26 +85,18 @@ nav ul li a .icon {
 nav ul li a .icon svg {
   width: 30px;
   height: 30px;
+  color: var(--color-border);
 }
 
 @media (min-width: 767px) {
   nav ul {
     width: 100%;
     display: flex;
-    /* justify-content: center; */
     flex-wrap: wrap;
   }
 
   nav ul li {
-    width: 25%;
+    width: 50%;
   }
 }
-
-/* @media (min-width: 767px) {
-  nav ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-} */
 </style>

@@ -41,7 +41,7 @@ const handleScroll = (ev: any) => {
 const headerCss = computed(() => ({
   'app-header': true,
   'sticky': true,
-  [props.class]: true
+  // [props.class]: true
 }))
 
 </script>
@@ -76,9 +76,14 @@ const headerCss = computed(() => ({
   display: flex;
   padding: 1rem;
   border: 1px solid var(--color-border);
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   transition: all 0.5s;
   background: white;
+}
+
+.back-link a,
+.back-link a:hover {
+  color: var(--vt-c-black);
 }
 
 h1 {
@@ -94,7 +99,7 @@ h1 {
   width: 100%;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
   .app-header {
     margin-bottom: 2rem;
   }

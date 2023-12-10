@@ -33,17 +33,14 @@ const iconCss = computed(() => ({
 
 <template>
   <div class="presentation">
-    <h1>
+    <b>Welcome! I'm</b>
+    <h1 class="yellow-tail-font">
       Gianfranco Frau
     </h1>
     <h2 @click="handleTitleClick">
       A Web Developer.
       <span :class="iconCss">👾</span>
     </h2>
-    <!-- <h3 class="startupitalia">
-      <span>Currently @ <a href="https://startupitalia.eu" target="_blank">StartupItalia</a></span>
-      <span class="icon animate__animated animate__bounceIn">🚀</span>
-    </h3> -->
   </div>
 </template>
 
@@ -54,12 +51,18 @@ const iconCss = computed(() => ({
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 1px solid red;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
+.presentation b {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
 h1 {
-  font-size: 2.4rem;
+  font-size: 3rem;
+  transition: all 0.5s ease-in;
 }
 
 h2 {
@@ -98,17 +101,13 @@ h3 .icon {
   border-radius: 50%;
 }
 
-/* h3.startupitalia a {
-  color: var(--startupitalia);
-}
+@media (min-width: 767px) {
+  .presentation {
+    margin-top: 0;
+  }
 
-h3.startupitalia a:hover {
-  color: var(--startupitalia);
+  h1 {
+    font-size: 3.5rem;
+  }
 }
-
-h1,
-h2 {
-  display: inline-block;
-  width: auto;
-} */
 </style>

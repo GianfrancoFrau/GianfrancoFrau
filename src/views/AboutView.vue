@@ -3,15 +3,10 @@
 
 import AppHeaderVue from '../components/AppHeader.vue';
 
-// import { ref } from 'vue';
-// const y = (new Date()).getFullYear();
-// const yborn = 1989;
-// const age = ref(y - yborn);
-
 </script>
 <template>
   <main class="app-page about-page">
-    <AppHeaderVue title="About" class="bg-random-shapes" />
+    <AppHeaderVue title="About" />
 
     <div class="page-content">
       <section class="bio">
@@ -33,7 +28,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
           My love for video games is what drove me to become a programmer when I grew up.
         </p>
         <p>
-          I love writing code. Programming for me has always been an art to be used to create something that works and has
+          I love writing code. Programming for me has always been an <b>art</b> to be used to create something that works and has
           a purpose.
         </p>
         <p>
@@ -53,7 +48,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
           profile & tech skills.
         </h2>
         <p>
-          I am a passionate Web Developer, interested on building things with Web Technologies.
+          I am a passionate Web Developer, focused on building amazing things with Web Technologies.
         </p>
         <p>Here are some of the
           skills I have acquired and technologies I learned or used over the years.
@@ -67,42 +62,6 @@ import AppHeaderVue from '../components/AppHeader.vue';
           <li>Git and software versioning</li>
         </ul>
       </section>
-
-      <!-- <section class="website">
-        <h2>this website.</h2>
-        <p>
-          This place for me is like a laboratory where I can experiment and try new things.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-          Lorem
-          ipsum dolor sit amet Lorem ipsum dolor sit amet
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-          Lorem
-          ipsum dolor sit amet Lorem ipsum dolor sit amet
-        </p>
-      </section> -->
-
-      <!-- <section class="exp">
-        <h2>Experience</h2>
-        <p>
-          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-          Lorem
-          ipsum dolor sit amet Lorem ipsum dolor sit amet
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-          Lorem
-          ipsum dolor sit amet Lorem ipsum dolor sit amet
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-          Lorem
-          ipsum dolor sit amet Lorem ipsum dolor sit amet
-        </p>
-      </section> -->
 
     </div>
   </main>
@@ -127,7 +86,12 @@ h2 {
   padding: 0;
 }
 
+.profile {
+  padding-bottom: 4rem;
+}
+
 .profile ul {
   padding: 1rem;
 }
+
 </style>
