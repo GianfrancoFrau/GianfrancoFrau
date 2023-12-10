@@ -1,0 +1,19 @@
+[{
+  "name": "Meagle",
+  "category": "project",
+  "short_description": "A Smart Money Tracker",
+  "description": "Long description here",
+  "url": "https://meagle.app",
+  "status": "dev",
+  "icon": "/assets/meagle.png"
+},
+{
+  "name": "FPSelection",
+  "category": "work",
+  "short_description": "E-Commerce built with Wordpress and Woocommerce",
+  "description": "Long description here",
+  "url": "https://fpselection.ch",
+  "status": "prod",
+  "icon": "/assets/fpselection.png",
+  "images": []
+}]

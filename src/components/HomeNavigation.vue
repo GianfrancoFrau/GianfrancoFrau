@@ -15,7 +15,7 @@ import IconCircle from './icons/IconCircle.vue';
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/projects" class="disabled">
+        <RouterLink to="/projects">
           <span class="icon">
             <IconCircle />
           </span>
