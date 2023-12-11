@@ -78,9 +78,10 @@ h2 {
 }
 
 .profile {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .profile ul {
   padding: 1rem;
-}</style>
+}
+</style>

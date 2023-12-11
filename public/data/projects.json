@@ -5,15 +5,18 @@
   "description": "Long description here",
   "url": "https://meagle.app",
   "status": "dev",
-  "icon": "/assets/meagle.png"
+  "icon": "/assets/meagle.png",
+  "hidden": true,
+  "year": ""
 },
 {
   "name": "FPSelection",
   "category": "work",
-  "short_description": "E-Commerce built with Wordpress and Woocommerce",
+  "short_description": "Multilanguage responsive e-commerce built with Wordpress and Woocommerce.",
   "description": "Long description here",
+  "technologies": ["Wordpress", "Woocommerce", "PHP", "Lorem", "Ipsum", "Dolor", "Sit amet"],
   "url": "https://fpselection.ch",
   "status": "prod",
-  "icon": "/assets/fpselection.png",
-  "images": []
+  "image": "/images/fp-selection-responsive.png",
+  "year": "2023"
 }]
