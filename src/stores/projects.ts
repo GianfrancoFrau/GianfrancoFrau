@@ -1,8 +1,14 @@
 import { defineStore } from 'pinia'
 
+interface ProjectsState {
+  projects: any[]
+  loading: boolean
+  error: any
+}
+
 export const useProjectsStore = defineStore({
   id: 'projects',
-  state: () => ({
+  state: (): ProjectsState => ({
     projects: [],
     loading: false,
     error: null

@@ -75,15 +75,15 @@ const headerCss = computed(() => ({
   left: 1rem;
   display: flex;
   padding: 1rem;
+  color: var(--vt-c-black);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   transition: all 0.5s;
-  background: white;
 }
 
-.back-link a,
-.back-link a:hover {
+.back-link:hover {
   color: var(--vt-c-black);
+  border-color: var(--vt-c-black);
 }
 
 h1 {

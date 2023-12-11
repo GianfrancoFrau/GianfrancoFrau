@@ -3,7 +3,7 @@
 import AppHeaderVue from '../components/AppHeader.vue';
 import { storeToRefs } from 'pinia'
 import { useProjectsStore } from '../stores/projects'
-import IconLoading from '@/components/icons/IconLoading.vue';
+// import IconLoading from '@/components/icons/IconLoading.vue';
 
 const { projects, loading, error } = storeToRefs(useProjectsStore())
 const { fetchProjects } = useProjectsStore()
