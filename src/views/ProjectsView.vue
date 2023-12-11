@@ -13,7 +13,7 @@ fetchProjects()
 </script>
 
 <template>
-  <main class="app-page projects-page">
+  <div class="app-page projects-page">
     <AppHeaderVue title="Projects" />
 
     <div class="page-content">
@@ -34,12 +34,9 @@ fetchProjects()
       </ul>
 
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped>
-.text-center {
-  text-align: center;
-}
 
 </style>

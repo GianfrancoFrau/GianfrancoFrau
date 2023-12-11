@@ -66,7 +66,6 @@ const headerCss = computed(() => ({
   align-items: center;
   transition: all 0.5s;
   background: white;
-  border-bottom: 10px solid white;
 }
 
 .back-link {
@@ -88,11 +87,10 @@ const headerCss = computed(() => ({
 
 h1 {
   width: auto;
-  padding: 1rem 1rem;
-  background: white;
 }
 
 .app-header.sticky {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;

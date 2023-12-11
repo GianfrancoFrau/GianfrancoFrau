@@ -3,7 +3,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
 </script>
 
 <template>
-  <main class="app-page notebbok-page">
+  <div class="app-page notebbok-page">
     <AppHeaderVue title="Notebook" />
 
     <div class="page-content">
@@ -56,7 +56,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
         ipsum dolor sit amet Lorem ipsum dolor sit amet
       </p>
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped>

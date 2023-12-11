@@ -5,11 +5,11 @@ import HomeNavigation from "../components/HomeNavigation.vue";
 </script>
 
 <template>
-  <main class="app-page home-page">
+  <div class="app-page home-page">
     <HomePresentation />
     <HomeNavigation />
     <!-- <AppFooter /> -->
-  </main>
+  </div>
 </template>
 
 <style scoped>

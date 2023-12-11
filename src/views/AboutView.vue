@@ -1,14 +1,14 @@
 
 <script setup lang="ts">
-
 import AppHeaderVue from '../components/AppHeader.vue';
-
 </script>
+
 <template>
-  <main class="app-page about-page">
+  <div class="app-page about-page">
     <AppHeaderVue title="About" />
 
     <div class="page-content">
+
       <section class="bio">
         <h2>
           <span class="icon">🌱</span>
@@ -64,7 +64,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
       </section>
 
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped>
