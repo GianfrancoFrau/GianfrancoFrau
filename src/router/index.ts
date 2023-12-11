@@ -32,7 +32,10 @@ const router = createRouter({
       name: 'bookmarks',
       component: () => import('../views/BookmarksView.vue')
     }
-  ]
+  ],
+  scrollBehavior() {
+    return { left: 0, top: 0, behavior: 'smooth' }
+  }
 })
 
 export default router
