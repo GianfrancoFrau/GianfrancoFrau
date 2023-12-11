@@ -22,14 +22,16 @@
   width: 100%;
   position: relative;
   background: white;
+  /* border: 1px solid red; */
+}
+
+.app-page.home-page {
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .page-content {
   padding: 0 1rem;
-}
-
-.home-page {
-  justify-content: center;
 }
 
 /*
@@ -64,4 +66,8 @@
 /* helpers */
 .text-center {
   text-align: center;
+}
+
+@media (min-width: 767px) {
+
 }

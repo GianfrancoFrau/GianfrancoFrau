@@ -128,6 +128,10 @@ nav ul li a .icon svg {
   color: var(--color-border);
 }
 
+ul.menu li {
+  min-width: 50%;
+}
+
 .contacts li a {
   font-size: 1rem;
   padding: 1rem;
@@ -142,5 +146,10 @@ nav ul li a .icon svg {
 }
 
 
-@media (min-width: 767px) {}
+@media (min-width: 767px) {
+
+  .contacts li a {
+    font-size: 1.2rem;
+  }
+}
 </style>

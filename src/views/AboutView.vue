@@ -18,25 +18,14 @@ import AppHeaderVue from '../components/AppHeader.vue';
           I'm born in Nuoro (<span class="phonetic" title="Nùoro"> /ˈnu.oro/</span>), Sardinia, in <b>1989</b>. I
           grew up in
           Orosei and after graduating from high school I moved to Pisa and then to Cagliari, where I currently live and
-          work.
-        </p>
-        <p>
-          I am a curious person who likes to learn. I like to understand how things work around me.
-        </p>
-        <p>
-          I love technology. As a child I alternated between living outdoors and gaming sessions with my Super Nintendo.
-          My love for video games is what drove me to become a programmer when I grew up.
-        </p>
-        <p>
-          I love writing code. Programming for me has always been an <b>art</b> to be used to create something that works and has
-          a purpose.
-        </p>
-        <p>
-          I love nature. My grandparents were farmers and ranchers and I grew up in a small town near the sea and
-          surrounded by the countryside.
-        </p>
-        <p>
-          I love music. I like to strum the guitar now and then (classical and acoustic) but I have to say I'm not very
+          work. I am a curious person who likes to learn. I like to understand how things work around me. I love
+          technology. As a child I alternated between living outdoors and gaming sessions with my Super Nintendo.
+          My love for video games is what drove me to become a programmer when I grew up. I love writing code. Programming
+          for me has always been an <b>art</b> to be used to create something that works and has
+          a purpose. I love nature. My grandparents were farmers and ranchers and I grew up in a small town near the sea
+          and
+          surrounded by the countryside. I love music. I like to strum the guitar now and then (classical and acoustic)
+          but I have to say I'm not very
           good at it.
         </p>
 
@@ -48,9 +37,7 @@ import AppHeaderVue from '../components/AppHeader.vue';
           profile & tech skills.
         </h2>
         <p>
-          I am a passionate Web Developer, focused on building amazing things with Web Technologies.
-        </p>
-        <p>Here are some of the
+          I am a passionate Web Developer, focused on building amazing things with Web Technologies. Here are some of the
           skills I have acquired and technologies I learned or used over the years.
         </p>
         <ul>
@@ -68,11 +55,15 @@ import AppHeaderVue from '../components/AppHeader.vue';
 </template>
 
 <style scoped>
+section {
+  font-size: 1.2rem;
+}
+
 h2 {
   font-weight: 900;
   margin: 1.5rem 0;
   padding-bottom: 0.5rem;
-  border-bottom: 4px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .phonetic {
@@ -92,6 +83,4 @@ h2 {
 
 .profile ul {
   padding: 1rem;
-}
-
-</style>
+}</style>
