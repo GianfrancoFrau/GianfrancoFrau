@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { onMounted, onBeforeUnmount, ref } from 'vue';
 import { computed } from 'vue';
 import IconArrowLeftVue from './icons/IconArrowLeft.vue';
 
@@ -7,36 +6,6 @@ const props: any = defineProps<{
   title?: string,
   class?: string
 }>()
-
-/*
-let stickyHeader = ref(false);
-
-onMounted(() => {
-  const appDiv = document.getElementById('app');
-  if (appDiv) {
-    appDiv.addEventListener('scroll', handleScroll);
-  }
-  console.log('app-header mounted', appDiv);
-})
-
-onBeforeUnmount(() => {
-  console.log('app-header unmounted');
-});
-
-const handleScroll = (ev: any) => {
-
-  const scrollY = ev.target.scrollTop;
-  const treeshold = 200;
-  if (scrollY > treeshold) {
-    stickyHeader.value = true;
-  } else {
-    stickyHeader.value = false;
-  }
-
-  console.log('HEY! handleScroll here', scrollY, stickyHeader.value);
-}
-*/
-
 
 const headerCss = computed(() => ({
   'app-header': true,
@@ -52,7 +21,7 @@ const headerCss = computed(() => ({
       <IconArrowLeftVue />
     </RouterLink>
 
-    <h1>{{ title }}</h1>
+    <h1>{{ props.title }}</h1>
   </header>
 </template>
 
