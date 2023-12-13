@@ -28,7 +28,7 @@ const sendMail = () => {
           Projects
         </RouterLink>
       </li>
-      <li>
+      <!-- <li>
         <RouterLink to="/notebook" class="disabled">
           <span class="icon">
             <IconCircle />
@@ -43,7 +43,7 @@ const sendMail = () => {
           </span>
           Bookmarks
         </RouterLink>
-      </li>
+      </li> -->
     </ul>
     <ul class="contacts">
       <li>
