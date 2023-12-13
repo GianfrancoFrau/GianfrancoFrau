@@ -1,11 +1,11 @@
 
 <script setup lang="ts">
-import AppHeaderVue from '../components/AppHeader.vue';
+import PageHeader from '../components/PageHeader.vue';
 </script>
 
 <template>
   <div class="app-page about-page">
-    <AppHeaderVue title="About" />
+    <PageHeader title="About" />
 
     <div class="page-content">
 

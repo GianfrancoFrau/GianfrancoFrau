@@ -1,11 +1,11 @@
 
 <script setup lang="ts">
-import AppHeaderVue from '../components/AppHeader.vue';
+import PageHeader from '../components/PageHeader.vue';
 </script>
 
 <template>
   <div class="app-page bookmarks-page">
-    <AppHeaderVue title="Bookmarks" class="bg-hexagon" />
+    <PageHeader title="Bookmarks" class="bg-hexagon" />
 
     <div class="page-content">
       <p>

@@ -1,22 +1,38 @@
-[{
-  "name": "Meagle",
-  "category": "project",
-  "short_description": "A Smart Money Tracker",
-  "description": "Long description here",
-  "url": "https://meagle.app",
-  "status": "dev",
-  "icon": "/assets/meagle.png",
-  "hidden": true,
-  "year": ""
-},
-{
-  "name": "FPSelection",
-  "category": "work",
-  "short_description": "Multilanguage responsive e-commerce built with Wordpress and Woocommerce.",
-  "description": "Long description here",
-  "technologies": ["Wordpress", "Woocommerce", "PHP", "Lorem", "Ipsum", "Dolor", "Sit amet"],
-  "url": "https://fpselection.ch",
-  "status": "prod",
-  "image": "/images/fp-selection-responsive.png",
-  "year": "2023"
-}]
+[
+  {
+    "name": "Test",
+    "category": "project",
+    "short_description": "Lorem ipsum dolor sit amet",
+    "description": "Long description here",
+    "url": "https://gianfrancofrau.com",
+    "status": "dev",
+    "image": "https://placehold.co/1920x1080",
+    "year": "2022"
+  },
+  {
+    "name": "Test 2",
+    "category": "project",
+    "short_description": "Lorem ipsum dolor sit amet",
+    "description": "Long description here",
+    "url": "https://gianfrancofrau.com",
+    "status": "dev",
+    "image": "https://placehold.co/1920x1080",
+    "year": "2023"
+  },
+  {
+    "name": "FPSelection",
+    "category": "work",
+    "short_description": "Multilanguage responsive e-commerce built with Wordpress and Woocommerce.",
+    "description": "Long description here",
+    "technologies": [
+      "Wordpress",
+      "Woocommerce",
+      "PHP"
+    ],
+    "url": "https://fpselection.ch",
+    "urlLabel": "website",
+    "status": "prod",
+    "image": "/images/fp-selection-responsive.png",
+    "year": "2023"
+  }
+]

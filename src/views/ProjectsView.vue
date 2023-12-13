@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import AppHeaderVue from '../components/AppHeader.vue';
+import PageHeader from '../components/PageHeader.vue';
 import { storeToRefs } from 'pinia'
 import { useProjectsStore } from '../stores/projects'
 import IconBoxArrowUpRight from '../components/icons/IconBoxArrowUpRight.vue';
@@ -8,13 +8,13 @@ import IconBoxArrowUpRight from '../components/icons/IconBoxArrowUpRight.vue';
 const { projects, loading, error } = storeToRefs(useProjectsStore())
 const { fetchProjects } = useProjectsStore()
 
-fetchProjects()
+fetchProjects('year')
 
 </script>
 
 <template>
   <div class="app-page projects-page">
-    <AppHeaderVue title="Projects" />
+    <PageHeader title="Projects" />
 
     <div class="page-content">
 
@@ -28,7 +28,7 @@ fetchProjects()
 
       <ul class="projects" v-if="!error">
         <li v-for="p in projects" :key="p.name">
-          <div class="project" v-if="!p.hidden">
+          <div class="project animate__animated animate__fadeInUp" v-if="!p.hidden">
             <div class="image" v-if="p.image">
               <img :src="p.image" />
             </div>
@@ -37,7 +37,7 @@ fetchProjects()
               <span class="year" v-if="p.year">{{ p.year }}</span>
               <span class="url" v-if="p.url">
                 <a :href="p.url" target="_blank">
-                  <span>Website</span>
+                  <span>{{ p.urlLabel || 'url' }}</span>
                   <span class="icon">
                     <IconBoxArrowUpRight />
                   </span>
@@ -62,9 +62,16 @@ fetchProjects()
 
 <style scoped>
 .projects {
-  margin: 2rem 0 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.project {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .info {
@@ -146,5 +153,11 @@ fetchProjects()
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   margin: 0.1rem;
+}
+
+@media (min-width: 767px) {
+  .project {
+    padding: 2rem;
+  }
 }
 </style>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import AppHeaderVue from '../components/AppHeader.vue';
+import PageHeader from '../components/PageHeader.vue';
 </script>
 
 <template>
   <div class="app-page notebbok-page">
-    <AppHeaderVue title="Notebook" />
+    <PageHeader title="Notebook" />
 
     <div class="page-content">
       <p>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import IconArrowLeftVue from './icons/IconArrowLeft.vue';
+import IconArrowLeft from './icons/IconArrowLeft.vue';
 
 const props: any = defineProps<{
   title?: string,
@@ -18,7 +18,7 @@ const headerCss = computed(() => ({
 <template>
   <header :class="headerCss">
     <RouterLink to="/" class="back-link">
-      <IconArrowLeftVue />
+      <IconArrowLeft />
     </RouterLink>
 
     <h1>{{ props.title }}</h1>
@@ -35,6 +35,7 @@ const headerCss = computed(() => ({
   align-items: center;
   transition: all 0.5s;
   background: white;
+  z-index: 99;
 }
 
 .back-link {
