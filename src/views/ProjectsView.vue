@@ -8,7 +8,7 @@ import IconBoxArrowUpRight from '../components/icons/IconBoxArrowUpRight.vue';
 const { projects, loading, error } = storeToRefs(useProjectsStore())
 const { fetchProjects } = useProjectsStore()
 
-fetchProjects('year')
+fetchProjects('position')
 
 </script>
 

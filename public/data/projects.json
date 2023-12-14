@@ -6,7 +6,8 @@
     "url": "https://gianfrancofrau.com",
     "status": "dev",
     "image": "https://placehold.co/1920x1080",
-    "year": "2022"
+    "year": "2022",
+    "position": 3
   },
   {
     "name": "This website",
@@ -20,8 +21,9 @@
     "url": "https://github.com/GianfrancoFrau/GianfrancoFrau",
     "urlLabel": "source",
     "status": "dev",
-    "image": "https://placehold.co/1920x1080",
-    "year": "2023"
+    "image": "/images/riso-sardonico@1x.png",
+    "year": "2023",
+    "position": 1
   },
   {
     "name": "FPSelection",
@@ -36,6 +38,7 @@
     "urlLabel": "website",
     "status": "prod",
     "image": "/images/fp-selection-responsive.png",
-    "year": "2023"
+    "year": "2023",
+    "position": 2
   }
 ]
