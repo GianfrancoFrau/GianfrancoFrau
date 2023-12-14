@@ -2,19 +2,23 @@
   {
     "name": "Test",
     "category": "project",
-    "short_description": "Lorem ipsum dolor sit amet",
-    "description": "Long description here",
+    "description": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.",
     "url": "https://gianfrancofrau.com",
     "status": "dev",
     "image": "https://placehold.co/1920x1080",
     "year": "2022"
   },
   {
-    "name": "Test 2",
+    "name": "This website",
     "category": "project",
-    "short_description": "Lorem ipsum dolor sit amet",
-    "description": "Long description here",
-    "url": "https://gianfrancofrau.com",
+    "description_html": "My little corner on the web. Minimal and responsive, built with vuejs and hosted on netlify. <a href='#' target='_blank'>Read the article.</a>",
+    "technologies": [
+      "Vuejs",
+      "Vite",
+      "Typescript"
+    ],
+    "url": "https://github.com/GianfrancoFrau/GianfrancoFrau",
+    "urlLabel": "source",
     "status": "dev",
     "image": "https://placehold.co/1920x1080",
     "year": "2023"
@@ -22,8 +26,7 @@
   {
     "name": "FPSelection",
     "category": "work",
-    "short_description": "Multilanguage responsive e-commerce built with Wordpress and Woocommerce.",
-    "description": "Long description here",
+    "description": "Multilanguage responsive e-commerce built with Wordpress and Woocommerce.",
     "technologies": [
       "Wordpress",
       "Woocommerce",

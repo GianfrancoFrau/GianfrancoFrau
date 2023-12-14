@@ -29,28 +29,33 @@ fetchProjects('year')
       <ul class="projects" v-if="!error">
         <li v-for="p in projects" :key="p.name">
           <div class="project animate__animated animate__fadeInUp" v-if="!p.hidden">
-            <div class="image" v-if="p.image">
-              <img :src="p.image" />
+            <div class="left">
+              <div class="image" v-if="p.image">
+                <img :src="p.image" />
+              </div>
             </div>
-            <div class="info">
-              <span class="name">{{ p.name }}</span>
-              <span class="year" v-if="p.year">{{ p.year }}</span>
-              <span class="url" v-if="p.url">
-                <a :href="p.url" target="_blank">
-                  <span>{{ p.urlLabel || 'url' }}</span>
-                  <span class="icon">
-                    <IconBoxArrowUpRight />
-                  </span>
-                </a>
-              </span>
-            </div>
-            <p class="description" v-if="p.short_description">{{ p.short_description }}</p>
-            <div class="technologies" v-if="p.technologies">
-              <ul>
-                <li v-for="t in p.technologies" :key="t">
-                  {{ t }}
-                </li>
-              </ul>
+            <div class="right">
+              <div class="info">
+                <span class="name">{{ p.name }}</span>
+                <span class="year" v-if="p.year">{{ p.year }}</span>
+                <span class="url" v-if="p.url">
+                  <a :href="p.url" target="_blank">
+                    <span>{{ p.urlLabel || 'url' }}</span>
+                    <span class="icon">
+                      <IconBoxArrowUpRight />
+                    </span>
+                  </a>
+                </span>
+              </div>
+              <p class="description" v-if="p.description_html" v-html="p.description_html"></p>
+              <p class="description" v-if="p.description && !p.description_html">{{ p.description }}</p>
+              <div class="technologies" v-if="p.technologies">
+                <ul>
+                  <li v-for="t in p.technologies" :key="t">
+                    {{ t }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </li>
@@ -87,9 +92,6 @@ fetchProjects('year')
 .image img {
   width: 100%;
   border-radius: var(--border-radius);
-  /* box-shadow: 4px 4px 2px #ccc;
-  -webkit-box-shadow: 4px 4px 2px #ccc;
-  -moz-box-shadow: 4px 4px 2px #ccc; */
 }
 
 .name {
@@ -114,7 +116,6 @@ fetchProjects('year')
   display: flex;
   align-items: center;
   color: var(--vt-c-black);
-  /* border: 1px solid red; */
 }
 
 .url a span:first-child {
@@ -146,6 +147,7 @@ fetchProjects('year')
   list-style: none;
   margin: 0 -0.1rem 0 -0.1rem;
 }
+
 .technologies ul li {
   font-size: 0.8rem;
   font-weight: 700;
@@ -158,6 +160,16 @@ fetchProjects('year')
 @media (min-width: 767px) {
   .project {
     padding: 2rem;
+    display: flex;
+  }
+
+  .left {
+    max-width: 45%;
+    margin-right: 2rem;
+  }
+
+  .right {
+    flex: 1 auto;
   }
 }
 </style>
