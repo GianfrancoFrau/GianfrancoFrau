@@ -23,6 +23,14 @@ const animations = ['bounce', 'rubberBand', 'shakeX', 'shakeY', 'headShake', 'sw
 const startingAnimation = 'bounceIn';
 const animation = ref(startingAnimation)
 
+const gradients = ['nephritis-to-wet-asphalt', 'wet-asphalt-to-green-sea']
+const gradient = ref(gradients[getRandomNumber(gradients.length)])
+const h2Css = computed(() => {
+  return {
+    [gradient.value]: true
+  }
+})
+
 const iconCss = computed(() => ({
   icon: true,
   animate__animated: true,
@@ -33,12 +41,12 @@ const iconCss = computed(() => ({
 
 <template>
   <div class="presentation">
-    <b>Welcome! I'm</b>
+    <b><span class="welcome">Welcome!</span> I'm</b>
     <h1 class="yellow-tail-font">
       Gianfranco Frau
     </h1>
     <h2 @click="handleTitleClick">
-      A Web Developer.
+      <span :class="h2Css">A Web Developer.</span>
       <span :class="iconCss">👾</span>
     </h2>
   </div>
@@ -57,6 +65,10 @@ const iconCss = computed(() => ({
 
 .presentation b {
   font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.welcome {
   font-weight: 900;
 }
 
@@ -84,6 +96,11 @@ h3 {
   border: 1px solid var(--color-border);
   background: white;
   font-weight: 900;
+}
+
+h2 span:first-child {
+  font-weight: 900;
+  transition: all 0.5s;
 }
 
 h2 .icon,
