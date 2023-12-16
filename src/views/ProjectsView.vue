@@ -26,14 +26,18 @@ fetchProjects('position')
         <!-- <IconLoading /> -->
       </p>
 
+      <p class="intro animate__animated animate__fadeInDown">
+        Something I've built, including side projects, clients projects and experiments.
+      </p>
+
       <ul class="projects" v-if="!error && !loading">
         <li v-for="p in projects" :key="p.name">
           <div class="project animate__animated animate__fadeInUp" v-if="!p.hidden">
-            <div class="left">
+            <!-- <div class="left">
               <div class="image" v-if="p.image">
                 <img :src="p.image" />
               </div>
-            </div>
+            </div> -->
             <div class="right">
               <div class="info">
                 <span class="name">{{ p.name }}</span>
@@ -70,6 +74,11 @@ fetchProjects('position')
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.intro {
+  margin: 2rem 0;
+  font-size: 1.6rem;
 }
 
 .project {
