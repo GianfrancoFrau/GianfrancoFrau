@@ -23,7 +23,7 @@ const animations = ['bounce', 'rubberBand', 'shakeX', 'shakeY', 'headShake', 'sw
 const startingAnimation = 'bounceIn';
 const animation = ref(startingAnimation)
 
-const gradients = ['nephritis-to-wet-asphalt', 'wet-asphalt-to-green-sea']
+const gradients = ['nephritis-to-wet-asphalt', 'wet-asphalt-to-green-sea', 'emerald-to-peter-river', 'amethyst-to-carrot']
 const gradient = ref(gradients[getRandomNumber(gradients.length)])
 const h2Css = computed(() => {
   return {
@@ -94,13 +94,12 @@ h3 {
   padding: 10px 35px;
   border-radius: 50px;
   border: 1px solid var(--color-border);
-  background: white;
   font-weight: 900;
 }
 
 h2 span:first-child {
   font-weight: 900;
-  transition: all 0.5s;
+  transition: var(--transition-default);
 }
 
 h2 .icon,
@@ -112,7 +111,7 @@ h3 .icon {
   justify-content: center;
   position: absolute;
   right: -1.2rem;
-  background: white;
+  background: var(--color-background-animated-icon);
   border: 1px solid var(--color-border);
   font-size: 2rem;
   border-radius: 50%;

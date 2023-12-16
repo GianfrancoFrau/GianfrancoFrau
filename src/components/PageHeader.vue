@@ -33,8 +33,8 @@ const headerCss = computed(() => ({
   height: var(--header-height);
   padding: 2rem 1rem;
   align-items: center;
-  transition: all 0.5s;
-  background: white;
+  transition: var(--transition-default);
+  background-color: var(--color-background-header);
   z-index: 99;
 }
 
@@ -44,15 +44,13 @@ const headerCss = computed(() => ({
   left: 1rem;
   display: flex;
   padding: 1rem;
-  color: var(--vt-c-black);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  transition: all 0.5s;
+  transition: var(--transition-default);
 }
 
 .back-link:hover {
-  color: var(--vt-c-black);
-  border-color: var(--vt-c-black);
+  border-color: var(--color-border-hover);
 }
 
 h1 {

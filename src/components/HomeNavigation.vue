@@ -101,15 +101,13 @@ nav ul li a {
   margin: 2px;
   font-size: 1.5rem;
   text-decoration: none;
-  color: var(--vt-c-black);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  transition: all 0.5s;
+  transition: var(--transition-default);
 }
 
 nav ul li a:hover {
-  color: var(--vt-c-black);
-  border-color: var(--vt-c-black);
+  border-color: var(--color-border-hover);
 }
 
 nav ul li a.disabled {
@@ -126,6 +124,11 @@ nav ul li a .icon svg {
   width: 30px;
   height: 30px;
   color: var(--color-border);
+  transition: var(--transition-default);
+}
+
+nav ul li a:hover .icon svg {
+  color: var(--color-border-hover);
 }
 
 ul.menu li {
@@ -136,15 +139,6 @@ ul.menu li {
   font-size: 1rem;
   padding: 1rem;
 }
-
-.contacts li a:hover {
-  opacity: 1;
-}
-
-.contacts li a .icon svg {
-  color: var(--vt-c-black);
-}
-
 
 @media (min-width: 767px) {
 

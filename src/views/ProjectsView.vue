@@ -22,11 +22,11 @@ fetchProjects('position')
         Can't load projects
       </p>
 
-      <p v-if="loading">
+      <p class="text-error text-center" v-if="loading">
         <!-- <IconLoading /> -->
       </p>
 
-      <ul class="projects" v-if="!error">
+      <ul class="projects" v-if="!error && !loading">
         <li v-for="p in projects" :key="p.name">
           <div class="project animate__animated animate__fadeInUp" v-if="!p.hidden">
             <div class="left">
@@ -115,7 +115,6 @@ fetchProjects('position')
   flex: 1 auto;
   display: flex;
   align-items: center;
-  color: var(--vt-c-black);
 }
 
 .url a span:first-child {
@@ -152,6 +151,7 @@ fetchProjects('position')
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.2rem 0.4rem;
+  opacity: 0.8;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   margin: 0.1rem;

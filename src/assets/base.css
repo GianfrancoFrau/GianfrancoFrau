@@ -1,20 +1,15 @@
 :root {
-  /* base colors */
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-  --vt-c-indigo: #2c3e50;
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  /** CSS PRIMARY COLORS */
+  --color-primary-a0: #ffffff;
+  --color-primary-a10: #c6cbd0;
+  --color-primary-a20: #9099a3;
+  --color-primary-a30: #5c6a78;
+  --color-primary-a50: #2c3e50;
+  --color-primary-a60: #23303c;
+  --color-primary-a70: #1a222a;
+  --color-primary-a80: #111519;
+  --color-primary-a90: #000000;
 
   /* FLAT UI COLORS */
   --turquoise: #1abc9c;
@@ -38,34 +33,24 @@
   --silver: #bdc3c7;
   --asbestos: #7f8c8d;
 
-  --color-background: var(--vt-c-white);
-  --color-border: var(--vt-c-divider-light-2);
-  --color-text: var(--vt-c-text-light-1);
+  /* app colors */
+  --color-background: var(--color-primary-a0);
+  --color-background-header: var(--color-background);
+  --color-background-animated-icon: var(--color-background);
+  --color-border: var(--color-primary-a10);
+  --color-border-hover: var(--color-primary-a20);
+  --color-text: var(--color-primary-a50);
+  --color-text-error: var(--pomegranate);
   --color-icon-loading: var(--wet-asphalt);
+  --color-links: var(--wet-asphalt);
+  --color-links-hover: var(--midnight-blue);
 
+  --app-width: 1024px;
   --header-height: 60px;
   --section-gap: 100px;
   --font-size: 16px;
-  --border-radius: 4px;
-
-  --app-width: 800px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  font-weight: normal;
-}
-
-body {
-  height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  line-height: 1.6;
-  font-family:
-    Inter,
+  --line-height: 1.6;
+  --font-family: Inter,
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -77,6 +62,23 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
+  --border-radius: 4px;
+  --transition-default: all 0.5s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
   font-size: var(--font-size);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -86,7 +88,7 @@ body {
     Hero Patterns https://heropatterns.com/
     bg-color: --wet-asphalt
   */
-  background-color: #ffffff;
+  background-color: var(--color-background);
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2334495e' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -94,21 +96,12 @@ b {
   font-weight: 700;
 }
 
-.yellow-tail-font {
-  font-family: 'Yellowtail', cursive;
+a,
+a:visited,
+a:active {
+  color: var(--color-links);
 }
 
-/* text-gradients */
-.wet-asphalt-to-green-sea {
-  background: var(--wet-asphalt);
-  background: linear-gradient(to right, var(--wet-asphalt) 0%, var(--green-sea) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.nephritis-to-wet-asphalt {
-  background: var(--nephritis);
-  background: linear-gradient(to right, var(--nephritis) 0%, var(--wet-asphalt) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+a:hover {
+  color: var(--color-links-hover);
 }
