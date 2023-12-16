@@ -1,5 +1,9 @@
 
 <script setup lang="ts">
+import IconFingerprint from '@/components/icons/IconFingerprint.vue';
+import IconSuitcase from '@/components/icons/IconSuitcase.vue';
+import IconBackpack from '@/components/icons/IconBackpack.vue';
+import IconHouseGear from '@/components/icons/IconHouseGear.vue';
 import PageHeader from '../components/PageHeader.vue';
 </script>
 
@@ -9,9 +13,11 @@ import PageHeader from '../components/PageHeader.vue';
 
     <div class="page-content">
 
-      <section class="bio">
+      <section class="bio animate__animated animate__fadeInUp">
         <h2>
-          <span class="icon">🌱</span>
+          <span class="icon">
+            <IconFingerprint />
+          </span>
           bio.
         </h2>
         <p>
@@ -31,9 +37,11 @@ import PageHeader from '../components/PageHeader.vue';
 
       </section>
 
-      <section class="profile">
+      <section class="profile animate__animated animate__fadeInUp">
         <h2>
-          <span class="icon">👨‍💻</span>
+          <span class="icon">
+            <IconBackpack />
+          </span>
           profile & tech skills.
         </h2>
         <p>
@@ -50,6 +58,34 @@ import PageHeader from '../components/PageHeader.vue';
         </ul>
       </section>
 
+      <section class="experience animate__animated animate__fadeInUp">
+        <h2>
+          <span class="icon">
+            <IconSuitcase />
+          </span>
+          Experience.
+        </h2>
+        <!-- <p>
+          I am a passionate Web Developer, focused on building amazing things with Web Technologies. Here are some of the
+          skills I have acquired and technologies I learned or used over the years.
+        </p> -->
+        <ul>
+          <li>StartupItalia</li>
+          <li>Vivocha</li>
+          <li>Glaamy</li>
+        </ul>
+      </section>
+
+      <section class="info animate__animated animate__fadeInUp">
+        <h2>
+          <span class="icon">
+            <IconHouseGear />
+          </span>
+          This website
+        </h2>
+        <p>Lorem ipsum dolor sit amet</p>
+      </section>
+
     </div>
   </div>
 </template>
@@ -57,6 +93,11 @@ import PageHeader from '../components/PageHeader.vue';
 <style scoped>
 section {
   font-size: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+section:last-child {
+  padding-bottom: 2rem;
 }
 
 h2 {
@@ -64,6 +105,19 @@ h2 {
   margin: 1.5rem 0;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+
+h2 .icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+h2 .icon svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .phonetic {
@@ -75,10 +129,6 @@ h2 {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.profile {
-  padding-bottom: 2rem;
 }
 
 .profile ul {

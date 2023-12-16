@@ -12,7 +12,7 @@
   {
     "name": "This website",
     "category": "project",
-    "description_html": "My little corner on the web. Minimal and responsive, built with vuejs and hosted on netlify. <a href='#' target='_blank'>Read the article.</a>",
+    "description_html": "My little corner on the web. Minimal and responsive, built with vuejs and hosted on netlify.",
     "technologies": [
       "Vuejs",
       "Vite",

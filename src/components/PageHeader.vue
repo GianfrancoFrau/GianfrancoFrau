@@ -55,6 +55,7 @@ const headerCss = computed(() => ({
 
 h1 {
   width: auto;
+  font-weight: 900;
 }
 
 .app-header.sticky {
