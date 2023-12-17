@@ -4,6 +4,7 @@ import IconCircle from './icons/IconCircle.vue';
 import IconGithub from './icons/IconGithub.vue'
 import IconLinkedin from './icons/IconLinkedin.vue'
 import IconEnvelopePlus from './icons/IconEnvelopePlus.vue'
+import IconTwitterX from './icons/IconTwitterX.vue';
 const sendMail = () => {
   window.location.href = 'mailto:gian.frau@hotmail.it';
 }
@@ -62,6 +63,14 @@ const sendMail = () => {
             <IconLinkedin />
           </span>
           <span>Linkedin</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/hybridev1" target="_blank">
+          <span class="icon">
+            <IconTwitterX />
+          </span>
+          <span></span>
         </a>
       </li>
       <li>
