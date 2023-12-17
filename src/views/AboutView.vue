@@ -4,6 +4,7 @@ import IconFingerprint from '@/components/icons/IconFingerprint.vue';
 import IconSuitcase from '@/components/icons/IconSuitcase.vue';
 import IconBackpack from '@/components/icons/IconBackpack.vue';
 import IconHouseGear from '@/components/icons/IconHouseGear.vue';
+import IconBoxArrowUpRight from '@/components/icons/IconBoxArrowUpRight.vue';
 import PageHeader from '../components/PageHeader.vue';
 </script>
 
@@ -48,14 +49,61 @@ import PageHeader from '../components/PageHeader.vue';
           I am a passionate Web Developer, focused on building amazing things with Web Technologies. Here are some of the
           skills I have acquired and technologies I learned or used over the years.
         </p>
-        <ul>
-          <li>HTML & CSS</li>
-          <li>Javascript & Typescript</li>
-          <li>Web Components based architectures</li>
-          <li>Angular, Vuejs, Stenciljs, Ionicframework</li>
-          <li>Scripting and automation</li>
-          <li>Git and software versioning</li>
-        </ul>
+        <div class="skills">
+          <div class="skills-row">
+            <div class="skill big">
+              Html
+            </div>
+            <div class="skill big">
+              Css
+            </div>
+            <div class="skill big">
+              Javascript
+            </div>
+          </div>
+          <div class="skills-row">
+            <div class="skill md">
+              Sass
+            </div>
+            <div class="skill md">
+              Typescript
+            </div>
+          </div>
+          <div class="skills-row">
+            <div class="skill sm">
+              Angular
+            </div>
+            <div class="skill sm">
+              Vuejs
+            </div>
+            <div class="skill sm">
+              Stenciljs
+            </div>
+            <div class="skill sm">
+              Ionic
+            </div>
+            <div class="skill sm">
+              Nodejs
+            </div>
+          </div>
+          <div class="skills-row">
+            <div class="skill xs">
+              Docker
+            </div>
+            <div class="skill xs">
+              Wordpress
+            </div>
+            <div class="skill xs">
+              Git
+            </div>
+            <div class="skill xs">
+              Bash
+            </div>
+            <div class="skill xs">
+              .
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="experience animate__animated animate__fadeInUp">
@@ -63,17 +111,40 @@ import PageHeader from '../components/PageHeader.vue';
           <span class="icon">
             <IconSuitcase />
           </span>
-          Experience.
+          experience.
         </h2>
-        <!-- <p>
-          I am a passionate Web Developer, focused on building amazing things with Web Technologies. Here are some of the
-          skills I have acquired and technologies I learned or used over the years.
-        </p> -->
         <ul>
-          <li>StartupItalia</li>
-          <li>Vivocha</li>
-          <li>Glaamy</li>
+          <li>
+            <div class="exp">
+              <header>
+                <h4 class="date">08/2023 &bull; today</h4>
+                <h3 class="name">StartupItalia</h3>
+              </header>
+              <p class="role">Full Stack Developer</p>
+            </div>
+          </li>
+          <li>
+            <div class="exp">
+              <header>
+                <h4 class="date">01/2016 &bull; 08/2023 - 7 years</h4>
+                <h3 class="name">Vivocha</h3>
+              </header>
+              <p class="role">Frontend Developer</p>
+            </div>
+          </li>
+          <li>
+            <div class="exp">
+              <header>
+                <h4 class="date">03/2014 &bull; 01/2016 - 2 years</h4>
+                <h3 class="name">Glaamy</h3>
+              </header>
+              <p class="role">Full Stack Developer</p>
+            </div>
+          </li>
         </ul>
+        <p class="linkedin-button">
+          <a href="https://www.linkedin.com/in/gianfranco-frau/" target="_blank">My Linkedin profile <IconBoxArrowUpRight /></a>
+        </p>
       </section>
 
       <section class="info animate__animated animate__fadeInUp">
@@ -81,7 +152,7 @@ import PageHeader from '../components/PageHeader.vue';
           <span class="icon">
             <IconHouseGear />
           </span>
-          This website
+          this website.
         </h2>
         <p>Lorem ipsum dolor sit amet</p>
       </section>
@@ -131,7 +202,80 @@ h2 .icon svg {
   padding: 0;
 }
 
-.profile ul {
-  padding: 1rem;
+.skills {
+  margin: 2.5rem 0;
 }
+
+.skills-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background-color: var(--clouds);
+  flex: 1 auto;
+  margin: 0.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.skill.big {
+  padding: 1.8rem;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.skill.md {
+  padding: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.skill.sm {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.skill.xs {
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+.experience ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience ul li {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.experience ul li:first-child {
+  margin-top: 3rem;
+}
+
+.exp header .date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.exp header .name {
+  font-weight: 900;
+}
+
+.exp .role {
+  font-size: 1rem;
+}
+
+.linkedin-button svg {
+  margin-left: 0.5rem;
+}
+
 </style>

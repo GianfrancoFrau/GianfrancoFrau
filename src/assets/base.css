@@ -40,6 +40,7 @@
   --color-border: var(--color-primary-a10);
   --color-border-hover: var(--color-primary-a20);
   --color-text: var(--color-primary-a50);
+  --color-text-light: var(--color-primary-a30);
   --color-text-error: var(--pomegranate);
   --color-icon-loading: var(--wet-asphalt);
   --color-links: var(--wet-asphalt);
