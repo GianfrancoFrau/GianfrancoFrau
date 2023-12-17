@@ -5,6 +5,7 @@ import IconSuitcase from '@/components/icons/IconSuitcase.vue';
 import IconBackpack from '@/components/icons/IconBackpack.vue';
 import IconHouseGear from '@/components/icons/IconHouseGear.vue';
 import IconBoxArrowUpRight from '@/components/icons/IconBoxArrowUpRight.vue';
+import IconSend from '@/components/icons/IconSend.vue';
 import PageHeader from '../components/PageHeader.vue';
 </script>
 
@@ -143,8 +144,20 @@ import PageHeader from '../components/PageHeader.vue';
           </li>
         </ul>
         <p class="linkedin-button">
-          <a href="https://www.linkedin.com/in/gianfranco-frau/" target="_blank">My Linkedin profile <IconBoxArrowUpRight /></a>
+          <a href="https://www.linkedin.com/in/gianfranco-frau/" target="_blank">My Linkedin profile
+            <IconBoxArrowUpRight />
+          </a>
         </p>
+      </section>
+
+      <section class="contacts animate__animated animate__fadeInUp">
+        <h2>
+          <span class="icon">
+            <IconSend />
+          </span>
+          keep in touch.
+        </h2>
+        <p>Lorem ipsum dolor sit amet</p>
       </section>
 
       <section class="info animate__animated animate__fadeInUp">
@@ -154,7 +167,10 @@ import PageHeader from '../components/PageHeader.vue';
           </span>
           this website.
         </h2>
-        <p>Lorem ipsum dolor sit amet</p>
+        <p>
+          Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap icons.</a></p>
+        <p class="sm"><a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank">Version 3.0.2</a></p>
+        <p class="sm">Last update December 17, 2023</p>
       </section>
 
     </div>
@@ -278,4 +294,7 @@ h2 .icon svg {
   margin-left: 0.5rem;
 }
 
+.info .sm {
+  font-size: 1rem;
+}
 </style>
