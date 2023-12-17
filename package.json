@@ -23,7 +23,8 @@
     "clean": "rm -rf ./dist/*",
     "prepare": "husky install",
     "commit": "cz",
-    "release": "node release.js"
+    "release": "node release.js",
+    "postbuild": "node postbuild.js"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

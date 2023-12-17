@@ -1,15 +1,5 @@
 [
   {
-    "name": "Test",
-    "category": "project",
-    "description": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.",
-    "url": "https://gianfrancofrau.com",
-    "status": "dev",
-    "image": "https://placehold.co/1920x1080",
-    "year": "2022",
-    "position": 3
-  },
-  {
     "name": "This website",
     "category": "project",
     "description_html": "My little corner on the web. Minimal and responsive, built with vuejs and hosted on netlify.",

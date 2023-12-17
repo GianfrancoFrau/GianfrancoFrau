@@ -104,6 +104,7 @@ nav ul li {
 }
 
 nav ul li a {
+  font-weight: 900;
   display: flex;
   align-items: center;
   padding: 1rem 2.5rem 1rem 1rem;
@@ -140,7 +141,8 @@ nav ul li a:hover .icon svg {
   color: var(--color-border-hover);
 }
 
-ul.menu li {
+ul.menu li,
+ul.contacts li {
   min-width: 50%;
 }
 
@@ -153,6 +155,10 @@ ul.menu li {
 
   .contacts li a {
     font-size: 1.2rem;
+  }
+
+  ul.contacts li {
+    min-width: 25% !important;
   }
 }
 </style>

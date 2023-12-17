@@ -7,6 +7,10 @@ import IconHouseGear from '@/components/icons/IconHouseGear.vue';
 import IconBoxArrowUpRight from '@/components/icons/IconBoxArrowUpRight.vue';
 import IconSend from '@/components/icons/IconSend.vue';
 import PageHeader from '../components/PageHeader.vue';
+
+const sendMail = () => {
+  window.location.href = 'mailto:gian.frau@hotmail.it';
+}
 </script>
 
 <template>
@@ -30,7 +34,7 @@ import PageHeader from '../components/PageHeader.vue';
           technology. As a child I alternated between living outdoors and gaming sessions with my Super Nintendo.
           My love for video games is what drove me to become a programmer when I grew up. I love writing code. Programming
           for me has always been an <b>art</b> to be used to create something that works and has
-          a purpose. I love nature. My grandparents were farmers and ranchers and I grew up in a small town near the sea
+          a purpose. I love nature. My grandparents were farmers and I grew up in a small town near the sea
           and
           surrounded by the countryside. I love music. I like to strum the guitar now and then (classical and acoustic)
           but I have to say I'm not very
@@ -157,7 +161,11 @@ import PageHeader from '../components/PageHeader.vue';
           </span>
           keep in touch.
         </h2>
-        <p>Lorem ipsum dolor sit amet</p>
+        <p>
+          You can <a href="#" @click.prevent="sendMail" target="_blank">write me an email</a>, <a
+            href="https://github.com/GianfrancoFrau" target="_blank">view my code on Github</a> or
+          <a href="https://twitter.com/hybridev1" target="_blank">follow me on X</a>.
+        </p>
       </section>
 
       <section class="info animate__animated animate__fadeInUp">
@@ -168,9 +176,12 @@ import PageHeader from '../components/PageHeader.vue';
           this website.
         </h2>
         <p>
-          Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap icons.</a></p>
-        <p class="sm"><a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank">Version 3.0.2</a></p>
-        <p class="sm">Last update December 17, 2023</p>
+          Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/"
+            target="_blank">Bootstrap icons.</a> 
+            <!-- Home image from <a href="https://www.freepik.com" target="_blank">Freepik</a>. -->
+        </p>
+        <!-- <p class="sm"><a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank">Version 3.0.2</a></p>
+        <p class="sm">Last update December 17, 2023</p> -->
       </section>
 
     </div>
