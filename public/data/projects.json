@@ -2,9 +2,9 @@
   {
     "name": "This website",
     "category": "project",
-    "description_html": "My little corner on the web. Minimal and responsive, built with vuejs and hosted on netlify.",
+    "description_html": "My little corner on the web. Minimal and responsive, built with Vuejs and hosted on Netlify.",
     "technologies": [
-      "Vuejs",
+      "Vue.js",
       "Vite",
       "Typescript"
     ],
