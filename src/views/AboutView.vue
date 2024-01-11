@@ -86,23 +86,24 @@ const skills = [
           <span class="icon">
             <IconPersonRaisedHand />
           </span>
-          bio.
+          whoami.
         </h2>
         <p>
-          I'm born in Nuoro (<span class="phonetic" title="Nùoro"> /ˈnu.oro/</span>), Sardinia, in <b>1989</b>. I
+          I'm born in Nuoro (<span class="phonetic" title="Nùoro">/ˈnu.oro/</span>), Sardinia, in <b>1989</b>. I
           grew up in
           Orosei and after graduating from high school I moved to Pisa and then to Cagliari, where I currently live and
           work. I am a curious person who likes to learn. I like to understand how things work around me. I love
           technology. As a child I alternated between living outdoors and gaming sessions with my Super Nintendo.
           My love for video games is what drove me to become a programmer when I grew up. I love writing code. Programming
           for me has always been an <b>art</b> to be used to create something that works and has
-          a purpose. I love nature. My grandparents were farmers and I grew up in a small town near the sea
-          and
-          surrounded by the countryside. I love music. I like to strum the guitar now and then (classical and acoustic)
-          but I have to say I'm not very
-          good at it.
+          a purpose. I love nature. My grandparents were farmers and I grew up in a small town near the sea and surrounded
+          by the countryside.
         </p>
-
+        <p>
+          How do I spend my time? When I'm not writing code or reading some development-related article, I'm hiking and
+          walking in nature, reading books, climbing, running or doing bodyweight exercises and occasionally strumming the guitar or
+          dusting off my Nintendo Switch.
+        </p>
       </section>
 
       <section class="profile animate__animated animate__fadeInUp">
@@ -191,7 +192,8 @@ const skills = [
         </h2>
         <p>
           Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/"
-            target="_blank">Bootstrap icons.</a> Home image from <a href="https://www.freepik.com" target="_blank">Freepik</a>.
+            target="_blank">Bootstrap icons.</a> Background image from <a href="https://www.freepik.com"
+            target="_blank">Freepik</a>.
         </p>
         <!-- <p class="sm"><a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank">Version 3.0.2</a></p>
         <p class="sm">Last update December 17, 2023</p> -->
