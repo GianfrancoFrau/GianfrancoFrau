@@ -1,6 +1,6 @@
 
 <script setup lang="ts">
-import IconFingerprint from '@/components/icons/IconFingerprint.vue';
+import IconPersonRaisedHand from '@/components/icons/IconPersonRaisedHand.vue';
 import IconSuitcase from '@/components/icons/IconSuitcase.vue';
 import IconBackpack from '@/components/icons/IconBackpack.vue';
 import IconHouseGear from '@/components/icons/IconHouseGear.vue';
@@ -11,6 +11,68 @@ import PageHeader from '../components/PageHeader.vue';
 const sendMail = () => {
   window.location.href = 'mailto:gian.frau@hotmail.it';
 }
+
+const skills = [
+  {
+    row: [{
+      name: 'HTML',
+      size: 'big'
+    }, {
+      name: 'CSS',
+      size: 'big'
+    }, {
+      name: 'JAVASCRIPT',
+      size: 'big'
+    }]
+  },
+  {
+    row: [{
+      name: 'SASS',
+      size: 'md'
+    }, {
+      name: 'TYPESCRIPT',
+      size: 'md'
+    }]
+  },
+  {
+    row: [{
+      name: 'Angular',
+      size: 'sm'
+    }, {
+      name: 'Stencil.js',
+      size: 'sm'
+    }, {
+      name: 'Ionic',
+      size: 'sm'
+    }, {
+      name: 'Node.js',
+      size: 'sm'
+    }]
+  }, {
+    row: [{
+      name: 'Docker',
+      size: 'xs'
+    }, {
+      name: 'Wordpress',
+      size: 'xs'
+    }, {
+      name: 'Next.js',
+      size: 'xs'
+    }, {
+      name: 'React.js',
+      size: 'xs'
+    }, {
+      name: 'Vue.js',
+      size: 'xs'
+    }, {
+      name: 'Git',
+      size: 'sm'
+    }, {
+      name: 'Bash',
+      size: 'sm'
+    }]
+  }
+]
 </script>
 
 <template>
@@ -22,7 +84,7 @@ const sendMail = () => {
       <section class="bio animate__animated animate__fadeInUp">
         <h2>
           <span class="icon">
-            <IconFingerprint />
+            <IconPersonRaisedHand />
           </span>
           bio.
         </h2>
@@ -55,57 +117,9 @@ const sendMail = () => {
           skills I have acquired and technologies I learned or used over the years.
         </p>
         <div class="skills">
-          <div class="skills-row">
-            <div class="skill big">
-              Html
-            </div>
-            <div class="skill big">
-              Css
-            </div>
-            <div class="skill big">
-              Javascript
-            </div>
-          </div>
-          <div class="skills-row">
-            <div class="skill md">
-              Sass
-            </div>
-            <div class="skill md">
-              Typescript
-            </div>
-          </div>
-          <div class="skills-row">
-            <div class="skill sm">
-              Angular
-            </div>
-            <div class="skill sm">
-              Vuejs
-            </div>
-            <div class="skill sm">
-              Stenciljs
-            </div>
-            <div class="skill sm">
-              Ionic
-            </div>
-            <div class="skill sm">
-              Nodejs
-            </div>
-          </div>
-          <div class="skills-row">
-            <div class="skill xs">
-              Docker
-            </div>
-            <div class="skill xs">
-              Wordpress
-            </div>
-            <div class="skill xs">
-              Git
-            </div>
-            <div class="skill xs">
-              Bash
-            </div>
-            <div class="skill xs">
-              .
+          <div class="skills-row" v-for="(r, i) in skills" :key="i">
+            <div :class="{ skill: true, sm: true }" v-for="(s, j) in r.row" :key="j">
+              {{ s.name }}
             </div>
           </div>
         </div>
@@ -131,7 +145,7 @@ const sendMail = () => {
           <li>
             <div class="exp">
               <header>
-                <h4 class="date">01/2016 &bull; 08/2023 - 7 years</h4>
+                <h4 class="date">01/2016 &bull; 08/2023 - 7 years & 8 months</h4>
                 <h3 class="name">Vivocha</h3>
               </header>
               <p class="role">Frontend Developer</p>
@@ -140,7 +154,7 @@ const sendMail = () => {
           <li>
             <div class="exp">
               <header>
-                <h4 class="date">03/2014 &bull; 01/2016 - 2 years</h4>
+                <h4 class="date">03/2014 &bull; 01/2016 - 1 year & 11 months</h4>
                 <h3 class="name">Glaamy</h3>
               </header>
               <p class="role">Full Stack Developer</p>
@@ -177,8 +191,7 @@ const sendMail = () => {
         </h2>
         <p>
           Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/"
-            target="_blank">Bootstrap icons.</a> 
-            <!-- Home image from <a href="https://www.freepik.com" target="_blank">Freepik</a>. -->
+            target="_blank">Bootstrap icons.</a> Home image from <a href="https://www.freepik.com" target="_blank">Freepik</a>.
         </p>
         <!-- <p class="sm"><a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank">Version 3.0.2</a></p>
         <p class="sm">Last update December 17, 2023</p> -->
