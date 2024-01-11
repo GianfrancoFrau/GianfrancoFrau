@@ -100,7 +100,7 @@ const skills = [
           by the countryside.
         </p>
         <p>
-          How do I spend my time? When I'm not writing code or reading some development-related article, I'm hiking and
+          How do I spend my time? When I'm not writing code or reading development-related articles, I'm hiking and
           walking in nature, reading books, climbing, running or doing bodyweight exercises and occasionally strumming the guitar or
           dusting off my Nintendo Switch.
         </p>
