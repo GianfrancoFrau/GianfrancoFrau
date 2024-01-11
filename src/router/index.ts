@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
+import ProjectsView from '@/views/ProjectsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,23 +17,25 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      // component: () => import('../views/AboutView.vue'),
+      component: AboutView
     },
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('../views/ProjectsView.vue')
+      // component: () => import('../views/ProjectsView.vue')
+      component: ProjectsView
     },
-    {
-      path: '/notebook',
-      name: 'notebook',
-      component: () => import('../views/NotebookView.vue')
-    },
-    {
-      path: '/bookmarks',
-      name: 'bookmarks',
-      component: () => import('../views/BookmarksView.vue')
-    }
+    // {
+    //   path: '/notebook',
+    //   name: 'notebook',
+    //   component: () => import('../views/NotebookView.vue')
+    // },
+    // {
+    //   path: '/bookmarks',
+    //   name: 'bookmarks',
+    //   component: () => import('../views/BookmarksView.vue')
+    // }
   ],
   scrollBehavior() {
     return { left: 0, top: 0, behavior: 'smooth' }
