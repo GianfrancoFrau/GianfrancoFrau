@@ -111,6 +111,7 @@ nav ul li a {
   margin: 2px;
   font-size: 1.5rem;
   text-decoration: none;
+  background: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   transition: var(--transition-default);

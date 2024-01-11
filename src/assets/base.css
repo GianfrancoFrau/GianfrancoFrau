@@ -35,6 +35,8 @@
 
   /* app colors */
   --color-background: var(--color-primary-a0);
+  --color-home-background: rgba(255, 255, 255, 0.25);
+  --color-home-background-not-767: rgba(255, 255, 255, 0);
   --color-background-header: var(--color-background);
   --color-background-animated-icon: var(--color-background);
   --color-border: var(--color-primary-a10);
@@ -77,13 +79,17 @@
 
 body {
   color: var(--color-text);
-  background: var(--color-background);
   line-height: var(--line-height);
   font-family: var(--font-family);
   font-size: var(--font-size);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
+  background-image: url('halftone_background-010.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 
   /*
     Hero Patterns https://heropatterns.com/

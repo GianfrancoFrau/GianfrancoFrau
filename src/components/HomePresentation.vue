@@ -79,6 +79,7 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
+  background: var(--color-background);
 }
 
 h2:hover {
