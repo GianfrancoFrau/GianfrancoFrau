@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import HomePresentation from "../components/HomePresentation.vue";
 import HomeNavigation from "../components/HomeNavigation.vue";
-// import AppFooter from "@/components/AppFooter.vue";
+
+const ls = (new Date(document.lastModified));
+const lsd = ls.getDate() + '&bull;' + ls.getMonth() + 1 + '&bull;' + ls.getFullYear();
+const lsStr = "Last update: " + lsd;
+
 </script>
 
 <template>
   <div class="app-page home-page">
     <HomePresentation />
     <HomeNavigation />
-    <!-- <AppFooter /> -->
-
-    <p>
-      Last update: 23&bull;01&bull;2024
-    </p>
+    <p v-html="lsStr" />
   </div>
 </template>
 

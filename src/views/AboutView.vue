@@ -191,14 +191,18 @@ const skills = [
           </span>
           this website.
         </h2>
-        <p>
-          Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/"
-            target="_blank">Bootstrap icons.</a> Background image from <a href="https://www.freepik.com"
-            target="_blank">Freepik</a>.
-          <a href="https://github.com/GianfrancoFrau/GianfrancoFrau" class="external" target="_blank">Source Code
-            <IconBoxArrowUpRight />
-          </a>
-        </p>
+        <ul>
+          <li>
+            Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a
+              href="https://icons.getbootstrap.com/" target="_blank">Bootstrap icons.</a>
+          </li>
+          <li>Background image from <a href="https://www.freepik.com" target="_blank">Freepik</a>.</li>
+          <li>
+            <a href="https://github.com/GianfrancoFrau/GianfrancoFrau" class="external" target="_blank">Source Code
+              <IconBoxArrowUpRight />
+            </a>
+          </li>
+        </ul>
       </section>
 
     </div>
@@ -324,5 +328,10 @@ h2 .icon svg {
 
 .info .sm {
   font-size: 1rem;
+}
+
+.info ul {
+  margin: 0;
+  padding-left: 1rem;
 }
 </style>
