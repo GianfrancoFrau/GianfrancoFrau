@@ -101,7 +101,8 @@ const skills = [
         </p>
         <p>
           How do I spend my time? When I'm not writing code or reading development-related articles, I'm hiking and
-          walking in nature, reading books, climbing, running or doing bodyweight exercises and occasionally strumming the guitar or
+          walking in nature, reading books, climbing, running or doing bodyweight exercises and occasionally strumming the
+          guitar or
           dusting off my Nintendo Switch.
         </p>
       </section>
@@ -162,8 +163,8 @@ const skills = [
             </div>
           </li>
         </ul>
-        <p class="linkedin-button">
-          <a href="https://www.linkedin.com/in/gianfranco-frau/" target="_blank">My Linkedin profile
+        <p>
+          <a href="https://www.linkedin.com/in/gianfranco-frau/" class="external" target="_blank">My Linkedin profile
             <IconBoxArrowUpRight />
           </a>
         </p>
@@ -194,9 +195,10 @@ const skills = [
           Built using <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://icons.getbootstrap.com/"
             target="_blank">Bootstrap icons.</a> Background image from <a href="https://www.freepik.com"
             target="_blank">Freepik</a>.
+          <a href="https://github.com/GianfrancoFrau/GianfrancoFrau" class="external" target="_blank">Source Code
+            <IconBoxArrowUpRight />
+          </a>
         </p>
-        <!-- <p class="sm"><a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank">Version 3.0.2</a></p>
-        <p class="sm">Last update December 17, 2023</p> -->
       </section>
 
     </div>
@@ -316,7 +318,7 @@ h2 .icon svg {
   font-size: 1rem;
 }
 
-.linkedin-button svg {
+.external svg {
   margin-left: 0.5rem;
 }
 
