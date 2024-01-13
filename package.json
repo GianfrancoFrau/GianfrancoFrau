@@ -21,10 +21,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "clean": "rm -rf ./dist/*",
-    "prepare": "husky install",
-    "commit": "cz",
-    "release": "node release.js",
-    "postbuild": "node postbuild.js"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
@@ -45,11 +42,9 @@
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/test-utils": "^2.4.1",
     "@vue/tsconfig": "^0.4.0",
-    "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
-    "husky": "^8.0.0",
     "jsdom": "^22.1.0",
     "npm-run-all2": "^6.1.1",
     "prettier": "^3.0.3",
@@ -58,10 +53,5 @@
     "vite": "^4.4.11",
     "vitest": "^0.34.6",
     "vue-tsc": "^1.8.19"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
