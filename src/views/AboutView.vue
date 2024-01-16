@@ -283,7 +283,7 @@ h2 .icon svg {
 }
 
 .skill.sm {
-  padding: 1rem;
+  padding: 0.6rem;
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -334,4 +334,11 @@ h2 .icon svg {
   margin: 0;
   padding-left: 1rem;
 }
+
+@media screen and (min-width: 767px) {
+  .skill {
+    min-width: 20%;
+  }
+}
+
 </style>
