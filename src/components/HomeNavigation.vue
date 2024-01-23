@@ -12,6 +12,7 @@ const sendMail = () => {
 
 <template>
   <nav>
+    <!--
     <ul class="menu">
       <li>
         <RouterLink to="/about">
@@ -29,7 +30,7 @@ const sendMail = () => {
           Projects
         </RouterLink>
       </li>
-      <!-- <li>
+      <li>
         <RouterLink to="/notebook" class="disabled">
           <span class="icon">
             <IconCircle />
@@ -44,9 +45,10 @@ const sendMail = () => {
           </span>
           Bookmarks
         </RouterLink>
-      </li> -->
+      </li>
     </ul>
-    <ul class="contacts">
+    -->
+    <ul class="contacts animate__animated animate__fadeInUp">
       <li>
         <a href="https://github.com/GianfrancoFrau" target="_blank">
           <span class="icon">
@@ -88,7 +90,7 @@ const sendMail = () => {
 <style scoped>
 nav {
   width: 100%;
-  padding: 1rem;
+  padding: 4rem;
 }
 
 nav ul {
@@ -108,17 +110,19 @@ nav ul li a {
   display: flex;
   align-items: center;
   padding: 1rem 2.5rem 1rem 1rem;
+  opacity: 0.8;
   margin: 2px;
   font-size: 1.5rem;
   text-decoration: none;
   background: var(--color-background);
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   border-radius: var(--border-radius);
   transition: var(--transition-default);
 }
 
 nav ul li a:hover {
   border-color: var(--color-border-hover);
+  opacity: 1;
 }
 
 nav ul li a.disabled {
@@ -149,7 +153,7 @@ ul.contacts li {
 
 .contacts li a {
   font-size: 1rem;
-  padding: 1rem;
+  padding: 0.2rem;
 }
 
 @media (min-width: 767px) {
@@ -159,7 +163,7 @@ ul.contacts li {
   }
 
   ul.contacts li {
-    min-width: 25% !important;
+    min-width: 0 !important;
   }
 }
 </style>

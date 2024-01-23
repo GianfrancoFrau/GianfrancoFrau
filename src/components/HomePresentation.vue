@@ -41,8 +41,8 @@ const iconCss = computed(() => ({
 
 <template>
   <div class="presentation">
-    <b><span class="welcome">Welcome!</span> I'm</b>
-    <h1 class="yellow-tail-font">
+    <!-- <b><span class="welcome">Welcome!</span> I'm</b> -->
+    <h1 class="yellow-tail-font animate__animated animate__fadeInDown">
       Gianfranco Frau
     </h1>
     <h2 @click="handleTitleClick">
@@ -94,7 +94,7 @@ h3 {
   margin: 10px 0;
   padding: 10px 35px;
   border-radius: 50px;
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   font-weight: 900;
 }
 
@@ -113,7 +113,7 @@ h3 .icon {
   position: absolute;
   right: -1.2rem;
   background: var(--color-background-animated-icon);
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   font-size: 2rem;
   border-radius: 50%;
 }

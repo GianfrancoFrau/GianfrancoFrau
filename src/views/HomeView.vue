@@ -12,12 +12,15 @@ const lsStr = "Version " + APP_VERSION + " &bull; Last update: " + lsd;
   <div class="app-page home-page">
     <HomePresentation />
     <HomeNavigation />
-    <p v-html="lsStr" />
+    <footer v-html="lsStr" />
   </div>
 </template>
 
 <style scoped>
-p {
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 1rem;
   margin-top: 1rem;
   font-style: italic;
