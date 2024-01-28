@@ -110,8 +110,8 @@ h3 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: -1.2rem;
+  /*position: absolute;
+  right: -1.2rem;*/
   background: var(--color-background-animated-icon);
   /* border: 1px solid var(--color-border); */
   font-size: 2rem;
