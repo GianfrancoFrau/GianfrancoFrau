@@ -41,10 +41,15 @@ const iconCss = computed(() => ({
 
 <template>
   <div class="presentation">
-    <!-- <b><span class="welcome">Welcome!</span> I'm</b> -->
+    <!--
+    <b><span class="welcome">Welcome!</span> I'm</b>
+    -->
+    <!--
     <h1 class="yellow-tail-font animate__animated animate__fadeInDown">
       Gianfranco Frau
     </h1>
+    -->
+    <img src="@/assets/gianfranco-frau.png" class="title-img animate__animated animate__fadeInDown" alt="Gianfranco Frau" title="Gianfranco Frau" />
     <h2 @click="handleTitleClick">
       <span :class="h2Css">A Web Developer.</span>
       <span :class="iconCss">👾</span>
@@ -70,6 +75,11 @@ const iconCss = computed(() => ({
 
 .welcome {
   font-weight: 900;
+}
+
+.title-img {
+  width: 100%;
+  max-width: 350px;
 }
 
 h1 {

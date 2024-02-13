@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HomePresentation from "../components/HomePresentation.vue";
+import HomeTitle from "../components/HomeTitle.vue";
 import HomeNavigation from "../components/HomeNavigation.vue";
 
 const ls = new Date(BUILD_TS);
@@ -10,7 +10,7 @@ const lsStr = "Version " + APP_VERSION + " &bull; Last update: " + lsd;
 
 <template>
   <div class="app-page home-page">
-    <HomePresentation />
+    <HomeTitle />
     <HomeNavigation />
     <footer v-html="lsStr" />
   </div>
