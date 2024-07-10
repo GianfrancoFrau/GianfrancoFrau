@@ -3,7 +3,7 @@ import HomeTitle from "../components/HomeTitle.vue";
 import HomeNavigation from "../components/HomeNavigation.vue";
 
 const ls = new Date(BUILD_TS);
-const lsd = ls.getDate() + '/' + ls.getMonth() + 1 + '/' + ls.getFullYear();
+const lsd = ls.toLocaleDateString();;
 const lsStr = "Version " + APP_VERSION + " &bull; Last update: " + lsd;
 
 </script>
