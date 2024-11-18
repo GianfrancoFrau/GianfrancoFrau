@@ -68,14 +68,6 @@ const sendMail = () => {
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/hybridev1" target="_blank">
-          <span class="icon">
-            <IconTwitterX />
-          </span>
-          <span></span>
-        </a>
-      </li>
-      <li>
         <a href="#" @click.prevent="sendMail" target="_blank">
           <span class="icon">
             <IconEnvelopePlus />
