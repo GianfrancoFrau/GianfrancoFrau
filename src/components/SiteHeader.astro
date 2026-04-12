@@ -1,0 +1,35 @@
+---
+import ThemeToggle from './islands/ThemeToggle.vue';
+import IconArrowLeft from './icons/IconArrowLeft.astro';
+
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+  <div class="max-w-3xl mx-auto w-full px-4 h-14 flex items-center justify-between">
+    <div>
+      {isHome ? (
+        <span class="text-sm font-semibold">gianfrancofrau.com</span>
+      ) : (
+        <a
+          href="/"
+          class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <IconArrowLeft class="w-4 h-4" />
+          back
+        </a>
+      )}
+    </div>
+
+    {!isHome && (
+      <nav class="hidden sm:flex items-center gap-5 text-sm text-muted-foreground">
+        <a href="/about" class:list={['hover:text-foreground transition-colors', { 'text-foreground font-medium': pathname.startsWith('/about') }]}>About</a>
+        <a href="/projects" class:list={['hover:text-foreground transition-colors', { 'text-foreground font-medium': pathname.startsWith('/projects') }]}>Projects</a>
+        <a href="/blog" class:list={['hover:text-foreground transition-colors', { 'text-foreground font-medium': pathname.startsWith('/blog') }]}>Blog</a>
+      </nav>
+    )}
+
+    <ThemeToggle client:load />
+  </div>
+</header>

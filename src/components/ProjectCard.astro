@@ -1,0 +1,81 @@
+---
+import IconExternal from './icons/IconExternal.astro';
+import IconGithub from './icons/IconGithub.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, description, year, technologies, image, imageAlt, urlGithub, urlLive, status } = project.data;
+
+const statusStyle: Record<string, string> = {
+  prod: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+  dev: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+  archived: 'bg-muted text-muted-foreground',
+};
+---
+
+<article class="rounded-xl border border-border bg-card overflow-hidden hover:border-border/60 transition-colors group">
+  {image && (
+    <div class="aspect-video overflow-hidden bg-muted border-b border-border">
+      <img
+        src={image}
+        alt={imageAlt || title}
+        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  )}
+
+  <div class="p-5 space-y-3">
+    <div class="flex items-start justify-between gap-2">
+      <h3 class="font-semibold text-lg leading-tight">{title}</h3>
+      <div class="flex items-center gap-1.5 shrink-0">
+        <span class="text-xs text-muted-foreground">{year}</span>
+        <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${statusStyle[status] ?? statusStyle.archived}`}>
+          {status}
+        </span>
+      </div>
+    </div>
+
+    <p class="text-sm text-muted-foreground leading-relaxed">{description}</p>
+
+    <div class="flex flex-wrap gap-1.5">
+      {technologies.map((tech) => (
+        <span class="text-xs px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground font-mono">
+          {tech}
+        </span>
+      ))}
+    </div>
+
+    {(urlLive || urlGithub) && (
+      <div class="flex gap-4 pt-1">
+        {urlLive && (
+          <a
+            href={urlLive}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <IconExternal class="w-3.5 h-3.5" />
+            Website
+          </a>
+        )}
+        {urlGithub && (
+          <a
+            href={urlGithub}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <IconGithub class="w-3.5 h-3.5" />
+            Source
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</article>

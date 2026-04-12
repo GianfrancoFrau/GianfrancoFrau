@@ -1,0 +1,46 @@
+---
+import IconGithub from './icons/IconGithub.astro';
+import IconLinkedin from './icons/IconLinkedin.astro';
+import IconMail from './icons/IconMail.astro';
+
+const links = [
+  {
+    href: 'https://github.com/GianfrancoFrau',
+    label: 'GitHub',
+    icon: 'github',
+    external: true,
+  },
+  {
+    href: 'https://www.linkedin.com/in/gianfranco-frau/',
+    label: 'LinkedIn',
+    icon: 'linkedin',
+    external: true,
+  },
+  {
+    href: 'mailto:gian.frau@hotmail.it',
+    label: 'Email',
+    icon: 'mail',
+    external: false,
+  },
+];
+---
+
+<nav aria-label="Contact links">
+  <ul class="flex flex-wrap gap-2">
+    {links.map(({ href, label, icon, external }) => (
+      <li>
+        <a
+          href={href}
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noopener noreferrer' : undefined}
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+        >
+          {icon === 'github' && <IconGithub class="w-4 h-4" />}
+          {icon === 'linkedin' && <IconLinkedin class="w-4 h-4" />}
+          {icon === 'mail' && <IconMail class="w-4 h-4" />}
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

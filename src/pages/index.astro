@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnimatedTitle from '../components/islands/AnimatedTitle.vue';
+import ThemeToggle from '../components/islands/ThemeToggle.vue';
+import ContactLinks from '../components/ContactLinks.astro';
+---
+
+<BaseLayout>
+  <div class="min-h-screen flex flex-col">
+    <div class="absolute top-4 right-4">
+      <ThemeToggle client:load />
+    </div>
+
+    <div class="flex-1 flex flex-col items-center justify-center px-4 py-16 text-center">
+      <img
+        src="/images/gianfranco-frau.png"
+        alt="Gianfranco Frau"
+        class="w-72 max-w-sm mb-6"
+        loading="eager"
+      />
+
+      <h2 class="text-xl font-semibold mb-1">
+        <AnimatedTitle client:load />
+      </h2>
+
+      <p class="text-muted-foreground text-sm mb-8">
+        Cagliari, Sardinia
+      </p>
+
+      <nav class="flex flex-wrap justify-center gap-2 mb-8 text-sm">
+        <a href="/about" class="px-5 py-2 rounded-lg border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors font-medium">
+          About
+        </a>
+        <a href="/projects" class="px-5 py-2 rounded-lg border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors font-medium">
+          Projects
+        </a>
+        <a href="/blog" class="px-5 py-2 rounded-lg border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors font-medium">
+          Blog
+        </a>
+      </nav>
+
+      <ContactLinks />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number"
+    },
+    "position": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "project",
+        "work",
+        "experiment"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "prod",
+        "dev",
+        "archived"
+      ]
+    },
+    "technologies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "image": {
+      "type": "string"
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "urlGithub": {
+      "type": "string",
+      "format": "uri"
+    },
+    "urlLive": {
+      "type": "string",
+      "format": "uri"
+    },
+    "featured": {
+      "default": false,
+      "type": "boolean"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "year",
+    "position",
+    "category",
+    "status",
+    "technologies"
+  ]
+}

@@ -1,0 +1,37 @@
+---
+const skills = [
+  {
+    size: 'big',
+    items: ['HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    size: 'md',
+    items: ['SASS', 'TypeScript'],
+  },
+  {
+    size: 'sm',
+    items: ['Angular', 'Stencil.js', 'Ionic', 'Node.js', 'Git', 'Bash'],
+  },
+  {
+    size: 'xs',
+    items: ['Docker', 'WordPress', 'Next.js', 'React', 'Vue', 'Astro'],
+  },
+];
+---
+
+<div class="space-y-1.5">
+  {skills.map(({ size, items }) => (
+    <div class="flex flex-wrap gap-1">
+      {items.map((name) => (
+        <span
+          class:list={[
+            'skill-' + size,
+            'flex-1 min-w-fit rounded-lg border border-border bg-secondary text-secondary-foreground text-center uppercase tracking-wide',
+          ]}
+        >
+          {name}
+        </span>
+      ))}
+    </div>
+  ))}
+</div>
