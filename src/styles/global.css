@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -83,6 +87,9 @@
   }
   h1, h2, h3, h4 {
     @apply tracking-tight;
+  }
+  .font-display {
+    font-optical-sizing: auto;
   }
 }
 

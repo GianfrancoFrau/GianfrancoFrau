@@ -3,9 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import SkillGrid from '../components/SkillGrid.astro';
 import ExperienceList from '../components/ExperienceList.astro';
 import ContactLinks from '../components/ContactLinks.astro';
-import CvDownloadButton from '../components/CvDownloadButton.astro';
 import IconLinkedin from '../components/icons/IconLinkedin.astro';
-import IconExternal from '../components/icons/IconExternal.astro';
 ---
 
 <PageLayout title="About">
@@ -16,30 +14,29 @@ import IconExternal from '../components/icons/IconExternal.astro';
       <h2 class="text-2xl font-black mb-4 pb-3 border-b border-border">whoami.</h2>
       <div class="space-y-4 text-muted-foreground leading-relaxed">
         <p>
-          I'm born in Nuoro (<span class="italic border-b border-dashed border-current" title="Nùoro">/ˈnu.oro/</span>),
-          Sardinia, in <strong class="text-foreground">1989</strong>. I grew up in Orosei and after graduating from
-          high school I moved to Pisa and then to Cagliari, where I currently live and work.
+          I was born in Nuoro (<span class="italic border-b border-dashed border-current" title="Nùoro">/ˈnu.oro/</span>),
+          Sardinia, in <strong class="text-foreground">1989</strong>. I grew up in Orosei and, after finishing high
+          school, moved first to Pisa and then to Cagliari, where I currently live and work.
         </p>
         <p>
-          I am a curious person who likes to learn. I like to understand how things work around me. I love technology.
-          As a child I alternated between living outdoors and gaming sessions with my Super Nintendo. My love for video
-          games is what drove me to become a programmer when I grew up. I love writing code. Programming for me has
-          always been an <strong class="text-foreground">art</strong> to be used to create something that works and has a purpose.
+          I'm a naturally curious person — I like understanding how things work, whether it's a system, a tool, or an
+          idea. I've loved technology for as long as I can remember. Growing up, I split my time between playing
+          outside and gaming sessions on my Super Nintendo, and it was that early passion for video games that
+          eventually led me to programming. For me, writing code has always been a form of <strong class="text-foreground">craft</strong> —
+          a way to build things that are both functional and purposeful.
         </p>
         <p>
-          How do I spend my time? When I'm not writing code or reading development-related articles, I'm hiking and
-          walking in nature, reading books, climbing, running or doing bodyweight exercises and occasionally strumming
-          the guitar or dusting off my Nintendo Switch.
+          Outside of work, I spend my time hiking, climbing, running, and reading. I occasionally pick up the guitar
+          or blow the dust off my Nintendo Switch.
         </p>
       </div>
     </section>
 
     <!-- skills -->
     <section>
-      <h2 class="text-2xl font-black mb-4 pb-3 border-b border-border">profile & tech skills.</h2>
+      <h2 class="text-2xl font-black mb-4 pb-3 border-b border-border">tech skills.</h2>
       <p class="text-muted-foreground mb-6 leading-relaxed">
-        I am a passionate Web Developer, focused on building amazing things with Web Technologies. Here are some of
-        the skills I have acquired and technologies I learned or used over the years.
+        Technologies I've worked with and built things with over the years.
       </p>
       <SkillGrid />
     </section>
@@ -48,21 +45,17 @@ import IconExternal from '../components/icons/IconExternal.astro';
     <section>
       <div class="flex flex-wrap items-center justify-between gap-4 pb-3 mb-6 border-b border-border">
         <h2 class="text-2xl font-black">experience.</h2>
-        <CvDownloadButton />
-      </div>
-      <ExperienceList />
-      <p class="mt-6">
         <a
           href="https://www.linkedin.com/in/gianfranco-frau/"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
         >
           <IconLinkedin class="w-4 h-4" />
           My LinkedIn profile
-          <IconExternal class="w-3.5 h-3.5" />
         </a>
-      </p>
+      </div>
+      <ExperienceList />
     </section>
 
     <!-- contact -->

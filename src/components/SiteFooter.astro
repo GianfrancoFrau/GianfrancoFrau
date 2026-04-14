@@ -1,13 +1,13 @@
 ---
+import pkg from '../../package.json';
+
+const now = new Date();
+const lastUpdate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
 ---
 
 <footer class="border-t border-border mt-auto py-6">
   <div class="max-w-3xl mx-auto w-full px-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-muted-foreground">
-    <span>© {new Date().getFullYear()} Gianfranco Frau</span>
-    <span>
-      Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline underline-offset-2">Astro</a>
-      {' '}·{' '}
-      <a href="https://github.com/GianfrancoFrau/GianfrancoFrau" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline underline-offset-2">Source</a>
-    </span>
+    <span>© {now.getFullYear()} Gianfranco Frau</span>
+    <span>v{pkg.version} · last update {lastUpdate}</span>
   </div>
 </footer>

@@ -54,6 +54,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Fraunces: display font, variable (opsz + wght axes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <slot />

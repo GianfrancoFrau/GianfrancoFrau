@@ -15,17 +15,9 @@ const pickOther = <T>(arr: T[], current: T): T => {
 };
 
 const currentGradient = ref(gradients[Math.floor(Math.random() * gradients.length)]);
-const bouncing = ref(false);
 
 const handleClick = () => {
   currentGradient.value = pickOther(gradients, currentGradient.value);
-  bouncing.value = false;
-  requestAnimationFrame(() => {
-    bouncing.value = true;
-    setTimeout(() => {
-      bouncing.value = false;
-    }, 700);
-  });
 };
 </script>
 
@@ -40,12 +32,6 @@ const handleClick = () => {
     >
       A Web Developer.
     </span>
-    <span
-      :class="['text-2xl', bouncing ? 'animate-bounce' : '']"
-      role="img"
-      aria-label="alien monster"
-    >
-      👾
-    </span>
+    <span role="img" aria-label="alien monster">👾</span>
   </span>
 </template>
