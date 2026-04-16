@@ -1,13 +1,26 @@
 ---
 import pkg from '../../package.json';
+import IconGithub from './icons/IconGithub.astro';
+import IconLinkedin from './icons/IconLinkedin.astro';
+import IconMail from './icons/IconMail.astro';
 
 const now = new Date();
 const lastUpdate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
 ---
 
-<footer class="border-t border-border mt-auto py-6">
-  <div class="max-w-3xl mx-auto w-full px-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-muted-foreground">
-    <span>© {now.getFullYear()} Gianfranco Frau</span>
+<footer class="border-t border-border mt-auto">
+  <div class="max-w-3xl mx-auto w-full px-4 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+    <nav class="flex items-center gap-4" aria-label="Social links">
+      <a href="https://github.com/GianfrancoFrau" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-foreground transition-colors">
+        <IconGithub class="w-4 h-4" /> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/gianfranco-frau/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-foreground transition-colors">
+        <IconLinkedin class="w-4 h-4" /> LinkedIn
+      </a>
+      <a href="mailto:gian.frau@hotmail.it" class="inline-flex items-center gap-1.5 hover:text-foreground transition-colors">
+        <IconMail class="w-4 h-4" /> Email
+      </a>
+    </nav>
     <span>v{pkg.version} · last update {lastUpdate}</span>
   </div>
 </footer>

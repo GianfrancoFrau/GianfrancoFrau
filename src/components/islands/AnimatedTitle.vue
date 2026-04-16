@@ -3,21 +3,23 @@ import { ref } from 'vue';
 
 const gradients = [
   'from-emerald-500 to-sky-500',
-  'from-violet-500 to-pink-500',
-  'from-orange-500 to-red-500',
-  'from-blue-500 to-indigo-500',
-  'from-green-500 to-teal-500',
+  'from-violet-500 to-amber-400',
+  'from-orange-500 to-violet-600',
+  'from-blue-500 to-rose-500',
+  'from-teal-400 to-purple-600',
+  'from-yellow-400 to-pink-600',
+  'from-red-500 to-cyan-400',
+  'from-lime-400 to-blue-600',
+  'from-fuchsia-500 to-emerald-400',
+  'from-sky-400 to-orange-500',
 ];
 
-const pickOther = <T>(arr: T[], current: T): T => {
-  const others = arr.filter((i) => i !== current);
-  return others[Math.floor(Math.random() * others.length)];
-};
+const pick = () => gradients[Math.floor(Math.random() * gradients.length)];
 
-const currentGradient = ref(gradients[Math.floor(Math.random() * gradients.length)]);
+const currentGradient = ref(pick());
 
 const handleClick = () => {
-  currentGradient.value = pickOther(gradients, currentGradient.value);
+  currentGradient.value = pick();
 };
 </script>
 
@@ -32,6 +34,6 @@ const handleClick = () => {
     >
       A Web Developer.
     </span>
-    <span role="img" aria-label="alien monster">👾</span>
+    <!-- <span role="img" aria-label="alien monster">👾</span> -->
   </span>
 </template>
