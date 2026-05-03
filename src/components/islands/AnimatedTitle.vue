@@ -1,39 +1,57 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const gradients = [
-  'from-emerald-500 to-sky-500',
-  'from-violet-500 to-amber-400',
-  'from-orange-500 to-violet-600',
-  'from-blue-500 to-rose-500',
-  'from-teal-400 to-purple-600',
-  'from-yellow-400 to-pink-600',
-  'from-red-500 to-cyan-400',
-  'from-lime-400 to-blue-600',
-  'from-fuchsia-500 to-emerald-400',
-  'from-sky-400 to-orange-500',
+interface Gradient {
+  from: string;
+  to: string;
+}
+
+const gradients: Gradient[] = [
+  { from: '#10b981', to: '#0ea5e9' },
+  { from: '#8b5cf6', to: '#fbbf24' },
+  { from: '#f97316', to: '#7c3aed' },
+  { from: '#3b82f6', to: '#f43f5e' },
+  { from: '#2dd4bf', to: '#9333ea' },
+  { from: '#facc15', to: '#db2777' },
+  { from: '#ef4444', to: '#22d3ee' },
+  { from: '#a3e635', to: '#2563eb' },
+  { from: '#d946ef', to: '#34d399' },
+  { from: '#38bdf8', to: '#f97316' },
 ];
 
 const pick = () => gradients[Math.floor(Math.random() * gradients.length)];
 
-const currentGradient = ref(pick());
+const currentGradient = ref<Gradient>(pick());
+
+const setAccentVar = (g: Gradient) => {
+  document.documentElement.style.setProperty('--hero-accent', g.from);
+};
+
+onMounted(() => setAccentVar(currentGradient.value));
 
 const handleClick = () => {
   currentGradient.value = pick();
+  setAccentVar(currentGradient.value);
 };
 </script>
 
 <template>
   <span
-    class="inline-flex items-center gap-2 cursor-pointer select-none"
+    class="inline-flex items-center cursor-pointer select-none"
     @click="handleClick"
     title="Click me!"
   >
     <span
-      :class="`bg-gradient-to-r ${currentGradient} bg-clip-text text-transparent font-black transition-all duration-500`"
+      class="font-black"
+      :style="{
+        backgroundImage: `linear-gradient(to right, ${currentGradient.from}, ${currentGradient.to})`,
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        color: 'transparent',
+      }"
     >
       A Web Developer.
     </span>
-    <!-- <span role="img" aria-label="alien monster">👾</span> -->
   </span>
 </template>

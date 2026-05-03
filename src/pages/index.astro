@@ -9,31 +9,25 @@ import AnimatedTitle from '../components/islands/AnimatedTitle.vue';
   <div class="min-h-screen flex flex-col">
     <SiteHeader />
 
-    <div class="flex-1 flex flex-col items-center justify-center px-4 py-16 text-center">
-      <h1 class="font-display text-6xl sm:text-7xl font-bold leading-none tracking-tight mb-6">
-        Gianfranco<br />Frau
+    <div class="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
+      <p class="font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase mb-10">
+        Software Developer · Cagliari, Sardinia
+      </p>
+
+      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-[0.88] tracking-tight mb-10 text-foreground/75">
+        Gianfranco<br />
+        <span>Frau<span style="color: var(--hero-accent, oklch(0.62 0.17 55));">.</span></span>
       </h1>
 
-      <div class="text-lg font-black mb-1">
+      <div class="text-base text-muted-foreground mb-14">
         <AnimatedTitle client:load />
       </div>
 
-      <p class="text-muted-foreground text-sm mb-8">
-        Cagliari, Sardinia
-      </p>
-
-      <nav class="flex flex-wrap justify-center gap-2 mb-8 text-sm">
-        <a href="/about" class="px-5 py-2 rounded-lg border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors font-medium">
-          About
-        </a>
-        <a href="/projects" class="px-5 py-2 rounded-lg border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors font-medium">
-          Projects
-        </a>
-        <a href="/blog" class="px-5 py-2 rounded-lg border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors font-medium">
-          Blog
-        </a>
+      <nav class="flex items-center gap-2">
+        <a href="/about" class="px-4 py-2 text-sm font-medium rounded-md border border-border hover:bg-accent hover:text-foreground transition-colors">About</a>
+        <a href="/projects" class="px-4 py-2 text-sm font-medium rounded-md border border-border hover:bg-accent hover:text-foreground transition-colors">Projects</a>
+        <a href="/blog" class="px-4 py-2 text-sm font-medium rounded-md border border-border hover:bg-accent hover:text-foreground transition-colors">Blog</a>
       </nav>
-
     </div>
     <SiteFooter />
   </div>

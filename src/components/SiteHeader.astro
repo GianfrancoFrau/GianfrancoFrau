@@ -12,9 +12,7 @@ const isHome = pathname === '/'
   <div class="max-w-3xl mx-auto w-full px-4 h-14 flex items-center justify-between">
     <div>
       {
-        isHome ? (
-          ''
-        ) : (
+        isHome ? null : (
           <a
             href="/"
             class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
