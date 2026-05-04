@@ -45,15 +45,6 @@ const isHome = pathname === '/'
           >
             Projects
           </a>
-          <a
-            href="/blog"
-            class:list={[
-              'hover:text-foreground transition-colors',
-              { 'text-foreground font-medium': pathname.startsWith('/blog') }
-            ]}
-          >
-            Blog
-          </a>
         </nav>
       )
     }

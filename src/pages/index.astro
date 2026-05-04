@@ -14,7 +14,7 @@ import AnimatedTitle from '../components/islands/AnimatedTitle.vue';
         Software Developer · Cagliari, Sardinia
       </p>
 
-      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-[0.88] tracking-tight mb-10 text-foreground/75">
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.88] tracking-tight mb-10 text-foreground/75">
         Gianfranco<br />
         <span>Frau<span style="color: var(--hero-accent, oklch(0.62 0.17 55));">.</span></span>
       </h1>
@@ -23,10 +23,16 @@ import AnimatedTitle from '../components/islands/AnimatedTitle.vue';
         <AnimatedTitle client:load />
       </div>
 
-      <nav class="flex items-center gap-2">
-        <a href="/about" class="px-4 py-2 text-sm font-medium rounded-md border border-border hover:bg-accent hover:text-foreground transition-colors">About</a>
-        <a href="/projects" class="px-4 py-2 text-sm font-medium rounded-md border border-border hover:bg-accent hover:text-foreground transition-colors">Projects</a>
-        <a href="/blog" class="px-4 py-2 text-sm font-medium rounded-md border border-border hover:bg-accent hover:text-foreground transition-colors">Blog</a>
+      <nav class="flex items-center gap-3">
+        <a href="/about" class="px-5 py-2.5 text-sm font-medium rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-200">
+          About
+        </a>
+        <a href="/projects" class="group flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium rounded-full bg-foreground text-background hover:opacity-90 transition-opacity duration-200">
+          Projects
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </nav>
     </div>
     <SiteFooter />
