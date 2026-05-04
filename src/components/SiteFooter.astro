@@ -3,9 +3,6 @@ import pkg from '../../package.json';
 import IconGithub from './icons/IconGithub.astro';
 import IconLinkedin from './icons/IconLinkedin.astro';
 import IconMail from './icons/IconMail.astro';
-
-const now = new Date();
-const lastUpdate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
 ---
 
 <footer class="border-t border-border mt-auto bg-background/80 backdrop-blur-sm">
@@ -21,6 +18,6 @@ const lastUpdate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2
         <IconMail class="w-4 h-4" /> Email
       </a>
     </nav>
-    <span>v{pkg.version} · last update {lastUpdate}</span>
+    <span>v{pkg.version}</span>
   </div>
 </footer>
