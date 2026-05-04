@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue'
 
 interface Gradient {
-  from: string;
-  to: string;
+  from: string
+  to: string
 }
 
 const gradients: Gradient[] = [
@@ -17,39 +17,63 @@ const gradients: Gradient[] = [
   { from: '#a3e635', to: '#2563eb' },
   { from: '#d946ef', to: '#34d399' },
   { from: '#38bdf8', to: '#f97316' },
-];
+]
 
-const pick = () => gradients[Math.floor(Math.random() * gradients.length)];
+const current = ref(0)
+const next = ref(1)
+const fading = ref(false)
+let timer: ReturnType<typeof setInterval>
 
-const currentGradient = ref<Gradient>(pick());
+const gradientStyle = (g: Gradient) => ({
+  backgroundImage: `linear-gradient(to right, ${g.from}, ${g.to})`,
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+  color: 'transparent',
+})
 
-const setAccentVar = (g: Gradient) => {
-  document.documentElement.style.setProperty('--hero-accent', g.from);
-};
+const setAccentVar = (g: Gradient) =>
+  document.documentElement.style.setProperty('--hero-accent', g.from)
 
-onMounted(() => setAccentVar(currentGradient.value));
+const advance = () => {
+  if (fading.value) return
+  clearInterval(timer)
+  const nextIdx = (current.value + 1) % gradients.length
+  next.value = nextIdx
+  fading.value = true
+  setAccentVar(gradients[nextIdx])
+  setTimeout(() => {
+    current.value = nextIdx
+    fading.value = false
+    timer = setInterval(advance, 3500)
+  }, 600)
+}
 
-const handleClick = () => {
-  currentGradient.value = pick();
-  setAccentVar(currentGradient.value);
-};
+onMounted(() => {
+  setAccentVar(gradients[current.value])
+  timer = setInterval(advance, 3500)
+})
+
+onUnmounted(() => clearInterval(timer))
 </script>
 
 <template>
   <span
-    class="inline-flex items-center cursor-pointer select-none"
-    @click="handleClick"
+    class="relative inline-flex cursor-pointer select-none"
+    @click="advance"
     title="Click me!"
   >
     <span
-      class="font-black"
-      :style="{
-        backgroundImage: `linear-gradient(to right, ${currentGradient.from}, ${currentGradient.to})`,
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-        color: 'transparent',
-      }"
+      class="font-black transition-opacity duration-500"
+      :class="fading ? 'opacity-0' : 'opacity-100'"
+      :style="gradientStyle(gradients[current])"
+    >
+      A Web Developer.
+    </span>
+    <span
+      class="font-black transition-opacity duration-500 absolute inset-0"
+      :class="fading ? 'opacity-100' : 'opacity-0'"
+      :style="gradientStyle(gradients[next])"
     >
       A Web Developer.
     </span>
