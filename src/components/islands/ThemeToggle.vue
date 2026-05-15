@@ -23,7 +23,7 @@ const toggle = () => {
   <button
     @click="toggle"
     :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
-    class="inline-flex items-center justify-center w-8 h-8 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+    class="inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
   >
     <!-- Sun (shown in dark mode to switch to light) -->
     <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">

@@ -20,21 +20,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--
-      Anti-FOUC: must run synchronously before any paint.
-      Reads localStorage; defaults to dark if no preference is stored.
+      Anti-FOUC: dark is the hardcoded default on <html>.
+      Script only removes it if the user explicitly saved 'light'.
     -->
     <script is:inline>
       (function () {
         try {
-          const stored = localStorage.getItem('theme');
-          if (stored === 'dark' || !stored) {
-            document.documentElement.classList.add('dark');
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
           }
         } catch (_) {}
       })();
@@ -62,7 +61,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
   </head>

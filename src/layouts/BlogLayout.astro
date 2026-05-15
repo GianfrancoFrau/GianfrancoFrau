@@ -17,10 +17,10 @@ const formattedDate = formatDate(pubDate);
 <BaseLayout title={title} description={description}>
   <div class="min-h-screen flex flex-col">
     <SiteHeader />
-    <main class="flex-1 max-w-3xl mx-auto w-full px-4 py-10">
+    <main class="flex-1 max-w-3xl mx-auto w-full px-4 py-10 bg-background/90 backdrop-blur-sm">
       <article>
         <header class="mb-8 space-y-3">
-          <h1 class="text-3xl font-black">{title}</h1>
+          <h1 class="font-pixel text-lg leading-loose">{title}</h1>
           <div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             <time datetime={pubDate.toISOString()}>{formattedDate}</time>
             {updatedDate && (
@@ -35,7 +35,7 @@ const formattedDate = formatDate(pubDate);
           {tags.length > 0 && (
             <div class="flex flex-wrap gap-1.5">
               {tags.map((tag) => (
-                <span class="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
+                <span class="text-xs px-2.5 py-1 border border-border text-muted-foreground">
                   {tag}
                 </span>
               ))}

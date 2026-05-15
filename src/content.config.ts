@@ -7,16 +7,9 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    year: z.number(),
     position: z.number(),
-    category: z.enum(['project', 'work', 'experiment']),
-    status: z.enum(['prod', 'dev', 'archived']),
-    technologies: z.array(z.string()),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
-    urlGithub: z.string().url().optional(),
-    urlLive: z.string().url().optional(),
-    featured: z.boolean().default(false),
+    url: z.string().url().optional(),
+    repo: z.string().url().optional(),
   }),
 });
 

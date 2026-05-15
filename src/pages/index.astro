@@ -1,37 +1,88 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import SiteFooter from '../components/SiteFooter.astro';
-import AnimatedTitle from '../components/islands/AnimatedTitle.vue';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+import SiteFooter from '../components/SiteFooter.astro'
+import AnimatedTitle from '../components/islands/AnimatedTitle.vue'
+import ProjectCard from '../components/ProjectCard.astro'
+import ExperienceList from '../components/ExperienceList.astro'
+import ContactLinks from '../components/ContactLinks.astro'
+import IconLinkedin from '../components/icons/IconLinkedin.astro'
+import { getCollection } from 'astro:content'
+
+const allProjects = await getCollection('projects')
+const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
 ---
 
 <BaseLayout>
   <div class="min-h-screen flex flex-col">
     <SiteHeader />
 
-    <div class="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
-
-      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.88] tracking-tight mb-10 text-foreground/75">
+    <section class="flex flex-col items-center justify-center px-6 py-24 text-center">
+      <h1 class="font-pixel text-2xl sm:text-3xl md:text-4xl leading-snug mb-10 text-foreground/80">
         Gianfranco<br />
         <span>Frau<span style="color: var(--hero-accent, oklch(0.62 0.17 55));">.</span></span>
       </h1>
-
-      <div class="text-xl text-muted-foreground mb-14">
+      <div class="text-xl text-muted-foreground">
         <AnimatedTitle client:load />
       </div>
+    </section>
 
-      <nav class="flex items-center gap-3">
-        <a href="/about" class="px-5 py-2.5 text-sm font-medium rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-200">
-          About
-        </a>
-        <a href="/projects" class="group flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium rounded-full bg-foreground text-background hover:opacity-90 transition-opacity duration-200">
-          Projects
-          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </nav>
-    </div>
+    <main
+      class="flex-1 max-w-3xl mx-auto w-full px-4 pb-20 space-y-16 bg-background/90 backdrop-blur-sm"
+    >
+      <section>
+        <h2 class="font-pixel text-sm mb-6 pb-4 border-b border-border leading-loose">whoami.</h2>
+        <div class="space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            Born in Sardinia in <strong class="text-foreground">1989</strong>, I grew up splitting
+            my time between the countryside and afternoons glued to a Super Nintendo — drawn in by
+            adventures, puzzles, and the feeling that there was always something more to figure out.
+          </p>
+          <p>
+            That curiosity never really went away. As I got older, wondering <em>how</em> games worked
+            pulled me toward programming — and from there into a deeper fascination with software and
+            the complex systems shaping the world around us.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-pixel text-sm mb-6 pb-3 border-b border-border leading-loose">projects.</h2>
+        <div class="flex flex-col">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </section>
+
+      {/* experience — hidden, not deleted */}
+      {false && (
+        <section>
+          <div
+            class="flex flex-wrap items-center justify-between gap-4 pb-3 mb-6 border-b border-border"
+          >
+            <h2 class="font-pixel text-sm leading-loose">experience.</h2>
+            <a
+              href="https://www.linkedin.com/in/gianfranco-frau/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 border border-border bg-card text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <IconLinkedin class="w-4 h-4" />
+              My LinkedIn profile
+            </a>
+          </div>
+          <ExperienceList />
+        </section>
+      )}
+
+      <section>
+        <h2 class="font-pixel text-sm mb-6 pb-4 border-b border-border leading-loose">
+          keep in touch.
+        </h2>
+        <p class="text-muted-foreground mb-6">You can reach me via email, LinkedIn, or GitHub.</p>
+        <ContactLinks />
+      </section>
+    </main>
+
     <SiteFooter />
   </div>
 </BaseLayout>

@@ -24,30 +24,7 @@ const isHome = pathname === '/'
       }
     </div>
 
-    {
-      !isHome && (
-        <nav class="hidden sm:flex items-center gap-5 text-sm text-muted-foreground">
-          <a
-            href="/about"
-            class:list={[
-              'hover:text-foreground transition-colors',
-              { 'text-foreground font-medium': pathname.startsWith('/about') }
-            ]}
-          >
-            About
-          </a>
-          <a
-            href="/projects"
-            class:list={[
-              'hover:text-foreground transition-colors',
-              { 'text-foreground font-medium': pathname.startsWith('/projects') }
-            ]}
-          >
-            Projects
-          </a>
-        </nav>
-      )
-    }
+    <div />
 
     <ThemeToggle client:load />
   </div>

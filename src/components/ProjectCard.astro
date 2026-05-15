@@ -8,74 +8,38 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, description, year, technologies, image, imageAlt, urlGithub, urlLive, status } = project.data;
-
-const statusStyle: Record<string, string> = {
-  prod: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-  dev: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
-  archived: 'bg-muted text-muted-foreground',
-};
+const { title, description, url, repo } = project.data;
 ---
 
-<article class="w-full flex flex-col sm:flex-row rounded-xl border border-border bg-card overflow-hidden hover:border-signal/50 transition-colors group">
-  {image && (
-    <div class="aspect-video sm:aspect-auto sm:w-2/5 shrink-0 overflow-hidden bg-muted border-b sm:border-b-0 sm:border-r border-border">
-      <img
-        src={image}
-        alt={imageAlt || title}
-        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-        loading="lazy"
-        decoding="async"
-      />
+<article class="group flex flex-col gap-2 py-5 border-b border-border last:border-b-0 pl-4 border-l-2 border-l-foreground/10 hover:border-l-foreground/30 transition-colors">
+  <h3 class="font-semibold leading-tight">{title}</h3>
+
+  <p class="text-sm text-muted-foreground leading-relaxed">{description}</p>
+
+  {(url || repo) && (
+    <div class="flex gap-4 mt-1">
+      {url && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground border border-transparent hover:border-border px-2 py-1 transition-colors"
+        >
+          <IconExternal class="w-3 h-3" />
+          Website
+        </a>
+      )}
+      {repo && (
+        <a
+          href={repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground border border-transparent hover:border-border px-2 py-1 transition-colors"
+        >
+          <IconGithub class="w-3 h-3" />
+          Source
+        </a>
+      )}
     </div>
   )}
-
-  <div class="flex flex-col flex-1 gap-3 p-5">
-    <div class="flex items-start justify-between gap-2">
-      <h3 class="font-semibold text-lg leading-tight">{title}</h3>
-      <div class="flex items-center gap-1.5 shrink-0">
-        <span class="text-xs text-muted-foreground">{year}</span>
-        <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${statusStyle[status] ?? statusStyle.archived}`}>
-          {status}
-        </span>
-      </div>
-    </div>
-
-    <p class="text-sm text-muted-foreground leading-relaxed flex-1">{description}</p>
-
-    <div class="flex flex-wrap gap-1.5">
-      {technologies.map((tech) => (
-        <span class="text-xs px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground font-mono">
-          {tech}
-        </span>
-      ))}
-    </div>
-
-    {(urlLive || urlGithub) && (
-      <div class="flex gap-4">
-        {urlLive && (
-          <a
-            href={urlLive}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <IconExternal class="w-3.5 h-3.5" />
-            Website
-          </a>
-        )}
-        {urlGithub && (
-          <a
-            href={urlGithub}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <IconGithub class="w-3.5 h-3.5" />
-            Source
-          </a>
-        )}
-      </div>
-    )}
-  </div>
 </article>
