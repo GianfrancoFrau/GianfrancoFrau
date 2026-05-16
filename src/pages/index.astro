@@ -39,46 +39,57 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
             adventures, puzzles, and the feeling that there was always something more to figure out.
           </p>
           <p>
-            That curiosity never really went away. As I got older, wondering <em>how</em> games worked
-            pulled me toward programming — and from there into a deeper fascination with software and
-            the complex systems shaping the world around us.
+            That curiosity never really went away. As I got older, wondering <strong
+              class="text-foreground"><em>how</em></strong
+            > games worked pulled me toward programming — and from there into a deeper fascination with
+            software and the complex systems shaping the world around us.
+          </p>
+          <p>
+            Today I work as a <strong class="text-foreground">backend developer</strong> at a large telecommunications
+            company. Beyond implementing core platform features, I support the head of development in
+            coordinating the team's work and keeping projects on track.
           </p>
         </div>
       </section>
 
       <section>
         <h2 class="font-pixel text-sm mb-6 pb-3 border-b border-border leading-loose">projects.</h2>
+        <p class="text-muted-foreground leading-relaxed mb-6">
+          Experiments, small apps, projects built to learn something new or just for the fun of it.
+        </p>
         <div class="flex flex-col">
           {projects.map((project) => <ProjectCard project={project} />)}
         </div>
       </section>
 
       {/* experience — hidden, not deleted */}
-      {false && (
-        <section>
-          <div
-            class="flex flex-wrap items-center justify-between gap-4 pb-3 mb-6 border-b border-border"
-          >
-            <h2 class="font-pixel text-sm leading-loose">experience.</h2>
-            <a
-              href="https://www.linkedin.com/in/gianfranco-frau/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2 border border-border bg-card text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              <IconLinkedin class="w-4 h-4" />
-              My LinkedIn profile
-            </a>
-          </div>
-          <ExperienceList />
-        </section>
-      )}
+      {
+        false && (
+          <section>
+            <div class="flex flex-wrap items-center justify-between gap-4 pb-3 mb-6 border-b border-border">
+              <h2 class="font-pixel text-sm leading-loose">experience.</h2>
+              <a
+                href="https://www.linkedin.com/in/gianfranco-frau/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 border border-border bg-card text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <IconLinkedin class="w-4 h-4" />
+                My LinkedIn profile
+              </a>
+            </div>
+            <ExperienceList />
+          </section>
+        )
+      }
 
       <section>
         <h2 class="font-pixel text-sm mb-6 pb-4 border-b border-border leading-loose">
           keep in touch.
         </h2>
-        <p class="text-muted-foreground mb-6">You can reach me via email, LinkedIn, or GitHub.</p>
+        <p class="text-muted-foreground mb-6">
+          Want to say hello? You can reach me via email, LinkedIn, or GitHub.
+        </p>
         <ContactLinks />
       </section>
     </main>
