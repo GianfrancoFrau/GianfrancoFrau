@@ -20,20 +20,20 @@
   },
   "dependencies": {
     "astro": "^6",
-    "@astrojs/vue": "latest",
-    "@astrojs/mdx": "latest",
-    "@astrojs/sitemap": "latest",
+    "@astrojs/vue": "^6.0.1",
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/sitemap": "^3.7.2",
     "vue": "^3",
     "tailwindcss": "^4",
     "@tailwindcss/vite": "^4",
-    "@tailwindcss/typography": "latest",
+    "@tailwindcss/typography": "^0.5.19",
     "radix-vue": "^1",
     "class-variance-authority": "^0.7",
     "clsx": "^2",
     "tailwind-merge": "^2"
   },
   "devDependencies": {
-    "@astrojs/check": "latest",
+    "@astrojs/check": "^0.9.8",
     "typescript": "^5",
     "prettier": "^3"
   }
