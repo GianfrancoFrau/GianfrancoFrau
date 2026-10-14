@@ -80,14 +80,14 @@ onUnmounted(() => clearInterval(timer))
       :class="[fading ? 'opacity-0' : 'opacity-100', animated && 'transition-opacity duration-500']"
       :style="gradientStyle(gradients[current])"
     >
-      A Web Developer.
+      A Web Developer
     </span>
     <span
       class="font-black absolute inset-0"
       :class="[fading ? 'opacity-100' : 'opacity-0', animated && 'transition-opacity duration-500']"
       :style="gradientStyle(gradients[next])"
     >
-      A Web Developer.
+      A Web Developer
     </span>
   </span>
 </template>

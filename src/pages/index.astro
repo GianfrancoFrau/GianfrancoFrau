@@ -17,10 +17,9 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
   <div class="min-h-screen flex flex-col">
     <SiteHeader />
 
-    <section class="flex flex-col items-center justify-center px-6 py-24 text-center">
-      <h1 class="font-pixel text-2xl sm:text-3xl md:text-4xl leading-snug mb-10 text-foreground/80">
-        Gianfranco<br />
-        <span>Frau<span style="color: var(--hero-accent, oklch(0.62 0.17 55));">.</span></span>
+    <section class="max-w-3xl mx-auto w-full px-4 py-24">
+      <h1 class="font-pixel text-2xl sm:text-3xl md:text-4xl leading-snug mb-6 text-foreground/80">
+        Gianfranco Frau<span style="color: var(--hero-accent, oklch(0.62 0.17 55));">.</span>
       </h1>
       <div class="text-xl text-muted-foreground">
         <AnimatedTitle client:load />
@@ -45,19 +44,13 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
             software and the complex systems shaping the world around us.
           </p>
           <p>
-            Today I work as a <strong class="text-foreground">backend developer</strong> at a large telecommunications
-            company. Beyond implementing core platform features, I support the head of development in
-            coordinating the team's work and keeping projects on track.
+            Today I work as a <strong class="text-foreground">backend web developer</strong> at a multinational
+            telecommunications company, where I build the core of the platform and its APIs. Here you
+            can find <strong class="text-foreground">experiments, small apps, projects</strong> built to
+            learn something new or just for the fun of it.
           </p>
         </div>
-      </section>
-
-      <section>
-        <h2 class="font-pixel text-sm mb-6 pb-3 border-b border-border leading-loose">projects.</h2>
-        <p class="text-muted-foreground leading-relaxed mb-6">
-          Experiments, small apps, projects built to learn something new or just for the fun of it.
-        </p>
-        <div class="flex flex-col">
+        <div class="flex flex-col mt-6">
           {projects.map((project) => <ProjectCard project={project} />)}
         </div>
       </section>
