@@ -1,45 +1,31 @@
 ---
-import IconExternal from './icons/IconExternal.astro';
-import IconGithub from './icons/IconGithub.astro';
-import type { CollectionEntry } from 'astro:content';
+import ProjectLinks from './ProjectLinks.astro'
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-  project: CollectionEntry<'projects'>;
+  project: CollectionEntry<'projects'>
 }
 
-const { project } = Astro.props;
-const { title, description, url, repo } = project.data;
+const { project } = Astro.props
+const { title, description, url, repo } = project.data
 ---
 
-<article class="group flex flex-col gap-2 py-5 border-b border-border last:border-b-0 pl-4 border-l-2 border-l-foreground/10 hover:border-l-foreground/30 transition-colors">
-  <h3 class="font-semibold leading-tight">{title}</h3>
+<article
+  class="group relative flex flex-col gap-2 py-5 border-b border-border last:border-b-0 pl-4 border-l-2 border-l-foreground/10 hover:border-l-foreground/30 transition-colors"
+>
+  <h3 class="font-semibold leading-tight">
+    {/* Stretched link: the ::after overlay makes the whole card clickable */}
+    <a
+      href={`/projects/${project.id}`}
+      class="group-hover:underline underline-offset-4 after:absolute after:inset-0"
+    >
+      {title}
+    </a>
+  </h3>
 
   <p class="text-sm text-muted-foreground leading-relaxed">{description}</p>
 
-  {(url || repo) && (
-    <div class="flex gap-4 mt-1">
-      {url && (
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground border border-transparent hover:border-border px-2 py-1 transition-colors"
-        >
-          <IconExternal class="w-3 h-3" />
-          Website
-        </a>
-      )}
-      {repo && (
-        <a
-          href={repo}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground border border-transparent hover:border-border px-2 py-1 transition-colors"
-        >
-          <IconGithub class="w-3 h-3" />
-          Source
-        </a>
-      )}
-    </div>
-  )}
+  <div class="relative z-10 mt-1 self-start">
+    <ProjectLinks url={url} repo={repo} />
+  </div>
 </article>
