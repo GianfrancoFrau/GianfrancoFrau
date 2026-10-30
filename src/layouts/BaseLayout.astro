@@ -1,22 +1,22 @@
 ---
-import '../styles/global.css';
+import '../styles/global.css'
 
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
+  title?: string
+  description?: string
+  image?: string
 }
 
 const {
   title = 'Gianfranco Frau',
   description = 'Backend web developer based in Cagliari, Sardinia.',
-  image = '/android-chrome-512x512.png',
-} = Astro.props;
+  image = '/android-chrome-512x512.png'
+} = Astro.props
 
-const ogImage = new URL(image, Astro.site);
+const ogImage = new URL(image, Astro.site)
 
-const pageTitle = title === 'Gianfranco Frau' ? title : `${title} — Gianfranco Frau`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title === 'Gianfranco Frau' ? title : `${title} — Gianfranco Frau`
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
@@ -30,13 +30,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       Script only removes it if the user explicitly saved 'light'.
     -->
     <script is:inline>
-      (function () {
+      ;(function () {
         try {
           if (localStorage.getItem('theme') === 'light') {
-            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.remove('dark')
           }
         } catch (_) {}
-      })();
+      })()
     </script>
 
     <title>{pageTitle}</title>

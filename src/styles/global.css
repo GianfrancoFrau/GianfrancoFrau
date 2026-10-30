@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
@@ -91,7 +91,13 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:
+      'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
     background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
     background-size: 16px 16px;
   }
@@ -110,7 +116,10 @@
       oklch(0 0 0 / 4%) 4px
     );
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply tracking-tight;
   }
   .font-display {
@@ -131,7 +140,9 @@
 
 /* Pixel press: shadow disappears + translate on active — simulates button press */
 @utility pixel-press {
-  transition: box-shadow 0ms, transform 0ms;
+  transition:
+    box-shadow 0ms,
+    transform 0ms;
   &:hover {
     box-shadow: 2px 2px 0 var(--pixel-shadow);
     transform: translate(2px, 2px);
@@ -143,10 +154,18 @@
 }
 
 /* Skill size variants */
-.skill-big { @apply px-7 py-6 text-2xl font-black; }
-.skill-md  { @apply px-5 py-4 text-xl font-bold; }
-.skill-sm  { @apply px-3 py-2 text-sm font-medium; }
-.skill-xs  { @apply px-2.5 py-1.5 text-xs; }
+.skill-big {
+  @apply px-7 py-6 text-2xl font-black;
+}
+.skill-md {
+  @apply px-5 py-4 text-xl font-bold;
+}
+.skill-sm {
+  @apply px-3 py-2 text-sm font-medium;
+}
+.skill-xs {
+  @apply px-2.5 py-1.5 text-xs;
+}
 
 /* Buttons */
 @utility btn {

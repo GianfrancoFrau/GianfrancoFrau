@@ -1,17 +1,17 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import SiteFooter from '../components/SiteFooter.astro';
-import type { CollectionEntry } from 'astro:content';
-import { formatDate } from '../utils/date';
+import BaseLayout from './BaseLayout.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+import SiteFooter from '../components/SiteFooter.astro'
+import type { CollectionEntry } from 'astro:content'
+import { formatDate } from '../utils/date'
 
 interface Props {
-  post: CollectionEntry<'blog'>;
+  post: CollectionEntry<'blog'>
 }
 
-const { post } = Astro.props;
-const { title, description, pubDate, updatedDate, tags } = post.data;
-const formattedDate = formatDate(pubDate);
+const { post } = Astro.props
+const { title, description, pubDate, updatedDate, tags } = post.data
+const formattedDate = formatDate(pubDate)
 ---
 
 <BaseLayout title={title} description={description}>
@@ -26,9 +26,7 @@ const formattedDate = formatDate(pubDate);
             {updatedDate && (
               <span>
                 · Updated{' '}
-                <time datetime={updatedDate.toISOString()}>
-                  {formatDate(updatedDate)}
-                </time>
+                <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time>
               </span>
             )}
           </div>

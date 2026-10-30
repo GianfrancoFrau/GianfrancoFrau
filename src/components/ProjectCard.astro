@@ -10,9 +10,7 @@ const { project } = Astro.props
 const { title, description, url, repo } = project.data
 ---
 
-<article
-  class="group relative flex flex-col gap-2 py-5 border-b border-border last:border-b-0 pl-4 border-l-2 border-l-foreground/10 hover:border-l-foreground/30 transition-colors"
->
+<article class="group relative flex flex-col gap-2 py-5 border-b border-border last:border-b-0 pl-4 border-l-2 border-l-foreground/10 hover:border-l-foreground/30 transition-colors">
   <h3 class="font-semibold leading-tight">
     {/* Stretched link: the ::after overlay makes the whole card clickable */}
     <a

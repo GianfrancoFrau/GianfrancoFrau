@@ -1,24 +1,21 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { formatDate } from '../utils/date';
+import type { CollectionEntry } from 'astro:content'
+import { formatDate } from '../utils/date'
 
 interface Props {
-  post: CollectionEntry<'blog'>;
+  post: CollectionEntry<'blog'>
 }
 
-const { post } = Astro.props;
-const { title, description, pubDate, tags } = post.data;
-const formattedDate = formatDate(pubDate);
+const { post } = Astro.props
+const { title, description, pubDate, tags } = post.data
+const formattedDate = formatDate(pubDate)
 ---
 
 <article class="group">
   <a href={`/blog/${post.id}`} class="block space-y-2 p-4 -mx-4 hover:bg-accent transition-colors">
     <div class="flex items-start justify-between gap-4">
       <h3 class="font-semibold group-hover:text-accent-foreground transition-colors">{title}</h3>
-      <time
-        datetime={pubDate.toISOString()}
-        class="text-xs text-muted-foreground shrink-0 mt-0.5"
-      >
+      <time datetime={pubDate.toISOString()} class="text-xs text-muted-foreground shrink-0 mt-0.5">
         {formattedDate}
       </time>
     </div>
@@ -28,9 +25,7 @@ const formattedDate = formatDate(pubDate);
     {tags.length > 0 && (
       <div class="flex flex-wrap gap-1.5 pt-0.5">
         {tags.map((tag) => (
-          <span class="text-xs px-2 py-0.5 border border-border text-muted-foreground">
-            {tag}
-          </span>
+          <span class="text-xs px-2 py-0.5 border border-border text-muted-foreground">{tag}</span>
         ))}
       </div>
     )}
