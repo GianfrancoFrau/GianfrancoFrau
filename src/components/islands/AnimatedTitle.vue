@@ -40,11 +40,16 @@ const gradientStyle = (g: Gradient) => ({
 const setAccentVar = (g: Gradient) =>
   document.documentElement.style.setProperty('--hero-accent', g.from)
 
+/** Lets the accent dots transition only during the crossfade (see global.css) */
+const setFadingFlag = (on: boolean) =>
+  document.documentElement.toggleAttribute('data-hero-fading', on)
+
 const advance = () => {
   if (fading.value) return
   const nextIdx = (current.value + 1) % gradients.length
   next.value = nextIdx
   fading.value = true
+  setFadingFlag(true)
   setAccentVar(gradients[nextIdx])
   setTimeout(() => {
     // Disable transitions before resetting state so the swap from span2 back to span1
@@ -55,6 +60,7 @@ const advance = () => {
     animated.value = false
     current.value = nextIdx
     fading.value = false
+    setFadingFlag(false)
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         animated.value = true
@@ -77,7 +83,8 @@ onMounted(() => setAccentVar(gradients[current.value]))
       class="font-heading-solid"
       :class="[
         fading ? 'opacity-0' : 'opacity-100',
-        animated && 'transition-opacity duration-500 motion-reduce:transition-none'
+        animated &&
+          'transition-opacity duration-(--hero-fade-duration) motion-reduce:transition-none'
       ]"
       :style="gradientStyle(gradients[current])"
     >
@@ -88,7 +95,8 @@ onMounted(() => setAccentVar(gradients[current.value]))
       aria-hidden="true"
       :class="[
         fading ? 'opacity-100' : 'opacity-0',
-        animated && 'transition-opacity duration-500 motion-reduce:transition-none'
+        animated &&
+          'transition-opacity duration-(--hero-fade-duration) motion-reduce:transition-none'
       ]"
       :style="gradientStyle(gradients[next])"
     >

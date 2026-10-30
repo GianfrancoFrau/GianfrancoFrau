@@ -65,6 +65,8 @@
   --pixel-shadow: var(--p-shadow);
   /* Keeps the hero subtitle hue rotations at 3:1 on light backgrounds (see AnimatedTitle) */
   --hue-step-darken: 0.05;
+  /* Subtitle crossfade, shared by AnimatedTitle and the accent dots that follow it */
+  --hero-fade-duration: 500ms;
 }
 
 .dark {
@@ -168,4 +170,11 @@
 /* Follows the gradient picked in AnimatedTitle */
 @utility text-hero-accent {
   color: var(--hero-accent, var(--signal));
+}
+
+/* Fades only during the subtitle crossfade, so palette and theme switches stay instant */
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-hero-fading] .text-hero-accent {
+    transition: color var(--hero-fade-duration) var(--default-transition-timing-function);
+  }
 }
