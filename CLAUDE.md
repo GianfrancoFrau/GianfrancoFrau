@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Personal portfolio and blog for [gianfrancofrau.com](https://gianfrancofrau.com), built with Astro 6. Static site with Vue islands for interactivity, deployed on Netlify.
+Personal portfolio for [gianfrancofrau.com](https://gianfrancofrau.com), built with Astro 6. Static site with Vue islands for interactivity, deployed on Netlify.
 
 ## Commands
 
@@ -16,11 +16,11 @@ npm run format   # Prettier all files in src/
 
 **Stack:** Astro 6 (static output) + Vue 3 + Tailwind v4 + MDX. Routing is file-based under `src/pages/`.
 
-**Layout hierarchy:** `BaseLayout.astro` (HTML shell, SEO, fonts, anti-FOUC) → `PageLayout.astro` / `BlogLayout.astro` (add `SiteHeader` + `SiteFooter`) → pages.
+**Layout hierarchy:** `BaseLayout.astro` (HTML shell, SEO, fonts, anti-FOUC) → `PageLayout.astro` (adds `SiteHeader` + `SiteFooter`) → `ProjectLayout.astro` → pages.
 
 **Vue islands** in `src/components/islands/` are the only interactive components, hydrated with `client:load`. Everything else is static Astro.
 
-**Astro 6 content API** — two collections defined in `src/content.config.ts` with the glob loader. Key breaking changes from older Astro:
+**Astro 6 content API** — one collection (`projects`) defined in `src/content.config.ts` with the glob loader. Key breaking changes from older Astro:
 - Use `post.id` (not `post.slug`) for URL params
 - Use `render(post)` (not `post.render()`) to get the `Content` component
 - Import `z` from `zod`, `glob` from `astro/loaders`

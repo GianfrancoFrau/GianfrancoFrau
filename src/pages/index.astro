@@ -5,21 +5,15 @@ import SiteFooter from '../components/SiteFooter.astro'
 import AnimatedTitle from '../components/islands/AnimatedTitle.vue'
 import SectionHeading from '../components/SectionHeading.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import BlogCard from '../components/BlogCard.astro'
 import ExperienceList from '../components/ExperienceList.astro'
 import ContactLinks from '../components/ContactLinks.astro'
 import IconGithub from '../components/icons/IconGithub.astro'
 import IconLinkedin from '../components/icons/IconLinkedin.astro'
 import IconMail from '../components/icons/IconMail.astro'
 import { getCollection } from 'astro:content'
-import { getPublishedPosts } from '../utils/posts'
-
-const LATEST_POSTS_COUNT = 3
 
 const allProjects = await getCollection('projects')
 const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
-
-const latestPosts = (await getPublishedPosts()).slice(0, LATEST_POSTS_COUNT)
 ---
 
 <BaseLayout>
@@ -100,26 +94,6 @@ const latestPosts = (await getPublishedPosts()).slice(0, LATEST_POSTS_COUNT)
           ))}
         </div>
       </section>
-
-      {latestPosts.length > 0 && (
-        <section id="blog">
-          <SectionHeading title="blog">
-            <a
-              href="/blog"
-              class="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              all posts →
-            </a>
-          </SectionHeading>
-          <div class="divide-y divide-border">
-            {latestPosts.map((post) => (
-              <div class="py-2">
-                <BlogCard post={post} />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
       <section id="contact">
         <SectionHeading title="contact" />

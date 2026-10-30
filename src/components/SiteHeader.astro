@@ -2,18 +2,8 @@
 import ThemeToggle from './islands/ThemeToggle.vue'
 import IconMenu from './icons/IconMenu.astro'
 
-const pathname = Astro.url.pathname
-
-// Labels mirror the home section headings; blog is the only link to a separate page
-const navLinks = [
-  { label: 'whoami', href: '/#whoami' },
-  { label: 'experience', href: '/#experience' },
-  { label: 'projects', href: '/#projects' },
-  { label: 'blog', href: '/blog' },
-  { label: 'contact', href: '/#contact' }
-]
-
-const isCurrent = (href: string) => !href.includes('#') && pathname.startsWith(href)
+// Labels mirror the home section headings and their anchors
+const sections = ['whoami', 'experience', 'projects', 'contact']
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
@@ -26,12 +16,11 @@ const isCurrent = (href: string) => !href.includes('#') && pathname.startsWith(h
     <div class="flex items-center gap-4">
       <nav aria-label="Main" class="hidden sm:block">
         <ul class="flex items-center gap-4 font-mono text-sm">
-          {navLinks.map(({ label, href }) => (
+          {sections.map((label) => (
             <li>
               <a
-                href={href}
-                aria-current={isCurrent(href) ? 'page' : undefined}
-                class="text-muted-foreground hover:text-foreground aria-[current=page]:text-foreground transition-colors"
+                href={`/#${label}`}
+                class="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <span class="opacity-50">~/</span>
                 {label}
@@ -61,12 +50,11 @@ const isCurrent = (href: string) => !href.includes('#') && pathname.startsWith(h
   class="hidden open:block fixed top-16 right-4 bottom-auto left-auto m-0 w-56 p-2 border border-border bg-popover text-popover-foreground shadow-lg backdrop:bg-background/60"
 >
   <ul class="flex flex-col font-mono text-sm">
-    {navLinks.map(({ label, href }) => (
+    {sections.map((label) => (
       <li>
         <a
-          href={href}
-          aria-current={isCurrent(href) ? 'page' : undefined}
-          class="block px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent aria-[current=page]:text-foreground transition-colors"
+          href={`/#${label}`}
+          class="block px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
         >
           <span class="opacity-50">~/</span>
           {label}
