@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { DEFAULT_PALETTE, PALETTES, PALETTE_STORAGE_KEY } from '../data/palettes'
 
 interface Props {
   title?: string
@@ -17,26 +18,29 @@ const ogImage = new URL(image, Astro.site)
 
 const pageTitle = title === 'Gianfranco Frau' ? title : `${title} — Gianfranco Frau`
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const paletteIds = PALETTES.map((palette) => palette.id)
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="dark" data-palette={DEFAULT_PALETTE}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--
-      Anti-FOUC: dark is the hardcoded default on <html>.
-      Script only removes it if the user explicitly saved 'light'.
+      Anti-FOUC: dark and the default palette are hardcoded on <html>.
+      The script only applies what the user explicitly saved.
     -->
-    <script is:inline>
-      ;(function () {
-        try {
-          if (localStorage.getItem('theme') === 'light') {
-            document.documentElement.classList.remove('dark')
-          }
-        } catch (_) {}
-      })()
+    <script is:inline define:vars={{ paletteIds, paletteKey: PALETTE_STORAGE_KEY }}>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.remove('dark')
+        }
+        const palette = localStorage.getItem(paletteKey)
+        if (paletteIds.includes(palette)) {
+          document.documentElement.dataset.palette = palette
+        }
+      } catch (_) {}
     </script>
 
     <title>{pageTitle}</title>
@@ -62,7 +66,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bungee&family=Bungee+Shade&family=Space+Grotesk:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
   </head>

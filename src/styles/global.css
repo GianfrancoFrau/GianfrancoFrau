@@ -1,11 +1,14 @@
 @import 'tailwindcss';
+@import './palettes.css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-display: 'Space Grotesk', -apple-system, sans-serif;
-  --font-pixel: 'Press Start 2P', monospace;
+  --font-heading: 'Bungee Shade', 'Arial Black', sans-serif;
+  /* Same family without the shadow, for gradient text where the shade would blur */
+  --font-heading-solid: 'Bungee', 'Arial Black', sans-serif;
 }
 
 @theme inline {
@@ -28,61 +31,45 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-signal: var(--signal);
+  --color-signal-2: var(--signal-2);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Light theme */
+/* Site tokens, resolved from the active palette (src/styles/palettes.css) */
 :root {
   --radius: 0rem;
-  --signal: oklch(0.62 0.17 55);
-  --grid-dot: oklch(0.85 0 0);
-  --pixel-shadow: oklch(0.08 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: var(--p-bg);
+  --foreground: var(--p-fg);
+  --card: var(--p-card);
+  --card-foreground: var(--p-fg);
+  --popover: var(--p-card);
+  --popover-foreground: var(--p-fg);
+  --primary: var(--p-fg);
+  --primary-foreground: var(--p-bg);
+  --secondary: color-mix(in oklch, var(--p-fg) 6%, var(--p-bg));
+  --secondary-foreground: var(--p-fg);
+  --muted: color-mix(in oklch, var(--p-fg) 6%, var(--p-bg));
+  --muted-foreground: var(--p-muted);
+  --accent: color-mix(in oklch, var(--p-fg) 9%, var(--p-bg));
+  --accent-foreground: var(--p-fg);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: var(--p-border);
+  --input: var(--p-border);
+  --ring: var(--p-muted);
+  --signal: var(--p-accent);
+  --signal-2: var(--p-accent-2);
+  --grid-dot: var(--p-dot);
+  --pixel-shadow: var(--p-shadow);
+  /* Keeps the hero subtitle hue rotations at 3:1 on light backgrounds (see AnimatedTitle) */
+  --hue-step-darken: 0.05;
 }
 
-/* Dark theme */
 .dark {
-  --signal: oklch(0.75 0.15 60);
-  --grid-dot: oklch(0.24 0 0);
-  --pixel-shadow: oklch(0.04 0 0);
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --hue-step-darken: 0;
 }
 
 @layer base {

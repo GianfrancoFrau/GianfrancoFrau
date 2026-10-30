@@ -6,6 +6,7 @@ import ProjectIcon from '../components/ProjectIcon.astro'
 import ProjectLinks from '../components/ProjectLinks.astro'
 import ProjectMeta from '../components/ProjectMeta.astro'
 import SectionHeading from '../components/SectionHeading.astro'
+import ShadeText from '../components/ShadeText.astro'
 
 interface Props {
   project: CollectionEntry<'projects'>
@@ -28,7 +29,7 @@ const otherProjects = (await getCollection('projects'))
   .filter((other) => other.id !== project.id)
   .sort((a, b) => a.data.position - b.data.position)
 
-// Tints every text-hero-accent element on the page with the project color
+// Tints the accent dots on the page with the project color
 const accentStyle = color ? { '--hero-accent': color } : undefined
 const formatDate = (date: Date) => date.toISOString().slice(0, 10)
 ---
@@ -63,11 +64,9 @@ const formatDate = (date: Date) => date.toISOString().slice(0, 10)
     <header id="top" class="scroll-mt-28 mb-16 space-y-6">
       <ProjectIcon project={project} size="lg" />
       <div class="space-y-3">
-        {/* set:text avoids the whitespace Prettier would put before the ::after dot */}
-        <h1
-          class="font-pixel text-2xl sm:text-3xl leading-snug text-foreground/80 after:content-['.'] after:text-hero-accent"
-          set:text={title}
-        />
+        <h1 class="text-4xl sm:text-5xl leading-tight">
+          <ShadeText text={title} dot />
+        </h1>
         {tagline && <p class="text-xl">{tagline}</p>}
       </div>
       <p class="text-muted-foreground leading-relaxed max-w-xl">{description}</p>
@@ -114,7 +113,7 @@ const formatDate = (date: Date) => date.toISOString().slice(0, 10)
             {releases.map((release, i) => (
               <li class="py-4 first:pt-0 space-y-2">
                 <p class="font-mono text-sm">
-                  <span class="text-hero-accent">v{release.version}</span>
+                  <span class="text-foreground">v{release.version}</span>
                   {i === 0 && <span class="text-muted-foreground"> (latest)</span>}
                   <time
                     datetime={release.date.toISOString()}
@@ -137,7 +136,9 @@ const formatDate = (date: Date) => date.toISOString().slice(0, 10)
       {(url || repo) && (
         <div class="flex flex-col items-center text-center gap-4 py-12 border-y border-border">
           <ProjectIcon project={project} size="md" />
-          <p class="font-pixel text-sm leading-loose">{title}</p>
+          <p class="text-2xl leading-snug">
+            <ShadeText text={title} />
+          </p>
           {tagline && <p class="text-muted-foreground">{tagline}</p>}
           <ProjectLinks url={url} repo={repo} variant="cta" />
         </div>
@@ -150,7 +151,7 @@ const formatDate = (date: Date) => date.toISOString().slice(0, 10)
               more projects
             </h2>
             <a
-              href="/projects"
+              href="/#projects"
               class="font-mono text-xs text-muted-foreground hover:text-foreground"
             >
               all projects →

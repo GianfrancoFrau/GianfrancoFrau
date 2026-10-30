@@ -1,0 +1,15 @@
+---
+interface Props {
+  text: string
+  /** Appends an accent-colored dot, e.g. "Gianfranco Frau." */
+  dot?: boolean
+  dotClass?: string
+  class?: string
+}
+
+const { text, dot = false, dotClass = 'text-hero-accent', class: className } = Astro.props
+---
+
+{/* One line on purpose: a line break before the dot would render as a space */}
+<!-- prettier-ignore -->
+<span class:list={['font-heading', className]}>{text}{dot && <span class={dotClass}>.</span>}</span>

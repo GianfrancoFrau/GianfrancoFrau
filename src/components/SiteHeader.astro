@@ -1,6 +1,8 @@
 ---
 import ThemeToggle from './islands/ThemeToggle.vue'
 import IconMenu from './icons/IconMenu.astro'
+import ShadeText from './ShadeText.astro'
+import PalettePicker from './PalettePicker.astro'
 
 // Labels mirror the home section headings and their anchors
 const sections = ['whoami', 'experience', 'projects', 'contact']
@@ -8,8 +10,8 @@ const sections = ['whoami', 'experience', 'projects', 'contact']
 
 <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
   <div class="max-w-3xl mx-auto w-full px-4 h-14 flex items-center justify-between gap-4">
-    <a href="/" class="font-pixel text-[10px] text-foreground/80 hover:text-foreground">
-      GF<span class="text-signal">.</span>
+    <a href="/" class="text-xl hover:opacity-80 transition-opacity">
+      <ShadeText text="GF" dot dotClass="text-signal" />
       <span class="sr-only"> home</span>
     </a>
 
@@ -22,14 +24,17 @@ const sections = ['whoami', 'experience', 'projects', 'contact']
                 href={`/#${label}`}
                 class="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <span class="opacity-50">~/</span>
+                <span class="opacity-80">~/</span>
                 {label}
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      <ThemeToggle client:load />
+      <div class="flex items-center gap-1">
+        <PalettePicker />
+        <ThemeToggle client:load />
+      </div>
       <button
         type="button"
         popovertarget="mobile-nav"
@@ -56,7 +61,7 @@ const sections = ['whoami', 'experience', 'projects', 'contact']
           href={`/#${label}`}
           class="block px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
         >
-          <span class="opacity-50">~/</span>
+          <span class="opacity-80">~/</span>
           {label}
         </a>
       </li>

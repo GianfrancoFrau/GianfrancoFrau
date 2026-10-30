@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro'
 import SiteFooter from '../components/SiteFooter.astro'
 import AnimatedTitle from '../components/islands/AnimatedTitle.vue'
 import SectionHeading from '../components/SectionHeading.astro'
+import ShadeText from '../components/ShadeText.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import ExperienceList from '../components/ExperienceList.astro'
 import ContactLinks from '../components/ContactLinks.astro'
@@ -21,12 +22,12 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
     <SiteHeader />
 
     <section class="max-w-3xl mx-auto w-full px-4 pt-24 pb-20">
-      <h1 class="font-pixel text-2xl sm:text-3xl md:text-4xl leading-snug mb-6 text-foreground/80">
-        Gianfranco Frau<span class="text-hero-accent">.</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
+        <ShadeText text="Gianfranco Frau" dot />
       </h1>
-      <p class="text-xl mb-4">
+      <p class="flex items-baseline text-2xl sm:text-3xl leading-tight mb-6">
         <AnimatedTitle client:load text="A Web Developer" />
-        <span class="font-black text-hero-accent">.</span>
+        <span class="font-heading-solid text-hero-accent">.</span>
       </p>
       <p class="text-muted-foreground leading-relaxed max-w-xl mb-8">
         I design and build web platforms, APIs, websites and applications.
@@ -87,11 +88,7 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
       </section>
 
       <section id="projects">
-        <SectionHeading title="projects">
-          <a href="/projects" class="font-mono text-xs text-muted-foreground hover:text-foreground">
-            all projects →
-          </a>
-        </SectionHeading>
+        <SectionHeading title="projects" />
         <div class="grid gap-4 sm:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard project={project} />

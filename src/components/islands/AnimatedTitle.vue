@@ -8,18 +8,21 @@ interface Gradient {
   to: string
 }
 
-const gradients: Gradient[] = [
-  { from: '#ef4444', to: '#22d3ee' }, // red      ~  0°
-  { from: '#f97316', to: '#7c3aed' }, // orange   ~ 25°
-  { from: '#facc15', to: '#db2777' }, // yellow   ~ 45°
-  { from: '#a3e635', to: '#2563eb' }, // lime     ~ 78°
-  { from: '#10b981', to: '#0ea5e9' }, // green    ~160°
-  { from: '#2dd4bf', to: '#9333ea' }, // teal     ~173°
-  { from: '#38bdf8', to: '#f97316' }, // sky      ~199°
-  { from: '#3b82f6', to: '#f43f5e' }, // blue     ~217°
-  { from: '#8b5cf6', to: '#fbbf24' }, // violet   ~263°
-  { from: '#d946ef', to: '#34d399' } // fuchsia  ~293°
-]
+/**
+ * Clicking rotates the hue of the two palette accents, keeping their lightness and chroma so
+ * every step stays readable. Some hues (yellow, green) read lighter at the same lightness:
+ * --hue-step-darken (global.css) compensates on the light theme.
+ */
+const rotate = (token: string, degrees: number) =>
+  degrees === 0
+    ? `var(${token})`
+    : `oklch(from var(${token}) calc(l - var(--hue-step-darken)) c calc(h + ${degrees}))`
+
+const HUE_STEPS = 10
+const gradients: Gradient[] = Array.from({ length: HUE_STEPS }, (_, i) => {
+  const degrees = (360 / HUE_STEPS) * i
+  return { from: rotate('--signal', degrees), to: rotate('--signal-2', degrees) }
+})
 
 const current = ref(0)
 const next = ref(1)
@@ -71,7 +74,7 @@ onMounted(() => setAccentVar(gradients[current.value]))
     @click="advance"
   >
     <span
-      class="font-black"
+      class="font-heading-solid"
       :class="[
         fading ? 'opacity-0' : 'opacity-100',
         animated && 'transition-opacity duration-500 motion-reduce:transition-none'
@@ -81,7 +84,7 @@ onMounted(() => setAccentVar(gradients[current.value]))
       {{ text }}
     </span>
     <span
-      class="font-black absolute inset-0"
+      class="font-heading-solid absolute inset-0"
       aria-hidden="true"
       :class="[
         fading ? 'opacity-100' : 'opacity-0',

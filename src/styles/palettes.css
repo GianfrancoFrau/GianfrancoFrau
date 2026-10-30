@@ -1,0 +1,152 @@
+/*
+ * Color palettes. Each one sets the --p-* base tokens for light and dark; global.css maps them
+ * onto the shadcn tokens used by the site. The active palette is the `data-palette` attribute on
+ * <html>. Selectors also match any other element carrying the attribute, so a swatch can show
+ * another palette's colors by reading its --p-* variables.
+ *
+ * When adding a palette, also list it in src/data/palettes.ts.
+ */
+
+[data-palette='graphite'] {
+  --p-bg: oklch(1 0 0);
+  --p-fg: oklch(0.145 0 0);
+  --p-muted: oklch(0.556 0 0);
+  --p-card: oklch(1 0 0);
+  --p-border: oklch(0.922 0 0);
+  --p-dot: oklch(0.85 0 0);
+  --p-accent: oklch(0.62 0.17 55);
+  --p-accent-2: oklch(0.6 0.14 250);
+  --p-shadow: oklch(0.08 0 0);
+}
+.dark[data-palette='graphite'],
+.dark [data-palette='graphite'] {
+  --p-bg: oklch(0.145 0 0);
+  --p-fg: oklch(0.985 0 0);
+  --p-muted: oklch(0.708 0 0);
+  --p-card: oklch(0.205 0 0);
+  --p-border: oklch(1 0 0 / 10%);
+  --p-dot: oklch(0.24 0 0);
+  --p-accent: oklch(0.75 0.15 60);
+  --p-accent-2: oklch(0.75 0.12 230);
+  --p-shadow: oklch(0.04 0 0);
+}
+
+[data-palette='tyrrhenian'] {
+  --p-bg: oklch(0.985 0.006 220);
+  --p-fg: oklch(0.25 0.06 240);
+  --p-muted: oklch(0.5 0.04 238);
+  --p-card: oklch(1 0 0);
+  --p-border: oklch(0.9 0.02 228);
+  --p-dot: oklch(0.86 0.025 228);
+  --p-accent: oklch(0.63 0.18 35);
+  --p-accent-2: oklch(0.62 0.11 200);
+  --p-shadow: oklch(0.25 0.06 240);
+}
+.dark[data-palette='tyrrhenian'],
+.dark [data-palette='tyrrhenian'] {
+  --p-bg: oklch(0.19 0.045 240);
+  --p-fg: oklch(0.96 0.01 230);
+  --p-muted: oklch(0.75 0.035 232);
+  --p-card: oklch(0.235 0.05 240);
+  --p-border: oklch(0.33 0.055 238);
+  --p-dot: oklch(0.28 0.05 238);
+  --p-accent: oklch(0.76 0.15 38);
+  --p-accent-2: oklch(0.82 0.12 190);
+  --p-shadow: oklch(0.1 0.04 240);
+}
+
+[data-palette='basalt'] {
+  --p-bg: oklch(0.975 0.005 75);
+  --p-fg: oklch(0.23 0.015 55);
+  --p-muted: oklch(0.5 0.018 60);
+  --p-card: oklch(0.995 0.003 80);
+  --p-border: oklch(0.89 0.01 70);
+  --p-dot: oklch(0.85 0.012 70);
+  --p-accent: oklch(0.62 0.15 62);
+  --p-accent-2: oklch(0.55 0.17 28);
+  --p-shadow: oklch(0.23 0.015 55);
+}
+.dark[data-palette='basalt'],
+.dark [data-palette='basalt'] {
+  --p-bg: oklch(0.19 0.008 60);
+  --p-fg: oklch(0.95 0.012 80);
+  --p-muted: oklch(0.72 0.018 70);
+  --p-card: oklch(0.235 0.01 60);
+  --p-border: oklch(0.33 0.012 60);
+  --p-dot: oklch(0.27 0.01 60);
+  --p-accent: oklch(0.8 0.14 78);
+  --p-accent-2: oklch(0.7 0.15 30);
+  --p-shadow: oklch(0.08 0.005 60);
+}
+
+[data-palette='phosphor'] {
+  --p-bg: oklch(0.975 0.012 110);
+  --p-fg: oklch(0.25 0.05 150);
+  --p-muted: oklch(0.5 0.04 150);
+  --p-card: oklch(0.99 0.008 110);
+  --p-border: oklch(0.88 0.03 130);
+  --p-dot: oklch(0.85 0.03 130);
+  --p-accent: oklch(0.55 0.16 150);
+  --p-accent-2: oklch(0.65 0.15 65);
+  --p-shadow: oklch(0.25 0.05 150);
+}
+.dark[data-palette='phosphor'],
+.dark [data-palette='phosphor'] {
+  --p-bg: oklch(0.14 0.02 155);
+  --p-fg: oklch(0.93 0.05 145);
+  --p-muted: oklch(0.72 0.06 148);
+  --p-card: oklch(0.185 0.03 155);
+  --p-border: oklch(0.29 0.04 155);
+  --p-dot: oklch(0.23 0.03 155);
+  --p-accent: oklch(0.85 0.19 145);
+  --p-accent-2: oklch(0.83 0.15 75);
+  --p-shadow: oklch(0.06 0.02 155);
+}
+
+[data-palette='arcade'] {
+  --p-bg: oklch(0.98 0.01 285);
+  --p-fg: oklch(0.22 0.06 285);
+  --p-muted: oklch(0.5 0.05 285);
+  --p-card: oklch(1 0 0);
+  --p-border: oklch(0.9 0.025 285);
+  --p-dot: oklch(0.87 0.03 285);
+  --p-accent: oklch(0.6 0.23 350);
+  --p-accent-2: oklch(0.62 0.13 215);
+  --p-shadow: oklch(0.22 0.06 285);
+}
+.dark[data-palette='arcade'],
+.dark [data-palette='arcade'] {
+  --p-bg: oklch(0.17 0.05 285);
+  --p-fg: oklch(0.96 0.015 285);
+  --p-muted: oklch(0.74 0.05 285);
+  --p-card: oklch(0.22 0.06 285);
+  --p-border: oklch(0.33 0.07 285);
+  --p-dot: oklch(0.26 0.06 285);
+  --p-accent: oklch(0.74 0.2 350);
+  --p-accent-2: oklch(0.83 0.13 205);
+  --p-shadow: oklch(0.08 0.04 285);
+}
+
+[data-palette='myrtle'] {
+  --p-bg: oklch(0.98 0.008 330);
+  --p-fg: oklch(0.24 0.05 330);
+  --p-muted: oklch(0.5 0.04 330);
+  --p-card: oklch(1 0 0);
+  --p-border: oklch(0.9 0.02 330);
+  --p-dot: oklch(0.87 0.025 330);
+  --p-accent: oklch(0.55 0.17 340);
+  --p-accent-2: oklch(0.6 0.13 80);
+  --p-shadow: oklch(0.24 0.05 330);
+}
+.dark[data-palette='myrtle'],
+.dark [data-palette='myrtle'] {
+  --p-bg: oklch(0.18 0.035 330);
+  --p-fg: oklch(0.96 0.012 330);
+  --p-muted: oklch(0.74 0.035 330);
+  --p-card: oklch(0.225 0.045 330);
+  --p-border: oklch(0.33 0.05 330);
+  --p-dot: oklch(0.27 0.045 330);
+  --p-accent: oklch(0.75 0.15 345);
+  --p-accent-2: oklch(0.84 0.13 85);
+  --p-shadow: oklch(0.08 0.03 330);
+}

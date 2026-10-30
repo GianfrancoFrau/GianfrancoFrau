@@ -27,7 +27,9 @@ npm run format   # Prettier all files in src/
 
 **Tailwind v4** has no `tailwind.config.js`. All theme tokens are in `src/styles/global.css` via `@theme`/`@theme inline` blocks, using CSS custom properties with `oklch` values following shadcn-vue conventions.
 
-**Dark mode** is driven by the `.dark` class on `<html>`, stored in `localStorage`. `BaseLayout` runs an inline `is:inline` script before first paint to prevent FOUC. Default is dark.
+**Palettes**: colors come from `src/styles/palettes.css`, one block of `--p-*` tokens per palette and mode, selected by `data-palette` on `<html>`. `global.css` maps them onto the shadcn tokens, so components never reference a palette directly. The list, default (`tyrrhenian`) and storage key live in `src/data/palettes.ts`; `PalettePicker.astro` switches palette. Large titles use Bungee Shade through `ShadeText.astro`; below ~24px (section headings, footer) use solid Bungee (`font-heading-solid`), since the shade blurs.
+
+**Dark mode** is driven by the `.dark` class on `<html>`, stored in `localStorage` like the palette. `BaseLayout` runs an inline script before first paint that applies both, to prevent FOUC. Default is dark.
 
 ## Code style
 
