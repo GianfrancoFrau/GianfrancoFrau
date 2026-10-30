@@ -1,31 +1,85 @@
 ---
 import ThemeToggle from './islands/ThemeToggle.vue'
-import IconArrowLeft from './icons/IconArrowLeft.astro'
+import IconMenu from './icons/IconMenu.astro'
 
 const pathname = Astro.url.pathname
-const isHome = pathname === '/'
+
+// Labels mirror the home section headings; blog is the only link to a separate page
+const navLinks = [
+  { label: 'whoami', href: '/#whoami' },
+  { label: 'experience', href: '/#experience' },
+  { label: 'projects', href: '/#projects' },
+  { label: 'blog', href: '/blog' },
+  { label: 'contact', href: '/#contact' }
+]
+
+const isCurrent = (href: string) => !href.includes('#') && pathname.startsWith(href)
 ---
 
-<header
-  class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm"
->
-  <div class="max-w-3xl mx-auto w-full px-4 h-14 flex items-center justify-between">
-    <div>
-      {
-        isHome ? null : (
-          <a
-            href="/"
-            class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <IconArrowLeft class="w-4 h-4" />
-            back
-          </a>
-        )
-      }
+<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+  <div class="max-w-3xl mx-auto w-full px-4 h-14 flex items-center justify-between gap-4">
+    <a href="/" class="font-pixel text-[10px] text-foreground/80 hover:text-foreground">
+      GF<span class="text-signal">.</span>
+      <span class="sr-only"> home</span>
+    </a>
+
+    <div class="flex items-center gap-4">
+      <nav aria-label="Main" class="hidden sm:block">
+        <ul class="flex items-center gap-4 font-mono text-sm">
+          {navLinks.map(({ label, href }) => (
+            <li>
+              <a
+                href={href}
+                aria-current={isCurrent(href) ? 'page' : undefined}
+                class="text-muted-foreground hover:text-foreground aria-[current=page]:text-foreground transition-colors"
+              >
+                <span class="opacity-50">~/</span>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <ThemeToggle client:load />
+      <button
+        type="button"
+        popovertarget="mobile-nav"
+        aria-label="Open menu"
+        class="sm:hidden inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+      >
+        <IconMenu class="w-5 h-5" />
+      </button>
     </div>
-
-    <div />
-
-    <ThemeToggle client:load />
   </div>
 </header>
+
+{/* `open:block` keeps the menu hidden where the Popover API is unsupported */}
+<nav
+  id="mobile-nav"
+  popover
+  aria-label="Main"
+  class="hidden open:block fixed top-16 right-4 bottom-auto left-auto m-0 w-56 p-2 border border-border bg-popover text-popover-foreground shadow-lg backdrop:bg-background/60"
+>
+  <ul class="flex flex-col font-mono text-sm">
+    {navLinks.map(({ label, href }) => (
+      <li>
+        <a
+          href={href}
+          aria-current={isCurrent(href) ? 'page' : undefined}
+          class="block px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent aria-[current=page]:text-foreground transition-colors"
+        >
+          <span class="opacity-50">~/</span>
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  // Popovers only light-dismiss on outside clicks: close it when a link is followed
+  const mobileNav = document.getElementById('mobile-nav')
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => mobileNav.hidePopover())
+  })
+</script>

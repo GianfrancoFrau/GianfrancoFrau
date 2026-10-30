@@ -147,3 +147,19 @@
 .skill-md  { @apply px-5 py-4 text-xl font-bold; }
 .skill-sm  { @apply px-3 py-2 text-sm font-medium; }
 .skill-xs  { @apply px-2.5 py-1.5 text-xs; }
+
+/* Buttons */
+@utility btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 border text-sm font-medium transition-colors;
+}
+@utility btn-primary {
+  @apply border-foreground bg-foreground text-background hover:opacity-90;
+}
+@utility btn-outline {
+  @apply border-border bg-card hover:bg-accent hover:text-accent-foreground;
+}
+
+/* Follows the gradient picked in AnimatedTitle */
+@utility text-hero-accent {
+  color: var(--hero-accent, var(--signal));
+}

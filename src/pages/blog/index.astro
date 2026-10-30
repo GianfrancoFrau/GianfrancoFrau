@@ -1,10 +1,9 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../utils/posts';
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = await getPublishedPosts();
 ---
 
 <PageLayout title="Blog">

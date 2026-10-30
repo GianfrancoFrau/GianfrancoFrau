@@ -1,12 +1,24 @@
 ---
-import pkg from '../../package.json';
+import pkg from '../../package.json'
 
-const year = new Date().getFullYear();
+const year = new Date().getFullYear()
 ---
 
 <footer class="border-t border-border mt-auto bg-background/80 backdrop-blur-sm">
-  <div class="max-w-3xl mx-auto w-full px-4 py-6 flex items-center justify-between text-xs text-muted-foreground">
-    <span><span class="font-pixel text-[10px]">Gianfranco Frau</span> &copy; {year}</span>
-    <span>v{pkg.version}</span>
+  <div class="max-w-3xl mx-auto w-full px-4 py-6 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+    <span>
+      <span class="font-pixel text-[10px]">Gianfranco Frau</span> &copy; {year}
+    </span>
+    <span class="font-mono">
+      <a
+        href="https://github.com/GianfrancoFrau/GianfrancoFrau"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline underline-offset-4 hover:text-foreground"
+      >
+        source
+      </a>{' '}
+      · v{pkg.version}
+    </span>
   </div>
 </footer>
