@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  project: CollectionEntry<'projects'>
+  /** Short form drops year and stack, for cards */
+  short?: boolean
+}
+
+const { project, short = false } = Astro.props
+const { platform, since, status, stack } = project.data
+
+const statusLabels = { active: 'active', wip: 'work in progress', archived: 'archived' }
+
+const facts = [
+  platform,
+  !short && since && `since ${since}`,
+  status && statusLabels[status],
+  !short && stack.length > 0 && stack.join(', ')
+].filter(Boolean)
+---
+
+{facts.length > 0 && (
+  <p class="font-mono text-xs text-muted-foreground">
+    {facts.map((fact, i) => (
+      <>
+        {i > 0 && <span class="opacity-50 mx-1.5">·</span>}
+        <span>{fact}</span>
+      </>
+    ))}
+  </p>
+)}

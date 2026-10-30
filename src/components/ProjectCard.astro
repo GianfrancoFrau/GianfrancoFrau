@@ -1,5 +1,7 @@
 ---
+import ProjectIcon from './ProjectIcon.astro'
 import ProjectLinks from './ProjectLinks.astro'
+import ProjectMeta from './ProjectMeta.astro'
 import type { CollectionEntry } from 'astro:content'
 
 interface Props {
@@ -7,23 +9,31 @@ interface Props {
 }
 
 const { project } = Astro.props
-const { title, description, url, repo } = project.data
+const { title, description, tagline, url, repo } = project.data
 ---
 
-<article class="group relative flex flex-col gap-2 py-5 border-b border-border last:border-b-0 pl-4 border-l-2 border-l-foreground/10 hover:border-l-foreground/30 transition-colors">
-  <h3 class="font-semibold leading-tight">
-    {/* Stretched link: the ::after overlay makes the whole card clickable */}
-    <a
-      href={`/projects/${project.id}`}
-      class="group-hover:underline underline-offset-4 after:absolute after:inset-0"
-    >
-      {title}
-    </a>
-  </h3>
-
-  <p class="text-sm text-muted-foreground leading-relaxed">{description}</p>
-
-  <div class="relative z-10 mt-1 self-start">
-    <ProjectLinks url={url} repo={repo} />
+<article class="group relative flex flex-col gap-3 p-4 border border-border bg-card hover:bg-accent/50 transition-colors">
+  <div class="flex items-center gap-4">
+    <ProjectIcon project={project} size="md" />
+    <div class="min-w-0 space-y-1">
+      <h3 class="font-semibold leading-tight">
+        {/* Stretched link: the ::after overlay makes the whole card clickable */}
+        <a
+          href={`/projects/${project.id}`}
+          class="group-hover:underline underline-offset-4 after:absolute after:inset-0"
+        >
+          {title}
+        </a>
+      </h3>
+      <ProjectMeta project={project} short />
+    </div>
   </div>
+
+  <p class="text-sm text-muted-foreground leading-relaxed">{tagline ?? description}</p>
+
+  {(url || repo) && (
+    <div class="relative z-10 mt-auto self-start">
+      <ProjectLinks url={url} repo={repo} />
+    </div>
+  )}
 </article>

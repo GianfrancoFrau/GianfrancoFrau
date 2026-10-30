@@ -5,24 +5,31 @@ import IconGithub from './icons/IconGithub.astro'
 interface Props {
   url?: string
   repo?: string
+  /** `inline`: small text links; `cta`: full buttons for the project hero */
+  variant?: 'inline' | 'cta'
 }
 
-const { url, repo } = Astro.props
-const linkClass =
+const { url, repo, variant = 'inline' } = Astro.props
+
+const inlineClass =
   'inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground border border-transparent hover:border-border px-2 py-1 transition-colors'
+const isCta = variant === 'cta'
+const websiteClass = isCta ? 'btn btn-primary' : inlineClass
+const sourceClass = isCta ? 'btn btn-outline' : inlineClass
+const iconClass = isCta ? 'w-4 h-4' : 'w-3 h-3'
 ---
 
 {(url || repo) && (
-  <div class="flex gap-4">
+  <div class:list={['flex flex-wrap', isCta ? 'gap-2' : 'gap-4']}>
     {url && (
-      <a href={url} target="_blank" rel="noopener noreferrer" class={linkClass}>
-        <IconExternal class="w-3 h-3" />
-        Website
+      <a href={url} target="_blank" rel="noopener noreferrer" class={websiteClass}>
+        <IconExternal class={iconClass} />
+        {isCta ? 'Open' : 'Website'}
       </a>
     )}
     {repo && (
-      <a href={repo} target="_blank" rel="noopener noreferrer" class={linkClass}>
-        <IconGithub class="w-3 h-3" />
+      <a href={repo} target="_blank" rel="noopener noreferrer" class={sourceClass}>
+        <IconGithub class={iconClass} />
         Source
       </a>
     )}

@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  project: CollectionEntry<'projects'>
+  size?: 'sm' | 'md' | 'lg'
+}
+
+const { project, size = 'md' } = Astro.props
+const { title, icon, color } = project.data
+
+const sizes = {
+  sm: { box: 'w-8 h-8 text-[10px]', px: 32 },
+  md: { box: 'w-14 h-14 text-base', px: 56 },
+  lg: { box: 'w-24 h-24 text-3xl', px: 96 }
+}
+const { box, px } = sizes[size]
+const boxClass = `${box} shrink-0 pixel-shadow-sm`
+---
+
+{icon ? (
+  <Image src={icon} alt="" width={px} height={px} class={`${boxClass} object-cover`} />
+) : (
+  <span
+    aria-hidden="true"
+    class={`${boxClass} inline-flex items-center justify-center font-pixel text-white select-none`}
+    style={{ backgroundColor: color ?? 'var(--signal)' }}
+  >
+    {title.charAt(0).toUpperCase()}
+  </span>
+)}

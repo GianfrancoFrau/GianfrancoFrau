@@ -1,26 +1,181 @@
 ---
+import { Image } from 'astro:assets'
+import { getCollection, type CollectionEntry } from 'astro:content'
 import PageLayout from './PageLayout.astro'
+import ProjectIcon from '../components/ProjectIcon.astro'
 import ProjectLinks from '../components/ProjectLinks.astro'
-import type { CollectionEntry } from 'astro:content'
+import ProjectMeta from '../components/ProjectMeta.astro'
+import SectionHeading from '../components/SectionHeading.astro'
 
 interface Props {
   project: CollectionEntry<'projects'>
 }
 
 const { project } = Astro.props
-const { title, description, url, repo } = project.data
+const { title, description, tagline, color, icon, url, repo, screenshots, features, changelog } =
+  project.data
+
+const hasTips = Boolean(project.body?.trim())
+const releases = [...changelog].sort((a, b) => b.date.getTime() - a.date.getTime())
+
+const sections = [
+  { id: 'features', show: features.length > 0 },
+  { id: 'tips', show: hasTips },
+  { id: 'changelog', show: releases.length > 0 }
+].filter((section) => section.show)
+
+const otherProjects = (await getCollection('projects'))
+  .filter((other) => other.id !== project.id)
+  .sort((a, b) => a.data.position - b.data.position)
+
+// Tints every text-hero-accent element on the page with the project color
+const accentStyle = color ? { '--hero-accent': color } : undefined
+const formatDate = (date: Date) => date.toISOString().slice(0, 10)
 ---
 
-<PageLayout title={title} description={description}>
-  <article>
-    <header class="mb-8 space-y-4">
-      <h1 class="font-pixel text-lg leading-loose">{title}</h1>
-      <p class="text-muted-foreground leading-relaxed">{description}</p>
-      <ProjectLinks url={url} repo={repo} />
+<PageLayout title={title} description={tagline ?? description} image={icon?.src}>
+  <article class="[&_section]:scroll-mt-28" style={accentStyle}>
+    <nav
+      aria-label={`${title} sections`}
+      class="sticky top-14 z-40 -mx-4 -mt-10 mb-12 px-4 h-12 flex items-center gap-6 border-b border-border/40 bg-background/80 backdrop-blur-sm overflow-x-auto whitespace-nowrap"
+    >
+      <a href="#top" class="flex items-center gap-2 text-sm font-semibold shrink-0">
+        <ProjectIcon project={project} size="sm" />
+        {title}
+      </a>
+      <ul class="flex items-center gap-4 font-mono text-xs">
+        {sections.map(({ id }) => (
+          <li>
+            <a
+              href={`#${id}`}
+              class="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {id}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="ml-auto shrink-0">
+        <ProjectLinks url={url} repo={repo} />
+      </div>
+    </nav>
+
+    <header id="top" class="scroll-mt-28 mb-16 space-y-6">
+      <ProjectIcon project={project} size="lg" />
+      <div class="space-y-3">
+        {/* set:text avoids the whitespace Prettier would put before the ::after dot */}
+        <h1
+          class="font-pixel text-2xl sm:text-3xl leading-snug text-foreground/80 after:content-['.'] after:text-hero-accent"
+          set:text={title}
+        />
+        {tagline && <p class="text-xl">{tagline}</p>}
+      </div>
+      <p class="text-muted-foreground leading-relaxed max-w-xl">{description}</p>
+      <ProjectLinks url={url} repo={repo} variant="cta" />
+      <ProjectMeta project={project} />
     </header>
 
-    <div class="prose prose-zinc dark:prose-invert max-w-none">
-      <slot />
+    <div class="space-y-16">
+      {screenshots.length > 0 && (
+        <div class="space-y-6">
+          {screenshots.map(({ src, alt }) => (
+            <Image src={src} alt={alt} class="w-full h-auto border border-border pixel-shadow" />
+          ))}
+        </div>
+      )}
+
+      {features.length > 0 && (
+        <section id="features">
+          <SectionHeading title="features" />
+          <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+            {features.map((feature) => (
+              <li class="space-y-1">
+                <h3 class="font-semibold">{feature.title}</h3>
+                <p class="text-sm text-muted-foreground leading-relaxed">{feature.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {hasTips && (
+        <section id="tips">
+          <SectionHeading title="tips" />
+          <div class="prose prose-zinc dark:prose-invert max-w-none">
+            <slot />
+          </div>
+        </section>
+      )}
+
+      {releases.length > 0 && (
+        <section id="changelog">
+          <SectionHeading title="changelog" />
+          <ol class="divide-y divide-border">
+            {releases.map((release, i) => (
+              <li class="py-4 first:pt-0 space-y-2">
+                <p class="font-mono text-sm">
+                  <span class="text-hero-accent">v{release.version}</span>
+                  {i === 0 && <span class="text-muted-foreground"> (latest)</span>}
+                  <time
+                    datetime={release.date.toISOString()}
+                    class="ml-3 text-xs text-muted-foreground"
+                  >
+                    {formatDate(release.date)}
+                  </time>
+                </p>
+                <ul class="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                  {release.notes.map((note) => (
+                    <li>{note}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {(url || repo) && (
+        <div class="flex flex-col items-center text-center gap-4 py-12 border-y border-border">
+          <ProjectIcon project={project} size="md" />
+          <p class="font-pixel text-sm leading-loose">{title}</p>
+          {tagline && <p class="text-muted-foreground">{tagline}</p>}
+          <ProjectLinks url={url} repo={repo} variant="cta" />
+        </div>
+      )}
+
+      {otherProjects.length > 0 && (
+        <aside aria-labelledby="more-projects">
+          <div class="flex items-baseline justify-between gap-4 mb-4">
+            <h2 id="more-projects" class="font-mono text-sm text-muted-foreground">
+              more projects
+            </h2>
+            <a
+              href="/projects"
+              class="font-mono text-xs text-muted-foreground hover:text-foreground"
+            >
+              all projects →
+            </a>
+          </div>
+          <ul class="grid gap-3 sm:grid-cols-2">
+            {otherProjects.map((other) => (
+              <li>
+                <a
+                  href={`/projects/${other.id}`}
+                  class="flex items-center gap-3 p-3 border border-border bg-card hover:bg-accent transition-colors"
+                >
+                  <ProjectIcon project={other} size="sm" />
+                  <span class="min-w-0">
+                    <span class="block font-semibold text-sm">{other.data.title}</span>
+                    <span class="block text-xs text-muted-foreground truncate">
+                      {other.data.tagline ?? other.data.description}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
     </div>
   </article>
 </PageLayout>
