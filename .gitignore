@@ -29,3 +29,7 @@ coverage
 
 .astro/*
 .claude/*
+
+# Local working notes
+plan/
+review/
