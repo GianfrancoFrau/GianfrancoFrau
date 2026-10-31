@@ -6,7 +6,7 @@ import { PALETTES, PALETTE_STORAGE_KEY } from '../data/palettes'
   type="button"
   popovertarget="palette-menu"
   aria-label="Choose color palette"
-  class="inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+  class="palette-trigger inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +20,34 @@ import { PALETTES, PALETTE_STORAGE_KEY } from '../data/palettes'
     viewBox="0 0 24 24"
     aria-hidden="true"
   >
-    <circle cx="13.5" cy="6.5" r="1.5" />
-    <circle cx="17.5" cy="10.5" r="1.5" />
-    <circle cx="8.5" cy="7.5" r="1.5" />
-    <circle cx="6.5" cy="12.5" r="1.5" />
+    <circle
+      cx="6.5"
+      cy="12.5"
+      r="1.5"
+      class="palette-dot"
+      style="--dot-color: var(--signal); --dot-delay: 0ms"
+    />
+    <circle
+      cx="8.5"
+      cy="7.5"
+      r="1.5"
+      class="palette-dot"
+      style="--dot-color: var(--signal-2); --dot-delay: 75ms"
+    />
+    <circle
+      cx="13.5"
+      cy="6.5"
+      r="1.5"
+      class="palette-dot"
+      style="--dot-color: var(--signal); --dot-delay: 150ms"
+    />
+    <circle
+      cx="17.5"
+      cy="10.5"
+      r="1.5"
+      class="palette-dot"
+      style="--dot-color: var(--signal-2); --dot-delay: 225ms"
+    />
     <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.56-2.5 5.56-5.55C22 6.01 17.5 2 12 2z" />
   </svg>
 </button>
@@ -90,3 +114,46 @@ import { PALETTES, PALETTE_STORAGE_KEY } from '../data/palettes'
 
   markCurrent()
 </script>
+
+<style>
+  /* The dots are mostly stroke, so both stroke and fill take the color */
+  .palette-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .palette-trigger:focus-visible .palette-dot {
+    fill: var(--dot-color);
+    stroke: var(--dot-color);
+  }
+
+  /* Touch screens keep :hover after a tap, so hover effects are mouse-only like Tailwind's */
+  @media (hover: hover) {
+    .palette-trigger:hover .palette-dot {
+      fill: var(--dot-color);
+      stroke: var(--dot-color);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .palette-dot {
+      transition:
+        fill 150ms var(--dot-delay),
+        stroke 150ms var(--dot-delay);
+    }
+    .palette-trigger:focus-visible .palette-dot {
+      animation: dot-pop 300ms var(--dot-delay) ease-out both;
+    }
+
+    @media (hover: hover) {
+      .palette-trigger:hover .palette-dot {
+        animation: dot-pop 300ms var(--dot-delay) ease-out both;
+      }
+    }
+  }
+
+  @keyframes dot-pop {
+    50% {
+      scale: 1.5;
+    }
+  }
+</style>

@@ -11,4 +11,4 @@ const { text, dot = false, class: className } = Astro.props
 
 {/* One line on purpose: a line break before the dot would render as a space */}
 <!-- prettier-ignore -->
-<span class:list={['font-heading', className]}>{text}{dot && <span class="text-hero-accent">.</span>}</span>
+<span class:list={['font-heading', className]}>{text}{dot && <span data-shade-dot class="text-hero-accent">.</span>}</span>

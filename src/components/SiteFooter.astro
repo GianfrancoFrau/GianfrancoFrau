@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
     <span>
       <span class="font-heading-solid text-sm text-foreground">Gianfranco Frau</span> &copy; {year}
     </span>
-    <span class="font-mono">
+    <span class="font-mono inline-flex items-center gap-1.5">
       <a
         href="https://github.com/GianfrancoFrau/GianfrancoFrau"
         target="_blank"
@@ -17,8 +17,9 @@ const year = new Date().getFullYear()
         class="underline underline-offset-4 hover:text-foreground"
       >
         source
-      </a>{' '}
-      · v{pkg.version}
+      </a>
+      <span aria-hidden="true">·</span>
+      <span>v{pkg.version}</span>
     </span>
   </div>
 </footer>

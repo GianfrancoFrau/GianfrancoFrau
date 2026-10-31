@@ -5,12 +5,12 @@ import ShadeText from './ShadeText.astro'
 import PalettePicker from './PalettePicker.astro'
 
 // Labels mirror the home section headings and their anchors
-const sections = ['whoami', 'experience', 'projects', 'contact']
+const sections = ['whoami', 'experience', 'projects', 'contacts']
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
   <div class="max-w-3xl mx-auto w-full px-4 h-14 flex items-center justify-between gap-4">
-    <a href="/" class="text-xl hover:opacity-80 transition-opacity">
+    <a href="/" class="logo text-xl hover:opacity-80 transition-opacity">
       <ShadeText text="GF" dot />
       <span class="sr-only"> home</span>
     </a>
@@ -76,3 +76,25 @@ const sections = ['whoami', 'experience', 'projects', 'contact']
     link.addEventListener('click', () => mobileNav.hidePopover())
   })
 </script>
+
+<style>
+  /* The logo dot blinks like a terminal cursor */
+  @media (prefers-reduced-motion: no-preference) {
+    .logo:focus-visible :global([data-shade-dot]) {
+      animation: cursor-blink 0.8s steps(1) 3;
+    }
+
+    /* Touch screens keep :hover after a tap, so hover effects are mouse-only like Tailwind's */
+    @media (hover: hover) {
+      .logo:hover :global([data-shade-dot]) {
+        animation: cursor-blink 0.8s steps(1) 3;
+      }
+    }
+  }
+
+  @keyframes cursor-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>

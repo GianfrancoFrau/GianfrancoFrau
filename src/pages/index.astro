@@ -29,11 +29,13 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
         <AnimatedTitle client:load text="A Web Developer" />
         <span class="font-heading-solid text-hero-accent">.</span>
       </p>
-      <p class="text-muted-foreground leading-relaxed max-w-xl mb-8">
-        I design and build web platforms, APIs, websites and applications.
+      <p class="text-lg font-bold text-muted-foreground leading-relaxed text-balance mb-8">
+        I design and build <span class="text-hero-accent">web platforms</span>,
+        <span class="text-hero-accent">APIs</span>, <span class="text-hero-accent">websites</span>
+        and <span class="text-hero-accent">applications</span>.
       </p>
       <div class="flex flex-wrap gap-2">
-        <a href="#contact" class="btn btn-primary">
+        <a href="#contacts" class="btn btn-primary">
           <IconMail class="w-4 h-4" />
           Get in touch
         </a>
@@ -91,8 +93,8 @@ const projects = allProjects.sort((a, b) => a.data.position - b.data.position)
         </div>
       </section>
 
-      <section id="contact">
-        <SectionHeading title="contact" />
+      <section id="contacts">
+        <SectionHeading title="contacts" />
         <p class="text-muted-foreground mb-6">
           Want to say hello? You can reach me via email, LinkedIn, or GitHub.
         </p>

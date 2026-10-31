@@ -9,12 +9,11 @@ onMounted(() => {
 
 const toggle = () => {
   isDark.value = !isDark.value
-  if (isDark.value) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
+  document.documentElement.classList.toggle('dark', isDark.value)
+  try {
+    localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+  } catch {
+    // Storage can be blocked (private mode, site data disabled): the theme still applies
   }
 }
 </script>
@@ -23,11 +22,12 @@ const toggle = () => {
   <button
     @click="toggle"
     :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
-    class="inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+    class="group inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
   >
     <!-- Sun (shown in dark mode to switch to light) -->
     <svg
       v-if="isDark"
+      class="motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:rotate-90 motion-safe:group-focus-visible:rotate-90"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -47,6 +47,7 @@ const toggle = () => {
     <!-- Moon (shown in light mode to switch to dark) -->
     <svg
       v-else
+      class="motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:-rotate-20 motion-safe:group-focus-visible:-rotate-20"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
